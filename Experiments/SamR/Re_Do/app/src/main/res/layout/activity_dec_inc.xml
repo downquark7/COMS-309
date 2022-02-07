@@ -5,51 +5,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    tools:context=".SecondFragment">
+    tools:context=".Dec_Inc">
+
 
     <TextView
         android:id="@+id/textview_second"
+        android:text=" ISU Meal Counter"
+        android:textColor="@android:color/white"
+        android:textSize="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
-
+        android:layout_marginBottom="472dp"
+        app:layout_constraintBottom_toTopOf="@id/prev"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="112dp"
-        android:text="@string/previous"
-        android:textColor="@android:color/black"
-        android:backgroundTint="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="108dp"
+        android:backgroundTint="@android:color/white"
+        android:text="previous"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/NumText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="48dp"
         android:textColor="@android:color/white"
         android:textSize="30sp"
-
-
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="206dp"
-        tools:layout_editor_absoluteY="276dp" />
+        app:layout_constraintRight_toRightOf="@id/IncID"
+        app:layout_constraintTop_toBottomOf="@id/IncID" />
 
     <Button
         android:id="@+id/IncID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="136dp"
         android:layout_marginBottom="468dp"
-        android:backgroundTint="@android:color/holo_blue_dark"
+        android:backgroundTint="#FFFF00"
         android:text="Increment"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,21 +62,12 @@
         android:id="@+id/DecID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="148dp"
+        android:layout_marginEnd="132dp"
         android:layout_marginBottom="340dp"
-        android:backgroundTint="@android:color/holo_blue_bright"
+        android:backgroundTint="#FF0000"
         android:text="Decrement"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-
-    />
-
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
