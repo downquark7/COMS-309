@@ -1,5 +1,8 @@
 package com.example.enicely;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize
 public class TestUnit
 {
     private String name;
