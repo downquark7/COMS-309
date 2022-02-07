@@ -7,6 +7,11 @@ public class TestUnit
 {
     private String name;
 
+    public TestUnit()
+    {
+
+    }
+
     public TestUnit(String name)
     {
         this.name = name;
@@ -16,5 +21,15 @@ public class TestUnit
     public String toString()
     {
         return this.name;
+    }
+
+    public String getName()
+    {
+        return this.name;
+    }
+
+    public void setName()
+    {
+        this.name = name;
     }
 }
