@@ -4,13 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        </com.google.android.material.tabs.TabLayout="@+id/globalTabsLayout">
+        android:layout_height="wrap_content"
+        android:id="@+id/globalTabsLayout">
+
     </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pager">
+
+    </androidx.viewpager2.widget.ViewPager2>
 </LinearLayout>

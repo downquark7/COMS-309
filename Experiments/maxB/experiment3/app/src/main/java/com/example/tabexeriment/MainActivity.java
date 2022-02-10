@@ -1,12 +1,16 @@
 package com.example.tabexeriment;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+
 public class MainActivity extends AppCompatActivity {
 
-    private TabLayout tabslayout;
+    private TabLayout tabsLayout;
     private ViewPager2 pager;
     private TabsAdapter adapter;
 
@@ -19,5 +23,11 @@ public class MainActivity extends AppCompatActivity {
         pager = findViewById(R.id.pager);
         adapter = new TabsAdapter(this);
         pager.setAdapter(adapter);
+
+        new TabLayoutMediator(tabsLayout, pager, (tab, position) -> {
+            if (position == 0) tab.setText("Contacts");
+            else if (position == 1) tab.setText("Favourites");
+            else tab.setText("Settings");
+        }).attach();
     }
 }

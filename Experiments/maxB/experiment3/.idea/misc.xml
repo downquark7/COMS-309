@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/mabro/OneDrive/Desktop/Com S 309/1_hb_4/Experiments/maxB/experiment3/app/src/main/res/layout/fragment_favorites.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/mabro/OneDrive/Desktop/Com S 309/1_hb_4/Experiments/maxB/experiment3/app/src/main/res/layout/fragment_favorites.xml" value="0.1" />
         <entry key="..\:/Users/mabro/OneDrive/Desktop/Com S 309/1_hb_4/Experiments/maxB/experiment3/app/src/main/res/layout/fragment_list_contact.xml" value="0.2115036231884058" />
+        <entry key="..\:/Users/mabro/OneDrive/Desktop/Com S 309/1_hb_4/Experiments/maxB/experiment3/app/src/main/res/layout/fragment_single_contact.xml" value="0.1" />
         <entry key="..\:/Users/mabro/OneDrive/Desktop/Com S 309/1_hb_4/Experiments/maxB/experiment3/app/src/main/res/layout/tabsorganizer.xml" value="0.21784420289855072" />
       </map>
     </option>
