@@ -1,1 +1,2 @@
 conflict
+more conflicting text hopefully
