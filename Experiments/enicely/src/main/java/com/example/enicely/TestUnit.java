@@ -1,8 +1,16 @@
 package com.example.enicely;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize
 public class TestUnit
 {
     private String name;
+
+    public TestUnit()
+    {
+
+    }
 
     public TestUnit(String name)
     {
@@ -13,5 +21,15 @@ public class TestUnit
     public String toString()
     {
         return this.name;
+    }
+
+    public String getName()
+    {
+        return this.name;
+    }
+
+    public void setName()
+    {
+        this.name = name;
     }
 }
