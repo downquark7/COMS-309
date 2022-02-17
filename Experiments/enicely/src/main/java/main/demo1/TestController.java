@@ -1,11 +1,11 @@
-package main;
+package main.demo1;
 
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 
 @RestController
-public class Controller
+public class TestController
 {
     HashMap<String, TestUnit> database = new HashMap<>();
 

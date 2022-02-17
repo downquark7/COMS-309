@@ -1,4 +1,4 @@
-package main;
+package main.demo1;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
