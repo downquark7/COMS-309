@@ -11,18 +11,25 @@ import java.util.Random;
 @RestController
 public class loginManager
 {
-    //TODO: replace hashmap value with userData class once implemented
-    private HashMap<Integer, String> onlineUsers = new HashMap<>();
+    private HashMap<Integer, userData> onlineUsers = new HashMap<>();
 
     @GetMapping("/onlineUsers")
-    public HashMap<Integer, String> getOnlineUsers() {
+    public HashMap<Integer, userData> getOnlineUsers() {
         return onlineUsers;
     }
 
     @PostMapping("/login")
-    public Integer loginUser(@RequestBody loginData data) {
+    public userData loginUser(@RequestBody loginData data) {
         Integer id = new Random().nextInt();
-        onlineUsers.put(id, data.getUsername());
-        return id;
+
+        //temporary ig
+        userData user = new userData();
+        user.setId(id);
+        user.setUsername(data.getUsername());
+        user.setAuthenticationMethod(data.getAuthenticationMethod());
+        user.setAuthenticationData(data.getAuthenticationData());
+
+        onlineUsers.put(id, user);
+        return user;
     }
 }
