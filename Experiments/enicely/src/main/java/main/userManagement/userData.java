@@ -1,6 +1,6 @@
 package main.userManagement;
 
-import net.minidev.json.annotate.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class userData
 {
