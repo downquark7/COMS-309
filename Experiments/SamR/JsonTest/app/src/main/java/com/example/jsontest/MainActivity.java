@@ -43,7 +43,7 @@ private RequestQueue queue;
 
 
     private void jsonParse(){
-        String url = "https://myjson.dit.upm.es/api/bins/5jn9";
+        String url = "http://myjson.dit.upm.es/api/bins/j1r9";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
