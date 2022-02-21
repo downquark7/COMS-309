@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Experiment 1"
+rootProject.name = "Json Test"
 include ':app'
