@@ -17,15 +17,17 @@ public class Main
     }
 
     @Bean
-    CommandLineRunner initUser(userRepository userRepository) {
+    CommandLineRunner initUser(userRepository userRepository)
+    {
         return args -> {
-
-            userData user = new userData();
-            user.setUsername("josh");
-            user.setAuthenticationMethod("plaintext");
-            user.setAuthenticationData("george");
-            userRepository.save(user);
-
+            if (null == userRepository.findByUsername("josh"))
+            {
+                userData user = new userData();
+                user.setUsername("josh");
+                user.setAuthenticationMethod("plaintext");
+                user.setAuthenticationData("george");
+                userRepository.save(user);
+            }
         };
     }
 

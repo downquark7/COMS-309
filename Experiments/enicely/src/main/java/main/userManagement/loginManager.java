@@ -1,12 +1,10 @@
 package main.userManagement;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
 @RestController
@@ -21,6 +19,11 @@ public class loginManager
     public HashMap<Integer, userData> getOnlineUsers()
     {
         return onlineUsers;
+    }
+
+    @GetMapping("/users")
+    public List<userData> allUsers() {
+        return userRepository.findAll();
     }
 
     @PostMapping("/login")
@@ -48,6 +51,16 @@ public class loginManager
             return null;
         }
 
+        onlineUsers.put(user.getId(), user);
+
+        return user;
+    }
+
+    @DeleteMapping("/id/{id}")
+    public userData delete(@PathVariable int id)
+    {
+        userData user = userRepository.findById(id);
+        userRepository.delete(user);
         return user;
     }
 }
