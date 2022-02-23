@@ -13,6 +13,8 @@ public class ClassData
 
     private String name;
     private String instructor;
+    private String department;
+    private String number;
 
     public int getId()
     {
@@ -42,5 +44,25 @@ public class ClassData
     public void setInstructor(String instructor)
     {
         this.instructor = instructor;
+    }
+
+    public String getDepartment()
+    {
+        return department;
+    }
+
+    public void setDepartment(String department)
+    {
+        this.department = department;
+    }
+
+    public String getNumber()
+    {
+        return number;
+    }
+
+    public void setNumber(String number)
+    {
+        this.number = number;
     }
 }
