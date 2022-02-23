@@ -10,7 +10,7 @@ public class ClassData
     private int id;
 
     private String semesterCode;
-    private String semseterYear;
+    private String semesterYear;
     private String deptCode;
     private String classNumber;
     private String departmentTitle;
@@ -40,14 +40,14 @@ public class ClassData
         this.semesterCode = semesterCode;
     }
 
-    public String getSemseterYear()
+    public String getSemesterYear()
     {
-        return semseterYear;
+        return semesterYear;
     }
 
-    public void setSemseterYear(String semseterYear)
+    public void setSemesterYear(String semesterYear)
     {
-        this.semseterYear = semseterYear;
+        this.semesterYear = semesterYear;
     }
 
     public String getDeptCode()
