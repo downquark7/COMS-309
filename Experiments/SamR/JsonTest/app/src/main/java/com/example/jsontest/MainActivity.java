@@ -22,6 +22,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Map;
+import java.util.HashMap;
+
+//that one gonna return {} tho until you login lol
+//Don't forget to 'Content-Type': 'application/json'
 
 public class MainActivity extends AppCompatActivity {
     private TextView TextResult;
@@ -32,68 +36,95 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final String authenticationMethod;
 
         TextResult = findViewById(R.id.text_view_result);
         Button button = findViewById(R.id.button_parse);
 
-        queue = Volley.newRequestQueue(this);
+       // queue = Volley.newRequestQueue(this);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-//            public void onClick(View view) {
-//                jsonParse();
-//            }
             public void onClick(View view) {
-                send_data(this);
+                postRequest();
             }
         });
     }
 
-    private void send_data(Context context, final username, final authenticationMethod, final authenticationData) {
-        username;
-        Send_DataResponse().requestStarted();
-        RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest sr = new StringRequest(Request.Method.POST, "http://api.someservice.com/post/comment", new Response.Listener<String>() {
+
+
+    private void postRequest(){
+        RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
+
+        String url = "http://coms-309-032.class.las.iastate.edu:8080/onlineUsers";
+        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Send_DataResponse.requestCompleted();
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    TextResult.setText("Data 1:", jsonObject.getString("Username"));
+                    TextResult.append("Data 2:", jsonObject.getString("authenticationMethod"));
+                    TextResult.append("Data 2:", jsonObject.getString("authenticationData"));
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Send_DataResponse.requestEndedWithError(error);
+                TextResult.setText("Failed to post data");
             }
         }) {
             @Override
-            protected Map<String, String> getParams() {
-                Map<String, String> param = new Hashmap<String, String>();
-                param.put("username", username);
-                param.put("authenticationMethod", authenticationMethod);
-                param.put("authenticationData", authenticationData);
+            protected Map<String,String> getParams(){
+                Map<String,String> param= new HashMap<String,String>();
+                param.put("Username", data);
+                        //need second *correct* parameter
+                param.put("authenticationMethod", data);
+                param.put("authenticationData", data);
                 return param;
-
-
             }
 
             @Override
-            public Map<String, String> getHeader() throws AuthFailureError {
-                Map<String, String> param = new Hashmap<String, String>();
-                param.put("Content-Type", "application/x-www-form-urlencoded");
+            public Map<String,String> getHeaders() throws AuthFailureError{
+                Map<String,String> param = new HashMap<String,String>();
+                param.put ("Content-Type", "application/json");
                 return param;
             }
         };
-        queue.add(sr);
-
+        queue.add(request);
     }
 
-    public interface Send_DataListener{
-        public void requestStarted();
-        public void requestCompleted();
-        public void requestEndedWithError(VolleyError error);
 
-
-    }
+//        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+//                new Response.Listener<JSONObject>() {
+//                    @Override
+//                    public void onResponse(JSONObject response) {
+//                        try {
+//                            JSONArray jsonArray = response.getJSONArray("Login");
+//                            for(int i =0; i< jsonArray.length(); i++){
+//                                JSONObject User = jsonArray.getJSONObject(i);
+//
+//                                String username = User.getString("Username");
+//                                String password = User.getString("password");
+//                                int id = User.getInt("id");
+//
+//                                TextResult.append(username + ", " + password + ", " + String.valueOf(id) + "\n\n");
+//                            }
+//                        } catch(JSONException e){
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error){
+//                error.printStackTrace();
+//            }
+//
+//        });
+//        queue.add(request);
+//    }
 
 
 //    private void jsonParse(){
