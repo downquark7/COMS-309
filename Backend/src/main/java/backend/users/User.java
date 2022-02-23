@@ -1,13 +1,17 @@
 package backend.users;
 
+import backend.schedules.Schedule;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-public class UserData
+public class User
 {
     @Id
     @GeneratedValue
@@ -17,6 +21,13 @@ public class UserData
 
     @JsonIgnore
     private String authenticationData;
+
+    @OneToMany
+    private List<Schedule> schedules;
+
+    public User() {
+        schedules = new ArrayList<>();
+    }
 
     public int getId()
     {
@@ -56,5 +67,15 @@ public class UserData
     public void setAuthenticationData(String authenticationData)
     {
         this.authenticationData = authenticationData;
+    }
+
+    public List<Schedule> getSchedules()
+    {
+        return schedules;
+    }
+
+    public void setSchedules(List<Schedule> schedules)
+    {
+        this.schedules = schedules;
     }
 }
