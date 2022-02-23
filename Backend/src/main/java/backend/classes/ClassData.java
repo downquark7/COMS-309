@@ -1,20 +1,24 @@
 package backend.classes;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class ClassData
 {
     @Id
-    @GeneratedValue
     private int id;
 
-    private String name;
-    private String instructor;
-    private String department;
-    private String number;
+    private String semesterCode;
+    private String semseterYear;
+    private String deptCode;
+    private String classNumber;
+    private String departmentTitle;
+    private String classTitle;
+    private String classComments;
+    private String classPreReqs;
+
+    //TODO: add sections later
 
     public int getId()
     {
@@ -26,43 +30,83 @@ public class ClassData
         this.id = id;
     }
 
-    public String getName()
+    public String getSemesterCode()
     {
-        return name;
+        return semesterCode;
     }
 
-    public void setName(String name)
+    public void setSemesterCode(String semesterCode)
     {
-        this.name = name;
+        this.semesterCode = semesterCode;
     }
 
-    public String getInstructor()
+    public String getSemseterYear()
     {
-        return instructor;
+        return semseterYear;
     }
 
-    public void setInstructor(String instructor)
+    public void setSemseterYear(String semseterYear)
     {
-        this.instructor = instructor;
+        this.semseterYear = semseterYear;
     }
 
-    public String getDepartment()
+    public String getDeptCode()
     {
-        return department;
+        return deptCode;
     }
 
-    public void setDepartment(String department)
+    public void setDeptCode(String deptCode)
     {
-        this.department = department;
+        this.deptCode = deptCode;
     }
 
-    public String getNumber()
+    public String getClassNumber()
     {
-        return number;
+        return classNumber;
     }
 
-    public void setNumber(String number)
+    public void setClassNumber(String classNumber)
     {
-        this.number = number;
+        this.classNumber = classNumber;
+    }
+
+    public String getDepartmentTitle()
+    {
+        return departmentTitle;
+    }
+
+    public void setDepartmentTitle(String departmentTitle)
+    {
+        this.departmentTitle = departmentTitle;
+    }
+
+    public String getClassTitle()
+    {
+        return classTitle;
+    }
+
+    public void setClassTitle(String classTitle)
+    {
+        this.classTitle = classTitle;
+    }
+
+    public String getClassComments()
+    {
+        return classComments;
+    }
+
+    public void setClassComments(String classComments)
+    {
+        this.classComments = classComments;
+    }
+
+    public String getClassPreReqs()
+    {
+        return classPreReqs;
+    }
+
+    public void setClassPreReqs(String classPreReqs)
+    {
+        this.classPreReqs = classPreReqs;
     }
 }

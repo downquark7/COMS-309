@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface ClassRepository extends JpaRepository<ClassData, Integer>
 {
-    public List<ClassData> findAllByDepartment(String department);
-    public ClassData findByDepartmentAndNumber(String department, String number);
+    public List<ClassData> findAllByDepartmentTitle(String departmentTitle);
+    public ClassData findByDepartmentTitleAndClassNumber(String departmentTitle, String classNumber);
 }

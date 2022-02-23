@@ -20,19 +20,19 @@ public class ClassController
     @GetMapping("/classes/{department}")
     public List<ClassData> getAllClasses(@PathVariable String department)
     {
-        return classRepository.findAllByDepartment(department);
+        return classRepository.findAllByDepartmentTitle(department);
     }
 
     @GetMapping("/class/{department}/{number}")
     public ClassData getClass(@PathVariable String department, @PathVariable String number)
     {
-        return classRepository.findByDepartmentAndNumber(department, number);
+        return classRepository.findByDepartmentTitleAndClassNumber(department, number);
     }
 
     @DeleteMapping("/class/{department}/{number}")
     public ClassData deleteClass(@PathVariable String department, @PathVariable String number)
     {
-        ClassData classData = classRepository.findByDepartmentAndNumber(department, number);
+        ClassData classData = classRepository.findByDepartmentTitleAndClassNumber(department, number);
         classRepository.delete(classData);
         return classData;
     }
@@ -40,13 +40,13 @@ public class ClassController
     @PutMapping("/class/{department}/{number}")
     public ClassData updateClass(@PathVariable String department, @PathVariable String number, @RequestBody ClassData classData)
     {
-        classData.setDepartment(department);
-        classData.setNumber(number);
+        classData.setDepartmentTitle(department);
+        classData.setClassNumber(number);
         classRepository.save(classData);
         return classData;
     }
 
-    @PutMapping("/class")
+    @PostMapping("/class")
     public ClassData updateClass(@RequestBody ClassData classData)
     {
         classRepository.save(classData);
