@@ -5,9 +5,9 @@ const data = {"semesters":{"departments":[{"id":"1","title":"ACCOUNTING","abbrev
 axios
     .post('https://classes.iastate.edu/app/rest/courses/preferences', data)
     .then(res => {
-        for (const i in res.data.response) {
+        for (let i = 0; i < res.data.response.length; i++) {
             axios
-                .post('http://localhost:8080/class', i, {
+                .post('http://localhost:8080/class', res.data.response[i], {
                     headers: {
                         // Overwrite Axios's automatically set Content-Type
                         'Content-Type': 'application/json'
@@ -18,7 +18,18 @@ axios
                 })
         }
 
-        console.log(res.data.response[0])
+        //     axios
+        //         .post('http://localhost:8080/class', res.data.response[0], {
+        //             headers: {
+        //                 // Overwrite Axios's automatically set Content-Type
+        //                 'Content-Type': 'application/json'
+        //             }
+        //         })
+        //         .catch(error => {
+        //             console.error(error)
+        //         })
+        //
+        // console.log(res.data.response[0])
     })
     .catch(error => {
         console.error(error)
