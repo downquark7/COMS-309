@@ -21,8 +21,8 @@ public class SectionTimes
     private String formattedStartTime;
     private String formattedStopTime;
 
-    @ManyToOne
-    private Section section;
+//    @ManyToOne
+//    private Section section;
 
     public int getId()
     {
@@ -139,13 +139,13 @@ public class SectionTimes
         this.formattedStopTime = formattedStopTime;
     }
 
-    public Section getSection()
-    {
-        return section;
-    }
-
-    public void setSection(Section section)
-    {
-        this.section = section;
-    }
+//    public Section getSection()
+//    {
+//        return section;
+//    }
+//
+//    public void setSection(Section section)
+//    {
+//        this.section = section;
+//    }
 }

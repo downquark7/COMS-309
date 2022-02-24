@@ -20,8 +20,8 @@ public class Section
     @OneToMany
     private List<SectionTimes> sectionTimes;
 
-    @ManyToOne
-    private ClassData classData;
+//    @ManyToOne
+//    private ClassData classData;
 
     public int getId()
     {
@@ -93,13 +93,13 @@ public class Section
         this.sectionTimes = sectionTimes;
     }
 
-    public ClassData getClassData()
-    {
-        return classData;
-    }
-
-    public void setClassData(ClassData classData)
-    {
-        this.classData = classData;
-    }
+//    public ClassData getClassData()
+//    {
+//        return classData;
+//    }
+//
+//    public void setClassData(ClassData classData)
+//    {
+//        this.classData = classData;
+//    }
 }
