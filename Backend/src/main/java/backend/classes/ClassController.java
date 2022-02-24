@@ -67,4 +67,21 @@ public class ClassController
         classRepository.save(classData);
         return classData;
     }
+
+    @PostMapping("/classes")
+    public void updateClasses(@RequestBody List<ClassData> classes)
+    {
+        for (ClassData classData : classes)
+        {
+            for (Section s : classData.getSections())
+            {
+                for (SectionTimes st : s.getSectionTimes())
+                {
+                    sectionTimesRepository.save(st);
+                }
+                sectionRepository.save(s);
+            }
+            classRepository.save(classData);
+        }
+    }
 }
