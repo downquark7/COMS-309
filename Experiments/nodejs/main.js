@@ -11,9 +11,8 @@ for(let o = 0; o < types.length; o++) {
     axios
         .post('https://classes.iastate.edu/app/rest/courses/preferences', data(types[o]))
         .then(res => {
-            for (let i = 0; i < res.data.response.length; i++) {
                 axios
-                    .post('http://localhost:8080/class', res.data.response[i], {
+                    .post('http://localhost:8080/classes', res.data.response, {
                         headers: {
                             // Overwrite Axios's automatically set Content-Type
                             'Content-Type': 'application/json'
@@ -23,7 +22,6 @@ for(let o = 0; o < types.length; o++) {
                         console.error(error)
                     })
                 // break;
-            }
 
             // console.log(res.data.response[0])
         })
