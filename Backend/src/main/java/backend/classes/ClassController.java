@@ -11,6 +11,12 @@ public class ClassController
     @Autowired
     ClassRepository classRepository;
 
+    @Autowired
+    SectionRepository sectionRepository;
+
+    @Autowired
+    SectionTimesRepository sectionTimesRepository;
+
     @GetMapping("/classes")
     public List<ClassData> getAllClasses()
     {
@@ -49,6 +55,15 @@ public class ClassController
     @PostMapping("/class")
     public ClassData updateClass(@RequestBody ClassData classData)
     {
+        for (Section s : classData.getSections())
+        {
+            for (SectionTimes st : s.getSectionTimes())
+            {
+                sectionTimesRepository.save(st);
+            }
+            sectionRepository.save(s);
+        }
+
         classRepository.save(classData);
         return classData;
     }

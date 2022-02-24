@@ -5,7 +5,7 @@ function data(s) {
 }
 
 const types = ["ACCT", "ACSCI", "ADVRT", "AER E", "AF AM", "A B E", "AGEDS", "AGRON", "AFAS", "AM IN", "ASL", "A ECL", "AN S", "ANTHR", "AESHM", "A M D", "ARABC", "ARCH", "ARTED", "ART H", "ASTRO", "A TR", "ATH", "BBMB", "BCBIO", "BCB", "BPM I", "BIOL", "B M E", "B M S", "BUSAD", "CH E", "CHEM", "CHIN", "C E", "CL ST", "CMDIS", "COMST", "C R P", "C DEV", "CPR E", "COM S", "CON E", "C J", "CYBSC", "CYB E", "CPS", "DANCE", "DS", "DES", "DSN S", "DIET", "E C P", "EEB", "EEOB", "ECON", "EDUC", "EDADM", "EL PS", "E E", "ENGR", "E M", "ENGL", "ENT", "ENTSP", "ENV E", "ENSCI", "ENV S", "EVENT", "FCEDS", "FFP", "FIN", "FS HN", "FOR", "FRNCH", "GEN", "GENET", "GDCB", "GEOL", "GER", "GERON", "GLOBE", "GR ST", "ARTGR", "H S", "HCM", "HG ED", "HIST", "HON", "HORT", "HSP M", "HCI", "HD FS", "H SCI", "IMBIO", "IND D", "I E", "ARTIS", "IGS", "ARTID", "INTST", "JL MC", "KIN", "L A", "LATIN", "LD ST", "L L S", "L TM", "LAS", "LIB", "LING", "MGMT", "MIS", "MKT", "MAT E", "M S E", "MATH", "M E", "MTEOR", "MICRO", "M S", "MCDB", "MUSIC", "NREM", "N S", "NEURO", "NRS", "NUTRS", "OTS", "PERF", "PHIL", "PHYS", "PLBIO", "PL P", "POL S", "PORT", "PSYCH", "P R", "RELIG", "RESEV", "RUS", "STB", "SOC", "S E", "SPAN", "SP ED", "SP CM", "STAT", "SCM", "SUSAG", "SUS E", "TSM", "THTRE", "TOX", "TRANS", "US LS", "U ST", "URB D", "VDPAM", "V C S", "V MPM", "V PTH", "WESEP", "WISE", "WGS", "W F S", "WLC", "YTH"]
-
+// const types = ["MUSIC"];
 
 for(let o = 0; o < types.length; o++) {
     axios
@@ -22,19 +22,9 @@ for(let o = 0; o < types.length; o++) {
                     .catch(error => {
                         console.error(error)
                     })
+                // break;
             }
 
-            //     axios
-            //         .post('http://localhost:8080/class', res.data.response[0], {
-            //             headers: {
-            //                 // Overwrite Axios's automatically set Content-Type
-            //                 'Content-Type': 'application/json'
-            //             }
-            //         })
-            //         .catch(error => {
-            //             console.error(error)
-            //         })
-            //
             // console.log(res.data.response[0])
         })
         .catch(error => {
