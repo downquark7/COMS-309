@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     private void postRequest(){
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
 
-        String url = "http://coms-309-032.class.las.iastate.edu:8080/user/create";
+        String url = "http://coms-309-032.class.las.iastate.edu:8080/onlineUsers";
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -63,11 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     TextResult.setText("Data 1:", jsonObject.getString("Username"));
                     TextResult.append("Data 2:", jsonObject.getString("authenticationMethod"));
-                    //Above is the password
-                    //Will now create user for round trip
-                    //Return data is username
-//                    TextResult.append("Data 2:", jsonObject.getString("authenticationMethod"));
-//                    TextResult.append("Data 2:", jsonObject.getString("authenticationData"));
+                    TextResult.append("Data 2:", jsonObject.getString("authenticationData"));
 
 
                 } catch (Exception e) {
@@ -86,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 param.put("Username", data);
                         //need second *correct* parameter
                 param.put("authenticationMethod", data);
-//                param.put("authenticationData", data);
+                param.put("authenticationData", data);
                 return param;
             }
 
