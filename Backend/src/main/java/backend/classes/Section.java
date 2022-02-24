@@ -1,5 +1,7 @@
 package backend.classes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -18,10 +20,11 @@ public class Section
     private String deliveryTypeDisplay;
 
     @OneToMany
-    private List<SectionTimes> sectionTimes;
+    private List<SectionTime> sectionTimes;
 
-//    @ManyToOne
-//    private ClassData classData;
+    @ManyToOne
+    @JsonIgnore
+    private ClassData classData;
 
     public int getId()
     {
@@ -83,23 +86,23 @@ public class Section
         this.deliveryTypeDisplay = deliveryTypeDisplay;
     }
 
-    public List<SectionTimes> getSectionTimes()
+    public List<SectionTime> getSectionTimes()
     {
         return sectionTimes;
     }
 
-    public void setSectionTimes(List<SectionTimes> sectionTimes)
+    public void setSectionTimes(List<SectionTime> sectionTimes)
     {
         this.sectionTimes = sectionTimes;
     }
 
-//    public ClassData getClassData()
-//    {
-//        return classData;
-//    }
-//
-//    public void setClassData(ClassData classData)
-//    {
-//        this.classData = classData;
-//    }
+    public ClassData getClassData()
+    {
+        return classData;
+    }
+
+    public void setClassData(ClassData classData)
+    {
+        this.classData = classData;
+    }
 }

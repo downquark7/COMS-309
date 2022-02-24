@@ -1,11 +1,13 @@
 package backend.classes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class SectionTimes
+public class SectionTime
 {
     @Id
     private int id;
@@ -21,8 +23,9 @@ public class SectionTimes
     private String formattedStartTime;
     private String formattedStopTime;
 
-//    @ManyToOne
-//    private Section section;
+    @ManyToOne
+    @JsonIgnore
+    private Section section;
 
     public int getId()
     {
@@ -139,13 +142,13 @@ public class SectionTimes
         this.formattedStopTime = formattedStopTime;
     }
 
-//    public Section getSection()
-//    {
-//        return section;
-//    }
-//
-//    public void setSection(Section section)
-//    {
-//        this.section = section;
-//    }
+    public Section getSection()
+    {
+        return section;
+    }
+
+    public void setSection(Section section)
+    {
+        this.section = section;
+    }
 }
