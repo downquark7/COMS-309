@@ -51,10 +51,11 @@
         android:id="@+id/button"
         android:layout_width="108dp"
         android:layout_height="53dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="140dp"
         android:text="Submit"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="469dp" />
+        app:layout_constraintRight_toRightOf="@id/password_input"
+        app:layout_constraintTop_toTopOf="@id/password_input" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

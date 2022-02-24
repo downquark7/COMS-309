@@ -22,7 +22,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     Button button;
     EditText User,Password;
-    String url = "http://coms-309-032.class.las.iastate.edu:8080/user/create";
+    String url = "https://b2a7038d-a1ae-474c-acfc-166e6379474e.mock.pstmn.io/user";
     AlertDialog.Builder builder;
 
     @Override
