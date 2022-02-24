@@ -1,4 +1,4 @@
-package com.example.experiment1;
+package com.example.create_user;
 
 import org.junit.Test;
 
