@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     private void postRequest(){
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
 
-        String url = "http://coms-309-032.class.las.iastate.edu:8080/onlineUsers";
+        String url = "http://coms-309-032.class.las.iastate.edu:8080/class/MUSIC/102";
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -79,10 +79,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected Map<String,String> getParams(){
                 Map<String,String> param= new HashMap<String,String>();
-                param.put("Username", data);
+                param.put("Username", "bob");
                         //need second *correct* parameter
-                param.put("authenticationMethod", data);
-                param.put("authenticationData", data);
+                param.put("authenticationMethod", "plaintext");
+                param.put("authenticationData", "spongebob");
                 return param;
             }
 
