@@ -14,12 +14,12 @@ public class UserController
     UserRepository userRepository;
 
     @PostMapping("/user/create")
-    public User createUser(@RequestBody User user)
+    public User createUser(@RequestBody User user) throws Exception
     {
         if (!userRepository.existsByUsername(user.getUsername()))
             userRepository.save(user);
         else
-            return null;
+            throw new Exception("Username already exists");
         return user;
     }
 
