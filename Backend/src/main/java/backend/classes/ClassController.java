@@ -63,8 +63,17 @@ public class ClassController
             }
             sectionRepository.save(s);
         }
-
         classRepository.save(classData);
+        for (Section s : classData.getSections())
+        {
+            for (SectionTime st : s.getSectionTimes())
+            {
+                st.setSection(s);
+                sectionTimesRepository.save(st);
+            }
+            s.setClassData(classData);
+            sectionRepository.save(s);
+        }
         return classData;
     }
 
