@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
@@ -102,74 +103,19 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         queue.add(request);
-        Intent intent = new Intent(getApplicationContext(), Second.class);
-        intent.putExtra("message_key", text);
-        startActivity(intent);
+        text = TextResult.getText().toString();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                Intent intent = new Intent(getApplicationContext(), Second.class);
+                intent.putExtra("message_key", text);
+                startActivity(intent);
+            }
+        }, 1000);
 
     }
 
-
-//        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-//                new Response.Listener<JSONObject>() {
-//                    @Override
-//                    public void onResponse(JSONObject response) {
-//                        try {
-//                            JSONArray jsonArray = response.getJSONArray("Login");
-//                            for(int i =0; i< jsonArray.length(); i++){
-//                                JSONObject User = jsonArray.getJSONObject(i);
-//
-//                                String username = User.getString("Username");
-//                                String password = User.getString("password");
-//                                int id = User.getInt("id");
-//
-//                                TextResult.append(username + ", " + password + ", " + String.valueOf(id) + "\n\n");
-//                            }
-//                        } catch(JSONException e){
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error){
-//                error.printStackTrace();
-//            }
-//
-//        });
-//        queue.add(request);
-//    }
-
-
-//    private void jsonParse(){
-//        String url = "http://myjson.dit.upm.es/api/bins/j1r9";
-//
-//        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-//                new Response.Listener<JSONObject>() {
-//                    @Override
-//                    public void onResponse(JSONObject response) {
-//                        try {
-//                            JSONArray jsonArray = response.getJSONArray("Login");
-//                            for(int i =0; i< jsonArray.length(); i++){
-//                                JSONObject User = jsonArray.getJSONObject(i);
-//
-//                                String username = User.getString("Username");
-//                                String password = User.getString("password");
-//                                int id = User.getInt("id");
-//
-//                                TextResult.append(username + ", " + password + ", " + String.valueOf(id) + "\n\n");
-//                            }
-//                        } catch(JSONException e){
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error){
-//                error.printStackTrace();
-//            }
-//
-//        });
-//        queue.add(request);
-//    }
 
 
 }
