@@ -4,6 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Second">
+    tools:context=".Second"
+    android:background="@drawable/back">
+
+    <TextView
+        android:id="@+id/received_value_id"
+        android:layout_width="299dp"
+        android:layout_height="99dp"
+        android:textColor="#FFFFFF"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="315dp"
+        android:hint="Default-Text"
+        app:hintTextColor="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

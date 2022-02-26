@@ -3,7 +3,9 @@ package com.example.jsontest;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -30,6 +32,7 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity {
     private TextView TextResult;
     private RequestQueue queue;
+    private String text;
 
 
     @Override
@@ -57,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
         String url = "http://coms-309-032.class.las.iastate.edu:8080/user/create";
         JSONObject jsonBody = new JSONObject();
         try {
-            jsonBody.put("username", "Pie");
-            jsonBody.put("authenticationMethod", "pie");
-            jsonBody.put("authenticationData", "pie");
+            jsonBody.put("username", "Pies");
+            jsonBody.put("authenticationMethod", "pies");
+            jsonBody.put("authenticationData", "pies");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -75,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                     TextResult.append("Authentication Method: " + jsonObject.getString("authenticationMethod"));
                     TextResult.append("\n");
                     TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
+                    text = TextResult.getText().toString();
 
 
                 } catch (Exception e) {
@@ -98,6 +102,10 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         queue.add(request);
+        Intent intent = new Intent(getApplicationContext(), Second.class);
+        intent.putExtra("message_key", text);
+        startActivity(intent);
+
     }
 
 
