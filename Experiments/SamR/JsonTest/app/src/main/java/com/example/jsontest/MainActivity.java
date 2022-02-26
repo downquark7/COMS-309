@@ -23,6 +23,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import java.io.StringWriter;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView TextResult;
     private RequestQueue queue;
     private String text;
+    StringWriter str = new StringWriter();
 
 
     @Override
@@ -61,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
         String url = "http://coms-309-032.class.las.iastate.edu:8080/user/create";
         JSONObject jsonBody = new JSONObject();
         try {
-            jsonBody.put("username", "Pies");
-            jsonBody.put("authenticationMethod", "pies");
-            jsonBody.put("authenticationData", "pies");
+            jsonBody.put("username", "Piez");
+            jsonBody.put("authenticationMethod", "piez");
+            jsonBody.put("authenticationData", "piez");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -74,12 +76,25 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     TextResult.setText(response);
                     JSONObject jsonObject = new JSONObject(response);
+
+                    for(int i =0; i<jsonObject.length(); i++){
+                        String username =
+                    }
+
+                    str.append("Username: " + jsonObject.getString("username"));
+                    str.append("\n");
+                    str.append("Authentication Method: " + jsonObject.getString("authenticationMethod"));
+                    str.append("\n");
+                    str.append("Authentication Data: " + jsonObject.getString("authenticationData"));
+
                     TextResult.setText("Username: " + jsonObject.getString("username"));
                     TextResult.append("\n");
                     TextResult.append("Authentication Method: " + jsonObject.getString("authenticationMethod"));
                     TextResult.append("\n");
                     TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
-                    text = TextResult.getText().toString();
+
+
+                   // text = TextResult.getText().toString();
 
 
                 } catch (Exception e) {
@@ -104,12 +119,14 @@ public class MainActivity extends AppCompatActivity {
         };
         queue.add(request);
         text = TextResult.getText().toString();
+      //  Bundle post = new Bundle();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
+               // post.putString("test", text);
                 Intent intent = new Intent(getApplicationContext(), Second.class);
                 intent.putExtra("message_key", text);
+                //intent.putExtra(post);
                 startActivity(intent);
             }
         }, 1000);
