@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         TextResult = findViewById(R.id.text_view_result);
         Button button = findViewById(R.id.button_parse);
 
-       // queue = Volley.newRequestQueue(this);
+        // queue = Volley.newRequestQueue(this);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,19 +51,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    private void postRequest(){
+    private void postRequest() {
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
 
-        String url = "http://coms-309-032.class.las.iastate.edu:8080/class/MUSIC/102";
+        String url = "http://coms-309-032.class.las.iastate.edu:8080/user/create";
+        JSONObject jsonBody = new JSONObject();
+        try {
+            jsonBody.put("username", "Pie");
+            jsonBody.put("authenticationMethod", "pie");
+            jsonBody.put("authenticationData", "pie");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        final String requestBody = jsonBody.toString();
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
+                    TextResult.setText(response);
                     JSONObject jsonObject = new JSONObject(response);
-                    TextResult.setText("Data 1:", jsonObject.getString("Username"));
-                    TextResult.append("Data 2:", jsonObject.getString("authenticationMethod"));
-                    TextResult.append("Data 2:", jsonObject.getString("authenticationData"));
+                    TextResult.setText("Username: " + jsonObject.getString("username"));
+                    TextResult.append("\n");
+                    TextResult.append("Authentication Method: " + jsonObject.getString("authenticationMethod"));
+                    TextResult.append("\n");
+                    TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
 
 
                 } catch (Exception e) {
@@ -73,24 +84,17 @@ public class MainActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                TextResult.setText("Failed to post data");
+                TextResult.setText(error.toString());
             }
         }) {
             @Override
-            protected Map<String,String> getParams(){
-                Map<String,String> param= new HashMap<String,String>();
-                param.put("Username", "bob");
-                        //need second *correct* parameter
-                param.put("authenticationMethod", "plaintext");
-                param.put("authenticationData", "spongebob");
-                return param;
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
             }
 
             @Override
-            public Map<String,String> getHeaders() throws AuthFailureError{
-                Map<String,String> param = new HashMap<String,String>();
-                param.put ("Content-Type", "application/json");
-                return param;
+            public byte[] getBody() throws AuthFailureError {
+                return requestBody.getBytes();
             }
         };
         queue.add(request);
@@ -161,3 +165,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+
