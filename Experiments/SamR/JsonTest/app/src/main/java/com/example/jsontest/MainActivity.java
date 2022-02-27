@@ -1,5 +1,6 @@
 package com.example.jsontest;
 
+import androidx.annotation.MainThread;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -63,9 +64,9 @@ public class MainActivity extends AppCompatActivity {
         String url = "http://coms-309-032.class.las.iastate.edu:8080/user/create";
         JSONObject jsonBody = new JSONObject();
         try {
-            jsonBody.put("username", "Piez");
-            jsonBody.put("authenticationMethod", "piez");
-            jsonBody.put("authenticationData", "piez");
+            jsonBody.put("username", "Plie" + Math.random());
+            jsonBody.put("authenticationMethod", "pliez");
+            jsonBody.put("authenticationData", "pilez");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
 
                     for(int i =0; i<jsonObject.length(); i++){
-                        String username =
+                      // text += jsonObject.getJSONObject(i);
                     }
 
                     str.append("Username: " + jsonObject.getString("username"));
@@ -93,9 +94,12 @@ public class MainActivity extends AppCompatActivity {
                     TextResult.append("\n");
                     TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
 
-
+                    text = jsonObject.toString();
                    // text = TextResult.getText().toString();
-
+                    Intent intent = new Intent(getApplicationContext(), Second.class);
+                    intent.putExtra("message_key", text);
+                    //intent.putExtra(post);
+                    startActivity(intent);
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -120,16 +124,16 @@ public class MainActivity extends AppCompatActivity {
         queue.add(request);
         text = TextResult.getText().toString();
       //  Bundle post = new Bundle();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-               // post.putString("test", text);
-                Intent intent = new Intent(getApplicationContext(), Second.class);
-                intent.putExtra("message_key", text);
-                //intent.putExtra(post);
-                startActivity(intent);
-            }
-        }, 1000);
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//               // post.putString("test", text);
+//                Intent intent = new Intent(getApplicationContext(), Second.class);
+//                intent.putExtra("message_key", text);
+//                //intent.putExtra(post);
+//                startActivity(intent);
+//            }
+//        }, 1000);
 
     }
 

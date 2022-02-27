@@ -9,17 +9,17 @@
 
     <TextView
         android:id="@+id/received_value_id"
-        android:layout_width="299dp"
-        android:layout_height="99dp"
+        android:layout_width="279dp"
+        android:layout_height="618dp"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="275dp"
+        android:layout_marginTop="100dp"
         android:hint="Default-Text"
         android:textColor="#FFFFFF"
         android:textSize="40dp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="55dp"
         tools:layout_editor_absoluteY="50dp" />
-<!--        android:hintTextColor="@color/white"-->
+    <!--        android:hintTextColor="@color/white"-->
 
 
 </RelativeLayout>
