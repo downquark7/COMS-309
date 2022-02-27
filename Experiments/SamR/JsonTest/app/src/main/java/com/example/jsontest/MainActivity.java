@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView TextResult;
     private RequestQueue queue;
     private String text;
-    StringWriter str = new StringWriter();
 
 
     @Override
@@ -78,15 +77,6 @@ public class MainActivity extends AppCompatActivity {
                     TextResult.setText(response);
                     JSONObject jsonObject = new JSONObject(response);
 
-                    for(int i =0; i<jsonObject.length(); i++){
-                      // text += jsonObject.getJSONObject(i);
-                    }
-
-                    str.append("Username: " + jsonObject.getString("username"));
-                    str.append("\n");
-                    str.append("Authentication Method: " + jsonObject.getString("authenticationMethod"));
-                    str.append("\n");
-                    str.append("Authentication Data: " + jsonObject.getString("authenticationData"));
 
                     TextResult.setText("Username: " + jsonObject.getString("username"));
                     TextResult.append("\n");
@@ -122,18 +112,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         queue.add(request);
-        text = TextResult.getText().toString();
-      //  Bundle post = new Bundle();
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//               // post.putString("test", text);
-//                Intent intent = new Intent(getApplicationContext(), Second.class);
-//                intent.putExtra("message_key", text);
-//                //intent.putExtra(post);
-//                startActivity(intent);
-//            }
-//        }, 1000);
 
     }
 
