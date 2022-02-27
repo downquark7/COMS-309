@@ -22,6 +22,13 @@ public class Second extends AppCompatActivity  {
         // and key must be same which is send by first activity
         String str = intent.getStringExtra("message_key");
 
+        String[] items = str.split("user");
+        for (String item : items)
+        {
+            System.out.println("item = " + item);
+        }
+        String[] separated = str.split("username");
+
         // display the string into textView
         receiver_msg.setText(str);
     }
