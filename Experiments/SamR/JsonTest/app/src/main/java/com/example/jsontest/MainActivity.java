@@ -29,9 +29,6 @@ import java.io.StringWriter;
 import java.util.Map;
 import java.util.HashMap;
 
-//that one gonna return {} tho until you login lol
-//Don't forget to 'Content-Type': 'application/json'
-
 public class MainActivity extends AppCompatActivity {
     private TextView TextResult;
     private RequestQueue queue;
@@ -63,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         String url = "http://coms-309-032.class.las.iastate.edu:8080/user/create";
         JSONObject jsonBody = new JSONObject();
         try {
-            jsonBody.put("username", "Plie" + Math.random());
+            jsonBody.put("username", "Pli77e");
             jsonBody.put("authenticationMethod", "pliez");
             jsonBody.put("authenticationData", "pilez");
         } catch (JSONException e) {
@@ -77,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
                     TextResult.setText(response);
                     JSONObject jsonObject = new JSONObject(response);
 
-
                     TextResult.setText("Username: " + jsonObject.getString("username"));
                     TextResult.append("\n");
                     TextResult.append("Authentication Method: " + jsonObject.getString("authenticationMethod"));
@@ -85,10 +81,8 @@ public class MainActivity extends AppCompatActivity {
                     TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
 
                     text = jsonObject.toString();
-                   // text = TextResult.getText().toString();
                     Intent intent = new Intent(getApplicationContext(), Second.class);
                     intent.putExtra("message_key", text);
-                    //intent.putExtra(post);
                     startActivity(intent);
 
                 } catch (Exception e) {
