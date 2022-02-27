@@ -2,6 +2,9 @@ package backend.classes;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class ClassData
@@ -15,10 +18,15 @@ public class ClassData
     private String classNumber;
     private String departmentTitle;
     private String classTitle;
-    private String classComments;
+//    private String classComments;
     private String classPreReqs;
 
-    //TODO: add sections later
+    @OneToMany
+    private List<Section> sections;
+
+    public ClassData() {
+        sections = new ArrayList<>();
+    }
 
     public int getId()
     {
@@ -90,15 +98,15 @@ public class ClassData
         this.classTitle = classTitle;
     }
 
-    public String getClassComments()
-    {
-        return classComments;
-    }
-
-    public void setClassComments(String classComments)
-    {
-        this.classComments = classComments;
-    }
+//    public String getClassComments()
+//    {
+//        return classComments;
+//    }
+//
+//    public void setClassComments(String classComments)
+//    {
+//        this.classComments = classComments;
+//    }
 
     public String getClassPreReqs()
     {
@@ -108,5 +116,15 @@ public class ClassData
     public void setClassPreReqs(String classPreReqs)
     {
         this.classPreReqs = classPreReqs;
+    }
+
+    public List<Section> getSections()
+    {
+        return sections;
+    }
+
+    public void setSections(List<Section> sections)
+    {
+        this.sections = sections;
     }
 }

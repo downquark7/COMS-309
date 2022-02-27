@@ -2,25 +2,40 @@ package com.example.jsontest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import java.io.StringWriter;
+
+import java.util.Map;
+import java.util.HashMap;
+
+//that one gonna return {} tho until you login lol
+//Don't forget to 'Content-Type': 'application/json'
 
 public class MainActivity extends AppCompatActivity {
-private TextView TextResult;
-private RequestQueue queue;
+    private TextView TextResult;
+    private RequestQueue queue;
+    private String text;
+    StringWriter str = new StringWriter();
 
 
     @Override
@@ -31,47 +46,94 @@ private RequestQueue queue;
         TextResult = findViewById(R.id.text_view_result);
         Button button = findViewById(R.id.button_parse);
 
-        queue = Volley.newRequestQueue(this);
+        // queue = Volley.newRequestQueue(this);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                jsonParse();
+                postRequest();
             }
         });
     }
 
 
-    private void jsonParse(){
-        String url = "https://e9003277-9e21-4424-a459-d64d4060633b.mock.pstmn.io/test";
+    private void postRequest() {
+        RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                    try {
-
-                        JSONArray jsonArray = response.getJSONArray("Login");
-                        for(int i =0; i< jsonArray.length(); i++){
-                            JSONObject User = jsonArray.getJSONObject(i);
-
-                            String username = User.getString("Username");
-                            String password = User.getString("password");
-                            int id = User.getInt("id");
-
-                            TextResult.append(username + ", " + password + ", " + String.valueOf(id) + "\n\n");
-                        }
-                    } catch(JSONException e){
-                        e.printStackTrace();
-                    }
-                    }
-                }, new Response.ErrorListener() {
+        String url = "http://coms-309-032.class.las.iastate.edu:8080/user/create";
+        JSONObject jsonBody = new JSONObject();
+        try {
+            jsonBody.put("username", "Piez");
+            jsonBody.put("authenticationMethod", "piez");
+            jsonBody.put("authenticationData", "piez");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        final String requestBody = jsonBody.toString();
+        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
-            public void onErrorResponse(VolleyError error){
-        error.printStackTrace();
+            public void onResponse(String response) {
+                try {
+                    TextResult.setText(response);
+                    JSONObject jsonObject = new JSONObject(response);
+
+                    for(int i =0; i<jsonObject.length(); i++){
+                        String username =
+                    }
+
+                    str.append("Username: " + jsonObject.getString("username"));
+                    str.append("\n");
+                    str.append("Authentication Method: " + jsonObject.getString("authenticationMethod"));
+                    str.append("\n");
+                    str.append("Authentication Data: " + jsonObject.getString("authenticationData"));
+
+                    TextResult.setText("Username: " + jsonObject.getString("username"));
+                    TextResult.append("\n");
+                    TextResult.append("Authentication Method: " + jsonObject.getString("authenticationMethod"));
+                    TextResult.append("\n");
+                    TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
+
+
+                   // text = TextResult.getText().toString();
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                TextResult.setText(error.toString());
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
             }
 
-        });
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                return requestBody.getBytes();
+            }
+        };
         queue.add(request);
+        text = TextResult.getText().toString();
+      //  Bundle post = new Bundle();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+               // post.putString("test", text);
+                Intent intent = new Intent(getApplicationContext(), Second.class);
+                intent.putExtra("message_key", text);
+                //intent.putExtra(post);
+                startActivity(intent);
+            }
+        }, 1000);
+
     }
+
+
+
 }
+

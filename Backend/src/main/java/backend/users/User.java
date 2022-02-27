@@ -18,8 +18,6 @@ public class User
     private int id;
     private String username;
     private String authenticationMethod;
-
-    @JsonIgnore
     private String authenticationData;
 
     @OneToMany

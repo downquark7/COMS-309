@@ -14,37 +14,37 @@ public class UserController
     UserRepository userRepository;
 
     @PostMapping("/user/create")
-    public User createUser(@RequestBody User user)
+    public Object createUser(@RequestBody User user) throws Exception
     {
         if (!userRepository.existsByUsername(user.getUsername()))
             userRepository.save(user);
         else
-            return null;
+            return "Error: username already exists";
         return user;
     }
-
-    @PutMapping("/user/manage")
-    public User manageUser(@RequestBody User user)
-    {
-        userRepository.save(user);
-        return user;
-    }
+//
+//    @PutMapping("/user/manage")
+//    public User manageUser(@RequestBody User user)
+//    {
+//        userRepository.save(user);
+//        return user;
+//    }
 
     @PostMapping("/user/login")
-    public User loginUser(@RequestBody User user)
+    public Object loginUser(@RequestBody User user)
     {
         User userFromDb = userRepository.findByUsername(user.getUsername());
 
         if (userFromDb != null)
         {
             if (!user.getAuthenticationMethod().equals(userFromDb.getAuthenticationMethod()))
-                return null;
+                return "Login error: username or password not found";
             if (!user.getAuthenticationData().equals(userFromDb.getAuthenticationData()))
-                return null;
+                return "Login error: username or password not found";
 
         } else
         {
-            return null;
+            return "Login error: username or password not found";
         }
 
         onlineUsers.put(user.getId(), user);
@@ -59,8 +59,11 @@ public class UserController
     }
 
     @PostMapping("/user/logout")
-    public User logout(@RequestBody User user) {
+    public Object logout(@RequestBody User user)
+    {
         User userFromHashmap = onlineUsers.get(user.getId());
+        if (userFromHashmap == null)
+            return "Error: user not found";
         onlineUsers.remove(user.getId());
         return userFromHashmap;
     }
