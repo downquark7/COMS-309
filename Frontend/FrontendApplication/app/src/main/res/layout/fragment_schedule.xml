@@ -18,17 +18,21 @@
             android:text="<-"
             android:textStyle="bold"
             android:textSize="20sp"
-        <!--android:background:"@null"
-        android:textColor"@color/grey" -->
-        />
+            android:onClick="lastDayAction"
+            />
 
 
 
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/schedule_day_of_week"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
             android:text="Hello there!">
 
         </TextView>
@@ -39,10 +43,24 @@
             android:text="->"
             android:textStyle="bold"
             android:textSize="20sp"
-        <!--android:background:"@null"
-        android:textColor"@color/grey" -->
+            android:onClick="nextDayAction"
         />
     </LinearLayout>
 
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:text="Classes"></TextView>
+   </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/schedule_hourRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
 
 </LinearLayout>
