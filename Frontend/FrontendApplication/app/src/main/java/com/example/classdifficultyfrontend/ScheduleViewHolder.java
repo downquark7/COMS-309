@@ -11,5 +11,6 @@ public class ScheduleViewHolder extends RecyclerView.ViewHolder{
     private final TextView nameOfClass;
     public ScheduleViewHolder(@NonNull View itemView) {
         super(itemView);
+        hourOfDay = itemView.findViewById(R.id.item_number);
     }
 }
