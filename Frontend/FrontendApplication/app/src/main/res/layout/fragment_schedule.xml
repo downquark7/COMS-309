@@ -16,12 +16,13 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="<-"
-            android:textColor"@color/grey"
+            android:textStyle="bold"
+            android:textSize="20sp"
+        <!--android:background:"@null"
+        android:textColor"@color/grey" -->
+        />
 
 
-            >
-
-        </Button>
 
 
 
@@ -31,6 +32,16 @@
             android:text="Hello there!">
 
         </TextView>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="->"
+            android:textStyle="bold"
+            android:textSize="20sp"
+        <!--android:background:"@null"
+        android:textColor"@color/grey" -->
+        />
     </LinearLayout>
 
 
