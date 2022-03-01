@@ -69,4 +69,7 @@ public class PlaceholderContent {
             return content;
         }
     }
+
+    public static class ClassListFragment {
+    }
 }

@@ -64,7 +64,7 @@ public class classlistFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new class_listRecyclerViewAdapter(PlaceholderContent.ITEMS));
+            recyclerView.setAdapter(new ClassListRecyclerViewAdapter(PlaceholderContent.ITEMS));
         }
         return view;
     }
