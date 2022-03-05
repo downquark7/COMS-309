@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         pager.setAdapter(adapter);
 
         new TabLayoutMediator(tabsLayout, pager, (tab, position) -> {
-            if (position == 0) tab.setText("Contacts");
+            if (position == 0) tab.setText("Classes");
 //            else if (position == 1) tab.setText("Favourites");
 //            else tab.setText("Settings");
         }).attach();
