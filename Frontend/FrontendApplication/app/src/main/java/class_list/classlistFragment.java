@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 import com.example.classdifficultyfrontend.R;
 import com.example.classdifficultyfrontend.placeholder.PlaceholderContent;
 
+
+
 /**
  * A fragment representing a list of Items.
  */
