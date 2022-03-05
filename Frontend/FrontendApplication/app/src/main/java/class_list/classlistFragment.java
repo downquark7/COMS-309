@@ -1,4 +1,4 @@
-package com.example.classdifficultyfrontend;
+package class_list;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.classdifficultyfrontend.R;
 import com.example.classdifficultyfrontend.placeholder.PlaceholderContent;
 
 /**

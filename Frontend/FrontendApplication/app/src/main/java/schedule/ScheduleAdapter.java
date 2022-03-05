@@ -1,4 +1,4 @@
-package com.example.classdifficultyfrontend;
+package schedule;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;

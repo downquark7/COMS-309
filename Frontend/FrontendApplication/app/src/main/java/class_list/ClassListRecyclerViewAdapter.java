@@ -1,4 +1,4 @@
-package com.example.classdifficultyfrontend;
+package class_list;
 
 import androidx.recyclerview.widget.RecyclerView;
 
