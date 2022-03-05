@@ -3,22 +3,35 @@ package com.example.classdifficultyfrontend;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+
+//import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
+
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView classList;
-    //JSONPlaceholder jsonPlaceholder;
+
     private TabLayout tabsLayout;
-
-
+    private ViewPager2 pager;
+    private TabsAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_item_list);
+        setContentView(R.layout.tabsorganizer);
 
-        //classList = findViewById(R.id.recy)
+        tabsLayout = findViewById(R.id.globalTabsLayout);
+        pager = findViewById(R.id.pager);
+        adapter = new TabsAdapter(this);
+        pager.setAdapter(adapter);
+
+        new TabLayoutMediator(tabsLayout, pager, (tab, position) -> {
+            if (position == 0) tab.setText("Contacts");
+//            else if (position == 1) tab.setText("Favourites");
+//            else tab.setText("Settings");
+        }).attach();
     }
 }
