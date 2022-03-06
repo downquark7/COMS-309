@@ -6,23 +6,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @RestController
 public class ScheduleController
 {
-//    @Autowired //add this later for login verification maybe idk
-//    UserRepository userRepository;
-
-    @Autowired
-    ClassRepository classRepository;
-
     @Autowired
     SectionRepository sectionRepository;
-
-    @Autowired
-    SectionTimesRepository sectionTimesRepository;
 
     @PostMapping("/schedule")
     public ScheduleOutputHelper addSchedule(@RequestBody ScheduleInputHelper body)
@@ -35,18 +23,7 @@ public class ScheduleController
             Section s = sectionRepository.getById(id);
             schedule.addSection(s);
         }
-        ScheduleOutputHelper output = new ScheduleOutputHelper();
-        output.user = schedule.getUser();
-        output.name = schedule.getName();
 
-        List<ClassData> list = new ArrayList<>();
-        for (Section s : schedule.getList())
-        {
-            list.add(s.getClassData());
-        }
-        output.classes = list;
-
-
-        return output;
+        return new ScheduleOutputHelper(schedule);
     }
 }
