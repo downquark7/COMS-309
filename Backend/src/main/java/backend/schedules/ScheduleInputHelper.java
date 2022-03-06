@@ -4,9 +4,9 @@ import backend.users.User;
 
 import java.util.List;
 
-public class ScheduleHelperClass
+public class ScheduleInputHelper
 {
     public String name;
     public User user;
-    public List<String> classes;
+    public List<Integer> sections;
 }

@@ -15,6 +15,7 @@ import java.util.List;
 public class Schedule
 {
     @Id
+    @GeneratedValue
     private int id;
 
     private String name;
@@ -22,6 +23,42 @@ public class Schedule
     @JsonIgnore
     @ManyToOne
     private User user;
+
+    @OneToMany
+    private List<Section> list;
+
+    public void addSection(Section section)
+    {
+        list.add(section);
+    }
+
+    public void removeSection(Section section)
+    {
+        list.remove(section);
+    }
+
+    public Schedule() {
+        list = new ArrayList<>();
+    }
+
+    public List<SectionTime> getAllTimes() {
+        List<SectionTime> timesList = new ArrayList<>();
+        for(Section s : list)
+            for(SectionTime st : s.getSectionTimes())
+                timesList.add(st);
+
+        return timesList;
+    }
+
+    public List<Section> getList()
+    {
+        return list;
+    }
+
+    public void setList(List<Section> list)
+    {
+        this.list = list;
+    }
 
     public int getId()
     {
