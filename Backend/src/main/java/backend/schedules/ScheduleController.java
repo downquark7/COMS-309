@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class ScheduleController
@@ -37,12 +38,15 @@ public class ScheduleController
         ScheduleOutputHelper output = new ScheduleOutputHelper();
         output.user = schedule.getUser();
         output.name = schedule.getName();
-        output.sections = schedule.getList();
-        output.classes = new ArrayList<ClassData>();
-        for(Section s : schedule.getList())
+
+        List<ClassData> list = new ArrayList<>();
+        for (Section s : schedule.getList())
         {
-            output.classes.add(s.getClassData());
+            list.add(s.getClassData());
         }
+        output.classes = list;
+
+
         return output;
     }
 }

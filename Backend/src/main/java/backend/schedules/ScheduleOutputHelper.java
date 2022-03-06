@@ -11,5 +11,4 @@ public class ScheduleOutputHelper
     public String name;
     public User user;
     public List<ClassData> classes;
-    public List<Section> sections;
 }
