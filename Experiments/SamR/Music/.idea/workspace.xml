@@ -10,7 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="804d77fc-d95e-4b59-a99d-27846f8b8f18" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../JsonTest/app/src/main/java/com/example/jsontest/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JsonTest/app/src/main/java/com/example/jsontest/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Frontend/Login_User/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Frontend/Login_User/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Frontend/Login_User/app/src/main/java/com/example/login_usercreate/User_Create.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Frontend/Login_User/app/src/main/java/com/example/login_usercreate/User_Create.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Frontend/Login_User/app/src/main/res/layout/activity_default_screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Frontend/Login_User/app/src/main/res/layout/activity_default_screen.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
