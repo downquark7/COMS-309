@@ -1,0 +1,21 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable back
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id button_parse
+id received_value_id
+id text_view_result
+layout activity_main
+layout activity_second
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme.Git_Music

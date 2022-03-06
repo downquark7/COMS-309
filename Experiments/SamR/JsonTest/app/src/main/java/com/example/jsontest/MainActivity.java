@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         String url = "http://coms-309-032.class.las.iastate.edu:8080/user/create";
         JSONObject jsonBody = new JSONObject();
         try {
-            jsonBody.put("username", "Pli77e");
+            jsonBody.put("username", "Pli77e" + "123");
             jsonBody.put("authenticationMethod", "pliez");
             jsonBody.put("authenticationData", "pilez");
         } catch (JSONException e) {
