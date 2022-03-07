@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>Backend</groupId>
 	<artifactId>Backend</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>web-demo</version>
 	<name>Backend</name>
 	<description>Backend</description>
 	<properties>
