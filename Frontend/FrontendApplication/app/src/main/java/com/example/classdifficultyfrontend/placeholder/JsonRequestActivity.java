@@ -1,4 +1,4 @@
-package com.example.classdifficultyfrontend;
+package com.example.classdifficultyfrontend.placeholder;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -25,6 +25,10 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Get {
+public class JsonRequestActivity extends Activity {
+    //private String url;
 
+//    public String getRequest(String url){
+//        RequestQueu queue
+//    }
 }
