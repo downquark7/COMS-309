@@ -1,9 +1,11 @@
 package backend.schedules;
 
 import backend.classes.Section;
+import backend.classes.SectionRepository;
 import backend.classes.SectionTime;
 import backend.users.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,7 +15,7 @@ import java.util.List;
 public class Schedule
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private int id;
 
     private String name;
