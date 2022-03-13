@@ -14,9 +14,9 @@
 # For more information, see: https://docs.gitlab.com/ee/ci/yaml/README.html#stages
 
 stages:          # List of stages for jobs, and their order of execution
-  # - buildSpringboot
+  - buildSpringboot
   - buildAndroid
-  # - populateClasslist
+  - populateClasslist
 
 build-job:       # This job runs in the build stage, which runs first.
   stage: buildSpringboot
@@ -44,7 +44,7 @@ android-build:
     paths:
     - Android_test/app/build/outputs/
 
-build-job:
+populateClasslist:
   stage: populateClasslist
   tags:
     - springboot
