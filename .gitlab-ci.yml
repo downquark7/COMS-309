@@ -29,7 +29,7 @@ springboot-build:       # This job runs in the build stage, which runs first.
     - sudo systemctl restart system-web-demo
 
 android-build:
-  image: javiersantos/android-ci:latest
+  image: gjandres/android-ci:latest
   stage: buildAndroid
   tags:
     - android
