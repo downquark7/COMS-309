@@ -48,4 +48,4 @@ populateClasslist:
   tags:
     - springboot
   script:
-    - node Experiments/nodejs/main.js 2> /dev/null
+    - node Experiments/nodejs/main.js
