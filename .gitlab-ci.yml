@@ -34,10 +34,10 @@ build-job:
   tags:
     - android
   before_script:
+    - echo "working"
     - export GRADLE_USER_HOME='pwd'/.gradle
     - chmod +x ./Frontent/gradlew
   script:
-    - echo "working"
     - cd Frontend
     - ./gradlew assemble
   artifacts:
