@@ -35,6 +35,7 @@ android-build:
     - android
   before_script:
     - export GRADLE_USER_HOME='pwd'/.gradle
+    - ls
     - chmod +x ./Frontend/gradlew
   script:
     - cd Frontend
