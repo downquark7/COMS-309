@@ -32,7 +32,7 @@ build-job:
   image: javiersantos/android-ci:latest
   stage: buildAndroid
   tags:
-    - android2
+    - buildAndroid
   before_script:
     - export GRADLE_USER_HOME='pwd'/.gradle
     - chmod +x ./Frontent/gradlew
