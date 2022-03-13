@@ -32,13 +32,17 @@ build-job:
   image: javiersantos/android-ci:latest
   stage: buildAndroid
   tags:
-    - android
+    - android2
   before_script:
     - export GRADLE_USER_HOME='pwd'/.gradle
     - chmod +x ./Frontent/gradlew
   script:
     - cd Frontend
     - ./gradlew assemble
+  artifacts:
+    paths:
+    - Android_test/app/build/outputs/
+
 
 build-job:
   stage: populateClasslist
