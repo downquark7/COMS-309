@@ -34,7 +34,7 @@ const sleep = (milliseconds) => {
 
 const doSomething = async () => {
     for (let o = 0; o < types.length; o++) {
-        await sleep(2000)
+        await sleep(200)
         axios
             .post('https://classes.iastate.edu/app/rest/courses/preferences', data(types[o]))
             .then(res => {
