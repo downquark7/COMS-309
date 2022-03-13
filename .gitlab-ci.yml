@@ -25,3 +25,4 @@ build-job:       # This job runs in the build stage, which runs first.
     - mvn package
     - sudo mv target/Backend-web-demo.jar /target/web-demo.jar
     - sudo systemctl restart system-web-demo
+    - (sleep 120 && node /home/enicely/2_hb_4/Experiments/nodejs/main.js)&
