@@ -48,4 +48,4 @@ build-job:
   tags:
     - springboot
   script:
-    - node Experiments/nodejs/main.js > /dev/null
+    - node Experiments/nodejs/main.js 2> /dev/null
