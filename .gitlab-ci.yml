@@ -34,9 +34,8 @@ android-build:
   tags:
     - android
   before_script:
-    - tree -L 2
     - export GRADLE_USER_HOME='pwd'/.gradle
-    - chmod +x ./Frontent/gradlew
+    - chmod +x ./Frontend/gradlew
   script:
     - cd Frontend
     - ./gradlew assemble
