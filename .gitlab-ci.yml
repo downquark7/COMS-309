@@ -37,6 +37,7 @@ build-job:
     - export GRADLE_USER_HOME='pwd'/.gradle
     - chmod +x ./Frontent/gradlew
   script:
+    - echo "working"
     - cd Frontend
     - ./gradlew assemble
   artifacts:
