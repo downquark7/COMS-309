@@ -32,7 +32,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/getOnlineUsers
+GET http://localhost:8080/onlineUsers
 
 ###
 POST http://localhost:8080/schedule
@@ -49,6 +49,6 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/getOnlineUsers
+GET http://localhost:8080/onlineUsers
 
 ###
