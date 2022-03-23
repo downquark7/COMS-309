@@ -69,4 +69,14 @@ public class UserController
         onlineUsers.remove(user.getId());
         return userFromHashmap;
     }
+
+    @GetMapping("/getUser/{user}")
+    public User getUserByName(@PathVariable String user) {
+        return userRepository.findByUsername(user);
+    }
+
+    @GetMapping("/getUserById/{user}")
+    public User getUserById(@PathVariable int user) {
+        return userRepository.getById(user);
+    }
 }
