@@ -23,7 +23,8 @@ public class User
     @OneToMany
     private List<Schedule> schedules;
 
-    public User() {
+    public User()
+    {
         schedules = new ArrayList<>();
     }
 
@@ -75,5 +76,10 @@ public class User
     public void setSchedules(List<Schedule> schedules)
     {
         this.schedules = schedules;
+    }
+
+    public void addSchedule(Schedule schedule)
+    {
+        schedules.add(schedule);
     }
 }

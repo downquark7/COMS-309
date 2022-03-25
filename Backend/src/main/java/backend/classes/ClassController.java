@@ -57,10 +57,7 @@ public class ClassController
     {
         for (Section s : classData.getSections())
         {
-            for (SectionTime st : s.getSectionTimes())
-            {
-                sectionTimesRepository.save(st);
-            }
+            sectionTimesRepository.saveAll(s.getSectionTimes());
             sectionRepository.save(s);
         }
         classRepository.save(classData);
@@ -84,10 +81,7 @@ public class ClassController
         {
             for (Section s : classData.getSections())
             {
-                for (SectionTime st : s.getSectionTimes())
-                {
-                    sectionTimesRepository.save(st);
-                }
+                sectionTimesRepository.saveAll(s.getSectionTimes());
                 sectionRepository.save(s);
             }
             classRepository.save(classData);
