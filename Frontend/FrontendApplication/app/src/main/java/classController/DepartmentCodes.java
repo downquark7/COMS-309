@@ -1,4 +1,4 @@
-package controller;
+package classController;
 
 import java.util.HashMap;
 

@@ -4,9 +4,8 @@ import junit.framework.TestCase;
 
 import java.io.IOException;
 
-import controller.ClassController;
-import controller.ClassData;
-import controller.DepartmentCodes;
+import classController.ClassController;
+import classController.ClassData;
 
 public class ClassControllerTest extends TestCase {
 

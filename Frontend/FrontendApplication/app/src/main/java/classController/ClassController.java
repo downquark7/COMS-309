@@ -1,4 +1,4 @@
-package controller;
+package classController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

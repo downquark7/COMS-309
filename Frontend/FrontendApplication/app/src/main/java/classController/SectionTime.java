@@ -1,4 +1,4 @@
-package controller;
+package classController;
 
 public class SectionTime {
     private int id;
