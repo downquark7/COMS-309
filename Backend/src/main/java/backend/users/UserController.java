@@ -14,7 +14,7 @@ public class UserController
     UserRepository userRepository;
 
     @PostMapping("/user/create")
-    public Object createUser(@RequestBody User user) throws Exception
+    public User createUser(@RequestBody User user) throws Exception
     {
         if (!userRepository.existsByUsername(user.getUsername()))
             userRepository.save(user);
@@ -33,7 +33,7 @@ public class UserController
     }
 
     @PostMapping("/user/login")
-    public Object loginUser(@RequestBody User user)
+    public User loginUser(@RequestBody User user)
     {
         User userFromDb = userRepository.findByUsername(user.getUsername());
 
@@ -61,7 +61,7 @@ public class UserController
     }
 
     @PostMapping("/user/logout")
-    public Object logout(@RequestBody User user)
+    public User logout(@RequestBody User user)
     {
         User userFromHashmap = onlineUsers.get(user.getId());
         if (userFromHashmap == null)
