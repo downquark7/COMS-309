@@ -1,9 +1,12 @@
 package backend.classes;
 
+import backend.instructors.Instructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,13 +24,18 @@ public class ClassData
     private String classNumber;
     private String departmentTitle;
     private String classTitle;
-//    private String classComments;
+    //    private String classComments;
     private String classPreReqs;
 
     @OneToMany
     private List<Section> sections;
 
-    public ClassData() {
+    @JsonIgnore
+    @ManyToMany
+    private List<Instructor> instructorList = new ArrayList<>();
+
+    public ClassData()
+    {
         sections = new ArrayList<>();
     }
 
@@ -129,5 +137,25 @@ public class ClassData
     public void setSections(List<Section> sections)
     {
         this.sections = sections;
+    }
+
+    public List<Instructor> getInstructorList()
+    {
+        return instructorList;
+    }
+
+    public void setInstructorList(List<Instructor> instructorList)
+    {
+        this.instructorList = instructorList;
+    }
+
+    public void addInstructor(Instructor instructor)
+    {
+        instructorList.add(instructor);
+    }
+
+    public void removeInstructor(Instructor instructor)
+    {
+        instructorList.remove(instructor);
     }
 }
