@@ -16,7 +16,6 @@
 stages:          # List of stages for jobs, and their order of execution
   - buildSpringboot
   - buildAndroid
-  - populateClasslist
 
 springboot-build:       # This job runs in the build stage, which runs first.
   stage: buildSpringboot
