@@ -41,10 +41,3 @@ android-build:
   artifacts:
     paths:
     - Android_test/app/build/outputs/
-
-populateClasslist:
-  stage: populateClasslist
-  tags:
-    - springboot
-  script:
-    - node Experiments/nodejs/main.js
