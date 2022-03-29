@@ -21,7 +21,7 @@ public class ScheduleViewHolder extends RecyclerView.ViewHolder{
         itemView.setOnClickListener((View.OnClickListener) this);
     }
 
-    @Override
+
     public void onClick(View view){
         onItemListener.onItemClick(getAdapterPosition(), (String) hourOfDay.getText());
     }
