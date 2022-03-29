@@ -15,6 +15,7 @@
 
 stages:          # List of stages for jobs, and their order of execution
   - buildSpringboot
+  - deploySpringboot
   - buildAndroid
 
 springboot-build:       # This job runs in the build stage, which runs first.
@@ -24,7 +25,13 @@ springboot-build:       # This job runs in the build stage, which runs first.
   script:
     - cd Backend
     - mvn package
-    - sudo mv target/Backend-web-demo.jar /target/web-demo.jar
+
+springboot-deploy:
+  stage: deploySpringboot
+  tags:
+    - springboot
+  script:
+    - sudo mv target/Backend-web-demo.jar /target/web-demo2.jar
     - sudo systemctl restart system-web-demo
 
 android-build:
