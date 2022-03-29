@@ -1,14 +1,21 @@
 package com.example.classdifficultyfrontend;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
+    private RecyclerView classList;
+    //JSONPlaceholder jsonPlaceholder;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.fragment_item_list);
+
+        //classList = findViewById(R.id.recy)
     }
 }

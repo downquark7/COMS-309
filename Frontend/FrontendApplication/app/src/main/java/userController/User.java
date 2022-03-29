@@ -1,26 +1,17 @@
-package backend.users;
+package userController;
 
-import backend.schedules.Schedule;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+
 public class User
 {
-    @Id
-    @GeneratedValue
+
     private int id;
     private String username;
     private String authenticationMethod;
     private String authenticationData;
 
-    @OneToMany
     private List<Schedule> schedules;
 
     public User()

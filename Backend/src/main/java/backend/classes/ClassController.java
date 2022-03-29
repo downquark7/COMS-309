@@ -1,5 +1,7 @@
 package backend.classes;
 
+import backend.instructors.Instructor;
+import backend.instructors.InstructorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -52,16 +54,29 @@ public class ClassController
         return classData;
     }
 
+    @Autowired
+    InstructorRepository instructorRepository;
+
+    private Instructor getInstructor(String instrName)
+    {
+        Instructor i = instructorRepository.findByInstrName(instrName);
+        if (i == null)
+        {
+            i = new Instructor(instrName);
+            instructorRepository.save(i);
+        }
+        return i;
+    }
+
     @PostMapping("/class")
     public ClassData updateClass(@RequestBody ClassData classData)
     {
         for (Section s : classData.getSections())
         {
-            for (SectionTime st : s.getSectionTimes())
-            {
-                sectionTimesRepository.save(st);
-            }
+            sectionTimesRepository.saveAll(s.getSectionTimes());
             sectionRepository.save(s);
+            for (SectionTime st : s.getSectionTimes())
+                classData.addInstructor(getInstructor(st.getInstrName()));
         }
         classRepository.save(classData);
         for (Section s : classData.getSections())
@@ -70,10 +85,12 @@ public class ClassController
             {
                 st.setSection(s);
                 sectionTimesRepository.save(st);
+                getInstructor(st.getInstrName()).addClass(classData);
             }
             s.setClassData(classData);
             sectionRepository.save(s);
         }
+        classRepository.save(classData);
         return classData;
     }
 
@@ -84,11 +101,10 @@ public class ClassController
         {
             for (Section s : classData.getSections())
             {
-                for (SectionTime st : s.getSectionTimes())
-                {
-                    sectionTimesRepository.save(st);
-                }
+                sectionTimesRepository.saveAll(s.getSectionTimes());
                 sectionRepository.save(s);
+                for (SectionTime st : s.getSectionTimes())
+                    classData.addInstructor(getInstructor(st.getInstrName()));
             }
             classRepository.save(classData);
             for (Section s : classData.getSections())
@@ -97,10 +113,12 @@ public class ClassController
                 {
                     st.setSection(s);
                     sectionTimesRepository.save(st);
+                    getInstructor(st.getInstrName()).addClass(classData);
                 }
                 s.setClassData(classData);
                 sectionRepository.save(s);
             }
+            classRepository.save(classData);
         }
     }
 }

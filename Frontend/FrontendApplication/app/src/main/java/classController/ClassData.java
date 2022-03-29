@@ -1,21 +1,8 @@
-package backend.classes;
+package classController;
 
-import backend.instructors.Instructor;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class ClassData
-{
-    @Id
+public class ClassData {
     private int id;
 
     private String semesterCode;
@@ -26,18 +13,7 @@ public class ClassData
     private String classTitle;
     //    private String classComments;
     private String classPreReqs;
-
-    @OneToMany
     private List<Section> sections;
-
-    @JsonIgnore
-    @ManyToMany
-    private List<Instructor> instructorList = new ArrayList<>();
-
-    public ClassData()
-    {
-        sections = new ArrayList<>();
-    }
 
     public int getId()
     {
@@ -137,25 +113,5 @@ public class ClassData
     public void setSections(List<Section> sections)
     {
         this.sections = sections;
-    }
-
-    public List<Instructor> getInstructorList()
-    {
-        return instructorList;
-    }
-
-    public void setInstructorList(List<Instructor> instructorList)
-    {
-        this.instructorList = instructorList;
-    }
-
-    public void addInstructor(Instructor instructor)
-    {
-        instructorList.add(instructor);
-    }
-
-    public void removeInstructor(Instructor instructor)
-    {
-        instructorList.remove(instructor);
     }
 }

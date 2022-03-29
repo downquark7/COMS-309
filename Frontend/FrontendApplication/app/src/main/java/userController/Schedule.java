@@ -1,30 +1,18 @@
-package backend.schedules;
+package userController;
 
-import backend.classes.Section;
-import backend.classes.SectionRepository;
-import backend.classes.SectionTime;
-import backend.users.User;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+import classController.Section;
+import classController.SectionTime;
+
 public class Schedule
 {
-    @Id
-    @GeneratedValue
     private int id;
 
     private String name;
-
-    @JsonIgnore
-    @ManyToOne
     private User user;
 
-    @OneToMany
     private List<Section> list;
 
     public void addSection(Section section)

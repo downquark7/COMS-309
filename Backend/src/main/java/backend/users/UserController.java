@@ -14,37 +14,39 @@ public class UserController
     UserRepository userRepository;
 
     @PostMapping("/user/create")
-    public Object createUser(@RequestBody User user) throws Exception
+    public User createUser(@RequestBody User user) throws Exception
     {
         if (!userRepository.existsByUsername(user.getUsername()))
             userRepository.save(user);
         else
-            return "Error: username already exists";
+            return null;
         return user;
     }
-//
-//    @PutMapping("/user/manage")
-//    public User manageUser(@RequestBody User user)
-//    {
-//        userRepository.save(user);
-//        return user;
-//    }
+
+    @PutMapping("/user/manage")
+    public Object manageUser(@RequestBody User user)
+    {
+        if (user.getSchedules().isEmpty())
+            user.setSchedules(userRepository.getById(user.getId()).getSchedules());
+        userRepository.save(user);
+        return user;
+    }
 
     @PostMapping("/user/login")
-    public Object loginUser(@RequestBody User user)
+    public User loginUser(@RequestBody User user)
     {
         User userFromDb = userRepository.findByUsername(user.getUsername());
 
         if (userFromDb != null)
         {
             if (!user.getAuthenticationMethod().equals(userFromDb.getAuthenticationMethod()))
-                return "Login error: username or password not found";
+                return null;
             if (!user.getAuthenticationData().equals(userFromDb.getAuthenticationData()))
-                return "Login error: username or password not found";
+                return null;
 
         } else
         {
-            return "Login error: username or password not found";
+            return null;
         }
 
         onlineUsers.put(user.getId(), user);
@@ -59,12 +61,22 @@ public class UserController
     }
 
     @PostMapping("/user/logout")
-    public Object logout(@RequestBody User user)
+    public User logout(@RequestBody User user)
     {
         User userFromHashmap = onlineUsers.get(user.getId());
         if (userFromHashmap == null)
-            return "Error: user not found";
+            return null;
         onlineUsers.remove(user.getId());
         return userFromHashmap;
+    }
+
+    @GetMapping("/getUser/{user}")
+    public User getUserByName(@PathVariable String user) {
+        return userRepository.findByUsername(user);
+    }
+
+    @GetMapping("/getUserById/{user}")
+    public User getUserById(@PathVariable int user) {
+        return userRepository.getById(user);
     }
 }

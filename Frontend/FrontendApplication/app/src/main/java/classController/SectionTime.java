@@ -1,17 +1,6 @@
-package backend.classes;
+package classController;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-
-@Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class SectionTime
-{
-    @Id
+public class SectionTime {
     private int id;
     private int sectionSequenceNumber;
     private String instructionType;
@@ -24,9 +13,6 @@ public class SectionTime
     private String stopTime;
     private String formattedStartTime;
     private String formattedStopTime;
-
-    @ManyToOne
-    @JsonIgnore
     private Section section;
 
     public int getId()

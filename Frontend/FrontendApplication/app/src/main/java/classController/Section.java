@@ -1,19 +1,8 @@
-package backend.classes;
+package classController;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import java.util.List;
 
-@Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Section
-{
-    @Id
+public class Section {
     private int id;
     private String sectionID;
     private String openseats;
@@ -21,11 +10,7 @@ public class Section
     private String creditHigh;
     private String deliveryTypeDisplay;
 
-    @OneToMany
     private List<SectionTime> sectionTimes;
-
-    @ManyToOne
-    @JsonIgnore
     private ClassData classData;
 
     public int getId()
