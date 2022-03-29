@@ -22,17 +22,23 @@ import java.time.LocalTime;
 public class ScheduleActivity extends AppCompatActivity {
     private TextView hourDayText;
     private RecyclerView hourRecyclerView;
-    private LocalTime selectedTime;
+   // private LocalTime selectedTime;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
         initWidgets();
+        //selectedTime = LocalTime.now();
     }
     private void initWidgets(){
         hourRecyclerView = findViewById(R.id.schedule_hourRecyclerView);
 
     }
+    private void setHourDayView(){
+       // ArrayList<String> hoursInDay =
+    }
+
+    //private ArrayList<String>
 
 
 }
