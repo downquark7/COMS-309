@@ -61,11 +61,14 @@ public class Instructor
         this.classes = classes;
     }
 
-    public void addClass(ClassData classData) {
-        classes.add(classData);
+    public void addClass(ClassData classData)
+    {
+        if (!classes.contains(classData))
+            classes.add(classData);
     }
 
-    public void removeClass(ClassData classData) {
+    public void removeClass(ClassData classData)
+    {
         classes.remove(classData);
     }
 }
