@@ -1,6 +1,8 @@
 package com.example.classlist;
 
 import androidx.appcompat.app.AppCompatActivity;
+import classController.ClassController;
+import classController.ClassData;
 
 import android.os.Bundle;
 
