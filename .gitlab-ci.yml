@@ -18,8 +18,10 @@ workflow:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 stages:          # List of stages for jobs, and their order of execution
+  - testSpringboot
   - buildSpringboot
   - deploySpringboot
+  - testAndroid
   - buildAndroid
 
 springboot-build:       # This job runs in the build stage, which runs first.
@@ -52,3 +54,30 @@ android-build:
   artifacts:
     paths:
     - Android_test/app/build/outputs/
+
+springboot-test:
+  stage:
+    testSpringboot
+  tags:
+    - springboot
+  script:
+    - cd Backend
+    - mvn test
+  artifacts:
+    paths:
+      - Backend/target/*.jar
+
+android-test:
+  image: gjandres/android-ci:latest
+  stage: testAndroid
+  tags:
+    - android
+  before_script:
+    - export GRADLE_USER_HOME=` pwd` /.gradle
+    - chmod +x ./Frontend/gradlew
+  script:
+    - cd Frontend
+    - ./gradlew build
+  artifacts:
+    paths:
+      - Android_test/app/build/outputs/
