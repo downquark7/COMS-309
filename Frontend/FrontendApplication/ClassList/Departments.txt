@@ -1,8 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<resources>
-    <string name="app_name">ClassList</string>
-
-    <string-array name="Departments">
+<string-array name="Departments">
         <item>ACCOUNTING</item>
         <item>ACTUARIAL SCIENCE</item>
         <item>ADVERTISING</item>
@@ -110,7 +106,7 @@
         <item>LEADERSHIP STUDIES</item>
         <item>LEARNING AND LEADERSHIP SCIENCES</item>
         <item>LEARNING TEAM</item>
-        <item>LIBERAL ARTS &amp; SCIENCES</item>
+        <item>"LIBERAL ARTS &amp; SCIENCES</item>
         <item>LIBRARY</item>
         <item>LINGUISTICS</item>
         <item>MANAGEMENT</item>
@@ -166,11 +162,8 @@
         <item>VETERINARY PATHOLOGY</item>
         <item>WIND ENERGY SCIENCE, ENGINEERING AND POL</item>
         <item>WISE</item>
-        <item>WOMEN\'S AND GENDER STUDIES</item>
+        <item>WOMEN'S AND GENDER STUDIES</item>
         <item>WORLD FILM STUDIES</item>
         <item>WORLD LANGUAGES AND CULTURES</item>
         <item>YOUTH</item>
     </string-array>
-
-
-</resources>
