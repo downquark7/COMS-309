@@ -1,5 +1,7 @@
 package com.example.classlist;
 
+import static com.example.classlist.ClassController.getByDepartment;
+
 import androidx.appcompat.app.AppCompatActivity;
 //import classController.ClassController;
 //import departmentCodes.DepartmentCodes;
@@ -9,6 +11,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.io.IOException;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +30,12 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String t = choose.getSelectedItem().toString();
 
-                List<ClassData> list = getByDepartment (t);
+                List<ClassData> list = null;
+                try {
+                    list = getByDepartment (t);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
                 text.setText(list);
             }
