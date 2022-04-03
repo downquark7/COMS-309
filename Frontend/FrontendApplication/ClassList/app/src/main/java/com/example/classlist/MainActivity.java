@@ -1,6 +1,7 @@
 package com.example.classlist;
 
 import static com.example.classlist.ClassController.getByDepartment;
+import static com.example.classlist.ClassController.getAClass;
 
 import androidx.appcompat.app.AppCompatActivity;
 //import classController.ClassController;
@@ -13,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView text = (TextView) findViewById(R.id.textView);
         Spinner choose = (Spinner) findViewById(R.id.spinner);
+        int i = 0;
 
         choose.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                text.setText((CharSequence) list);
+                text.setText(list.getAclass(list,0));
             }
 
             @Override
