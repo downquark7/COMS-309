@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                text.setText(list);
+                text.setText((CharSequence) list);
             }
 
             @Override
