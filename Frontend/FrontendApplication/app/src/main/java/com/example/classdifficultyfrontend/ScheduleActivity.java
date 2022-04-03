@@ -13,6 +13,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.classdifficultyfrontend.databinding.ActivityScheduleBinding;
@@ -20,7 +21,9 @@ import com.example.classdifficultyfrontend.databinding.ActivityScheduleBinding;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-public class ScheduleActivity extends AppCompatActivity {
+import schedule.ScheduleAdapter;
+
+public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapter.OnItemListener{ // a lot of this code is based on the example given in this youtube tutorial: https://www.youtube.com/watch?v=Ba0Q-cK1fJo&ab_channel=CodeWithCal
     private TextView hourDayText;
     private RecyclerView hourRecyclerView;
    // private LocalTime selectedTime;
@@ -38,11 +41,20 @@ public class ScheduleActivity extends AppCompatActivity {
     private void setHourDayView(){
        ArrayList<String> hoursInDay = new ArrayList<>();
        for(int i = 7; i < 12; i++){
-           hoursInDay.add(i + ":00");
+           hoursInDay.add(i + ":00"); // TODO Change this later
        }
+       ScheduleAdapter scheduleAdapter = new ScheduleAdapter(hoursInDay, this);
+       RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
+       hourRecyclerView.setLayoutManager(layoutManager);
+       hourRecyclerView.setAdapter(scheduleAdapter);
     }
 
-   // private ArrayList<String>
+    @Override
+    public void onItemClick(int position, String dayText) {
+
+    }
+
+    // private ArrayList<String>
 
 
 }
