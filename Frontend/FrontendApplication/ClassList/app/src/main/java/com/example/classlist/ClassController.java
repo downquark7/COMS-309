@@ -1,4 +1,4 @@
-package classController;
+package com.example.classlist;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

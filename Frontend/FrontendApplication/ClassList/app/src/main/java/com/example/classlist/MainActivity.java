@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String t = choose.getSelectedItem().toString();
 
-                text.setText(t);
+                List<ClassData> list = getByDepartment (t);
+
+                text.setText(list);
             }
 
             @Override
