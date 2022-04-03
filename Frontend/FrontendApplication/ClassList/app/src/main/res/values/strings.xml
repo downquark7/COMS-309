@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <resources>
     <string name="app_name">ClassList</string>
 
@@ -5,7 +6,7 @@
         <item>ACCOUNTING</item>
         <item>ACTUARIAL SCIENCE</item>
         <item>ADVERTISING</item>
-        <item>AEROSPACE ENGINEERING</item>
+        <item>AEROSPACE sENGINEERING</item>
         <item>AFRICAN AND AFRICAN AMERICAN STUDIES</item>
         <item>AGRICULTURAL AND BIOSYSTEMS ENGINEERING</item>
         <item>AGRICULTURAL EDUCATION &amp; STUDIES</item>
@@ -169,7 +170,7 @@
         <item>WORLD FILM STUDIES</item>
         <item>WORLD LANGUAGES AND CULTURES</item>
         <item>YOUTH</item>
-
-
     </string-array>
+
+
 </resources>
