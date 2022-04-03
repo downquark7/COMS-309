@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.classdifficultyfrontend.databinding.ActivityScheduleBinding;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class ScheduleActivity extends AppCompatActivity {
     private TextView hourDayText;
@@ -35,10 +36,13 @@ public class ScheduleActivity extends AppCompatActivity {
 
     }
     private void setHourDayView(){
-       // ArrayList<String> hoursInDay =
+       ArrayList<String> hoursInDay = new ArrayList<>();
+       for(int i = 7; i < 12; i++){
+           hoursInDay.add(i + ":00");
+       }
     }
 
-    //private ArrayList<String>
+   // private ArrayList<String>
 
 
 }
