@@ -13,10 +13,16 @@
 #
 # For more information, see: https://docs.gitlab.com/ee/ci/yaml/README.html#stages
 
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
 stages:          # List of stages for jobs, and their order of execution
+  - testSpringboot
   - buildSpringboot
+  - deploySpringboot
+  - testAndroid
   - buildAndroid
-  - populateClasslist
 
 springboot-build:       # This job runs in the build stage, which runs first.
   stage: buildSpringboot
@@ -25,7 +31,13 @@ springboot-build:       # This job runs in the build stage, which runs first.
   script:
     - cd Backend
     - mvn package
-    - sudo mv target/Backend-web-demo.jar /target/web-demo.jar
+    - sudo mv target/Backend-web-demo.jar /target/web-demo2.jar
+
+springboot-deploy:
+  stage: deploySpringboot
+  tags:
+    - springboot
+  script:
     - sudo systemctl restart system-web-demo
 
 android-build:
@@ -43,9 +55,29 @@ android-build:
     paths:
     - Android_test/app/build/outputs/
 
-populateClasslist:
-  stage: populateClasslist
+springboot-test:
+  stage:
+    testSpringboot
   tags:
     - springboot
   script:
-    - node Experiments/nodejs/main.js
+    - cd Backend
+    - mvn test
+  artifacts:
+    paths:
+      - Backend/target/*.jar
+
+android-test:
+  image: gjandres/android-ci:latest
+  stage: testAndroid
+  tags:
+    - android
+  before_script:
+    - export GRADLE_USER_HOME='pwd'/.gradle
+    - chmod +x ./Frontend/FrontendApplication/gradlew
+  script:
+    - cd Frontend/FrontendApplication
+    - ./gradlew build
+  artifacts:
+    paths:
+      - Android_test/app/build/outputs/
