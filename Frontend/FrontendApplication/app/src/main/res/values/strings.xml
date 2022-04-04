@@ -10,4 +10,174 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_login">LoginActivity</string>
+
+    <string-array name="Departments">
+        <item>ACCOUNTING</item>
+        <item>ACTUARIAL SCIENCE</item>
+        <item>ADVERTISING</item>
+        <item>AEROSPACE sENGINEERING</item>
+        <item>AFRICAN AND AFRICAN AMERICAN STUDIES</item>
+        <item>AGRICULTURAL AND BIOSYSTEMS ENGINEERING</item>
+        <item>AGRICULTURAL EDUCATION &amp; STUDIES</item>
+        <item>AGRONOMY</item>
+        <item>AIR FORCE AEROSPACE STUDIES</item>
+        <item>AMERICAN INDIAN STUDIES</item>
+        <item>AMERICAN SIGN LANGUAGE</item>
+        <item>ANIMAL ECOLOGY</item>
+        <item>ANIMAL SCIENCE</item>
+        <item>ANTHROPOLOGY</item>
+        <item>APPAREL, EVENTS, AND HOSPITALITY MANAGEM</item>
+        <item>APPAREL, MERCHANDISING, AND DESIGN</item>
+        <item>ARABIC</item>
+        <item>ARCHITECTURE</item>
+        <item>ART EDUCATION</item>
+        <item>ART HISTORY</item>
+        <item>ASTRONOMY &amp; ASTROPHYSICS</item>
+        <item>ATHLETIC TRAINING</item>
+        <item>ATHLETICS</item>
+        <item>BIOCHEM, BIOPHYSICS &amp; MOLECULAR BIO</item>
+        <item>BIOINFORMATICS &amp; COMPUTATIONAL BIOL-UG</item>
+        <item>BIOINFORMATICS AND COMPUTATIONAL BIOL</item>
+        <item>BIOLOGICAL/PRE-MEDICAL ILLUSTRATION</item>
+        <item>BIOLOGY</item>
+        <item>BIOMEDICAL ENGINEERING</item>
+        <item>BIOMEDICAL SCIENCES</item>
+        <item>BUSINESS ADMINISTRATION</item>
+        <item>CHEMICAL ENGINEERING</item>
+        <item>CHEMISTRY</item>
+        <item>CHINESE</item>
+        <item>CIVIL ENGINEERING</item>
+        <item>CLASSICAL STUDIES</item>
+        <item>COMMUNICATION DISORDERS</item>
+        <item>COMMUNICATION STUDIES</item>
+        <item>COMMUNITY &amp; REGIONAL PLANNING</item>
+        <item>COMMUNITY DEVELOPMENT</item>
+        <item>COMPUTER ENGINEERING</item>
+        <item>COMPUTER SCIENCE</item>
+        <item>CONSTRUCTION ENGINEERING</item>
+        <item>CRIMINAL JUSTICE</item>
+        <item>CYBER SECURITY</item>
+        <item>CYBER SECURITY ENGINEERING</item>
+        <item>CYBER-PHYSICAL SYSTEMS</item>
+        <item>DANCE</item>
+        <item>DATA SCIENCE</item>
+        <item>DESIGN</item>
+        <item>DESIGN STUDIES</item>
+        <item>DIETETICS</item>
+        <item>EARLY CHILDCARE EDUCATION AND PROGRAMMIN</item>
+        <item>ECOLOGY &amp; EVOLUTIONARY BIOLOGY</item>
+        <item>ECOLOGY, EVOLUTION &amp; ORGANISMAL BIOL</item>
+        <item>ECONOMICS</item>
+        <item>EDUCATION</item>
+        <item>EDUCATIONAL ADMINISTRATION</item>
+        <item>EDUCATIONAL LEADERSHIP &amp; POLICY ST</item>
+        <item>ELECTRICAL ENGINEERING</item>
+        <item>ENGINEERING</item>
+        <item>ENGINEERING MECHANICS</item>
+        <item>ENGLISH</item>
+        <item>ENTOMOLOGY</item>
+        <item>ENTREPRENEURSHIP</item>
+        <item>ENVIRONMENTAL ENGINEERING</item>
+        <item>ENVIRONMENTAL SCIENCE</item>
+        <item>ENVIRONMENTAL STUDIES</item>
+        <item>EVENT MANAGEMENT</item>
+        <item>FAMILY &amp; CONSUMER SCIENCES ED &amp; STUDIES</item>
+        <item>FAMILY FINANCIAL PLANNING</item>
+        <item>FINANCE</item>
+        <item>FOOD SCIENCE &amp; HUMAN NUTRITION</item>
+        <item>FRENCH</item>
+        <item>GENETICS</item>
+        <item>GENETICS - INTERDISCIPLINARY</item>
+        <item>GENETICS, DEVELOPMENT &amp; CELL BIOL</item>
+        <item>GEOLOGY</item>
+        <item>GERMAN</item>
+        <item>GERONTOLOGY</item>
+        <item>GLOBAL RESOURCE SYSTEMS</item>
+        <item>GRADUATE STUDIES</item>
+        <item>GRAPHIC DESIGN</item>
+        <item>HEALTH STUDIES</item>
+        <item>HEALTHCARE MANAGEMENT</item>
+        <item>HIGHER EDUCATION</item>
+        <item>HISTORY</item>
+        <item>HONORS</item>
+        <item>HORTICULTURE</item>
+        <item>HOSPITALITY MANAGEMENT</item>
+        <item>HUMAN COMPUTER INTERACTION</item>
+        <item>HUMAN DEVELOPMENT &amp; FAMILY STUDIES</item>
+        <item>HUMAN SCIENCES</item>
+        <item>IMMUNOBIOLOGY</item>
+        <item>INDUSTRIAL DESIGN</item>
+        <item>INDUSTRIAL ENGINEERING</item>
+        <item>INTEGRATED STUDIO ARTS</item>
+        <item>INTERDISCIPLINARY GRADUATE STUDIES</item>
+        <item>INTERIOR DESIGN</item>
+        <item>INTERNATIONAL STUDIES</item>
+        <item>JOURNALISM &amp; MASS COMMUNICATION</item>
+        <item>KINESIOLOGY</item>
+        <item>LANDSCAPE ARCHITECTURE</item>
+        <item>LATIN</item>
+        <item>LEADERSHIP STUDIES</item>
+        <item>LEARNING AND LEADERSHIP SCIENCES</item>
+        <item>LEARNING TEAM</item>
+        <item>LIBERAL ARTS &amp; SCIENCES</item>
+        <item>LIBRARY</item>
+        <item>LINGUISTICS</item>
+        <item>MANAGEMENT</item>
+        <item>MANAGEMENT INFORMATION SYSTEMS</item>
+        <item>MARKETING</item>
+        <item>MATERIALS ENGINEERING</item>
+        <item>MATERIALS SCIENCE &amp; ENGINEERING</item>
+        <item>MATHEMATICS</item>
+        <item>MECHANICAL ENGINEERING</item>
+        <item>METEOROLOGY</item>
+        <item>MICROBIOLOGY</item>
+        <item>MILITARY SCIENCE</item>
+        <item>MOLECULAR CELLULAR DEV BIOLOGY</item>
+        <item>MUSIC</item>
+        <item>NATURAL RESOURCE ECOLOGY AND MGMT</item>
+        <item>NAVAL SCIENCE</item>
+        <item>NEUROSCIENCE</item>
+        <item>NURSING</item>
+        <item>NUTRITIONAL SCIENCES</item>
+        <item>ORGANIZATION FOR TROPICAL STUDIES</item>
+        <item>PERFORMING ARTS</item>
+        <item>PHILOSOPHY</item>
+        <item>PHYSICS</item>
+        <item>PLANT BIOLOGY</item>
+        <item>PLANT PATHOLOGY</item>
+        <item>POLITICAL SCIENCE</item>
+        <item>PORTUGUESE</item>
+        <item>PSYCHOLOGY</item>
+        <item>PUBLIC RELATIONS</item>
+        <item>RELIGIOUS STUDIES</item>
+        <item>RESEARCH &amp; EVALUATION</item>
+        <item>RUSSIAN</item>
+        <item>SEED TECHNOLOGY AND BUSINESS</item>
+        <item>SOCIOLOGY</item>
+        <item>SOFTWARE ENGINEERING</item>
+        <item>SPANISH</item>
+        <item>SPECIAL EDUCATION</item>
+        <item>SPEECH COMMUNICATION</item>
+        <item>STATISTICS</item>
+        <item>SUPPLY CHAIN MANAGEMENT</item>
+        <item>SUSTAINABLE AGRICULTURE</item>
+        <item>SUSTAINABLE ENVIRONMENTS</item>
+        <item>TECHNOLOGY SYSTEMS MANAGEMENT</item>
+        <item>THEATRE</item>
+        <item>TOXICOLOGY</item>
+        <item>TRANSPORTATION</item>
+        <item>U.S. LATINO/A STUDIES</item>
+        <item>UNIVERSITY STUDIES</item>
+        <item>URBAN DESIGN</item>
+        <item>VET DIAGNOSTIC &amp; PRODUCTION AN MED</item>
+        <item>VETERINARY CLINICAL SCIENCES</item>
+        <item>VETERINARY MICROBIOLOGY &amp; PREV MED</item>
+        <item>VETERINARY PATHOLOGY</item>
+        <item>WIND ENERGY SCIENCE, ENGINEERING AND POL</item>
+        <item>WISE</item>
+        <item>WOMEN\'S AND GENDER STUDIES</item>
+        <item>WORLD FILM STUDIES</item>
+        <item>WORLD LANGUAGES AND CULTURES</item>
+        <item>YOUTH</item>
+    </string-array>
 </resources>
