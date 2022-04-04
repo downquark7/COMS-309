@@ -114,4 +114,10 @@ public class ClassData {
     {
         this.sections = sections;
     }
+
+    @Override
+    public String toString()
+    {
+        return getClassTitle();
+    }
 }
