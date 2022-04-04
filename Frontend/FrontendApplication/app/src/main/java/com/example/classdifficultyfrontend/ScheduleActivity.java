@@ -1,25 +1,13 @@
 package com.example.classdifficultyfrontend;
-
+//import static classController.ClassController.ClassData;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.classdifficultyfrontend.databinding.ActivityScheduleBinding;
-
-import java.time.LocalTime;
 import java.util.ArrayList;
 
 import schedule.ScheduleAdapter;
@@ -38,14 +26,14 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
     }
     private void initWidgets(){
         hourRecyclerView = findViewById(R.id.schedule_hourRecyclerView);
-
+        //hourDayText = findViewById(R.id.)
     }
     private void setHourDayView(){
         ArrayList<String> hoursInDay = hoursInDayArray();
         ScheduleAdapter scheduleAdapter = new ScheduleAdapter(hoursInDay, this);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 8);
         hourRecyclerView.setLayoutManager(layoutManager);
-        hourRecyclerView.setAdapter(scheduleAdapter); // TODO This line of code is causing the crashing
+        hourRecyclerView.setAdapter(scheduleAdapter);
     }
 
 
@@ -58,12 +46,26 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
     }
     private ArrayList<String> hoursInDayArray(){
         ArrayList<String> hoursInDayArray = new ArrayList<>();
-        for(int i = 0; i < 50; i++){
-            hoursInDayArray.add(""); // TODO Change this later
+        for(int i = 0; i < 100; i++){
+            if(i % 8 == 0){
+                if(i == 40)
+                    hoursInDayArray.add("1:00");
+                else
+                hoursInDayArray.add(((((i+1)/8)+ 8)% 13)+":00");//TODO There is a bug here, it is showing 1:00 twice
+            }
+            else
+            hoursInDayArray.add("-");
         }
         return hoursInDayArray;
     }
+    private ArrayList<String> classlist(String scheduleID){//TODO temporary, for sake of demo
+        ArrayList<String> classlist = new ArrayList<>();
+        String classes[][] = {{"L TM", "S112"}, {"MTEOR", "498"}, {"AER E", "192"}};
+        for(int i = 0; i < 3; i++){
 
+        }
+        return classlist;
+    }
 
 
 }

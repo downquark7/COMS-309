@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.classdifficultyfrontend.R;
 
-public class ScheduleViewHolder extends RecyclerView.ViewHolder{
+public class ScheduleViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     public final TextView hourOfDay;
     private final ScheduleAdapter.OnItemListener onItemListener;
    // private final TextView nameOfClass;
@@ -16,7 +16,7 @@ public class ScheduleViewHolder extends RecyclerView.ViewHolder{
         super(itemView);
         hourOfDay = itemView.findViewById(R.id.cellHourText);
         this.onItemListener = onItemListener;
-        itemView.setOnClickListener((View.OnClickListener) this.onItemListener);
+        itemView.setOnClickListener(this);
     }
 
 

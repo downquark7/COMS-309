@@ -39,6 +39,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:text="Hour"
+            android:textColor="#808080"
+            android:textAlignment="center"
+            android:textSize="16sp"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="SUN"
             android:textColor="#808080"
             android:textAlignment="center"
@@ -96,6 +104,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/schedule_hourRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
