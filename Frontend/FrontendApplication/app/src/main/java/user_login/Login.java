@@ -23,7 +23,6 @@ import org.json.JSONObject;
 
 public class Login extends AppCompatActivity {
 
-    private static final android.R.attr R = ;
     private TextView TextResult;
     private RequestQueue queue;
     private String text;
@@ -60,16 +59,15 @@ public class Login extends AppCompatActivity {
         });
     }
 
-        private void login(String User_passed, String Pass_passed) {
-            RequestQueue queue = Volley.newRequestQueue(this);
+    private void login(String User_passed, String Pass_passed) {
+        RequestQueue queue = Volley.newRequestQueue(this);
 
-            String url = "http://coms-309-032.class.las.iastate.edu:8080/user/create";
+        String url = "http://coms-309-032.class.las.iastate.edu:8080/user/create";
 
-            String Userstr = user.getText().toString().trim();
-            String Userpass = pass.getText().toString().trim();
+        String Userstr = user.getText().toString().trim();
+        String Userpass = pass.getText().toString().trim();
 
 
-            }
-        }
-
+    }
+}
 

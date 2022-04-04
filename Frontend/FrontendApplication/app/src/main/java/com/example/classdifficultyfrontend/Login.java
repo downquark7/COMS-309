@@ -89,9 +89,9 @@ public class Login extends AppCompatActivity {
                     TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
 
                     text = jsonObject.toString();
-                   // Intent intent = new Intent(getApplicationContext(), Default_Screen.class);
-                   // intent.putExtra("message_key", text);
-                   // startActivity(intent);
+                    // Intent intent = new Intent(getApplicationContext(), Default_Screen.class);
+                    // intent.putExtra("message_key", text);
+                    // startActivity(intent);
 
                 } catch (Exception e) {
                     e.printStackTrace();
