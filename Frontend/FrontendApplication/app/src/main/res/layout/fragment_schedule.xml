@@ -18,7 +18,6 @@
             android:text="Back"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:onClick="lastDayAction"
             />
 
 
@@ -43,7 +42,6 @@
             android:text="->"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:onClick="nextDayAction"
         />
     </LinearLayout>
 
