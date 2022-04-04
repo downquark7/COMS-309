@@ -16,8 +16,6 @@ public class profile_screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_screen);
 
-//        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.profile_screen, R.layout.spinner_item);
-//        spinner.setAdapter(adapter);
 
 
     }
