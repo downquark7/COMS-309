@@ -11,6 +11,9 @@
         android:theme="@style/Theme.ClassDifficultyFrontend"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".updated_class_list"
+            android:exported="false" />
+        <activity
             android:name=".class_list_updated"
             android:exported="false" />
         <activity

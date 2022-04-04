@@ -3,6 +3,8 @@ package com.example.classdifficultyfrontend;
 import static com.example.classlist.ClassController.getByDepartment;
 import static com.example.classlist.ClassController.getAClass;
 
+import static classController.ClassController.getByDepartment;
+
 import androidx.appcompat.app.AppCompatActivity;
 //import classController.ClassController;
 //import departmentCodes.DepartmentCodes;
@@ -20,7 +22,7 @@ import java.util.List;
 
 import classController.ClassData;
 
-public class MainActivity extends AppCompatActivity {
+public class updated_class_list extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
