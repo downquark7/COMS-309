@@ -37,6 +37,17 @@
                 android:textColor="#FAF9F9"
                 android:textSize="25dp" />
 
+
+            <TextView
+                android:id="@+id/user_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:text="User Email:"
+                android:textColor="#FAF9F9"
+                android:textSize="25dp" />
+
             <EditText
                 android:id="@+id/Email"
                 android:layout_width="match_parent"
@@ -44,10 +55,19 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textEmailAddress"
-                android:text="Email:"
+                android:hint="Email"
+                android:textColorHint="#F6F6F6"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/user_Phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:text="Phone Number:"
                 android:textColor="#FAF9F9"
                 android:textSize="25dp" />
-
 
             <EditText
                 android:id="@+id/Phone"
@@ -56,9 +76,9 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="phone"
-                android:text="Phone Number:"
-                android:textColor="#FAF9F9"
-                android:textSize="23dp" />
+                android:hint="Phone Number"
+                android:textColorHint="#F6F6F6"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/classes"
