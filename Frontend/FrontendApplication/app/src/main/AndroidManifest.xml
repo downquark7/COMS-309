@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ClassDifficultyFrontend">
         <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.ClassDifficultyFrontend.NoActionBar" />
+        <activity
+            android:name=".ClassListActivity"
+            android:exported="false" />
+        <activity
             android:name=".ScheduleActivity"
             android:exported="false"
             android:label="@string/title_activity_schedule"
