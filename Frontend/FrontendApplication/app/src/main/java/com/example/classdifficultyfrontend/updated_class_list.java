@@ -1,7 +1,5 @@
 package com.example.classdifficultyfrontend;
 
-import static com.example.classlist.ClassController.getByDepartment;
-import static com.example.classlist.ClassController.getAClass;
 
 import static classController.ClassController.getByDepartment;
 
@@ -39,7 +37,6 @@ public class updated_class_list extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String t = choose.getSelectedItem().toString();
-                int i = 0;
 
                 List<ClassData> list = null;
                 try {
