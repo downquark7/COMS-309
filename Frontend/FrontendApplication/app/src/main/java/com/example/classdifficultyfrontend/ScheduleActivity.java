@@ -33,6 +33,7 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
         setContentView(R.layout.activity_schedule);
         initWidgets();
         //selectedTime = LocalTime.now();
+        setHourDayView();
     }
     private void initWidgets(){
         hourRecyclerView = findViewById(R.id.schedule_hourRecyclerView);
