@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // setContentView(R.layout.tabsorganizer);
+         //setContentView(R.layout.tabsorganizer);
 
         scheduleButton = (Button) findViewById(R.id.button_go_to_scheduler);
         scheduleButton.setOnClickListener(new View.OnClickListener() {
