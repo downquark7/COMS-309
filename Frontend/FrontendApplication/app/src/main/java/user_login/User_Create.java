@@ -1,4 +1,4 @@
-package com.example.login_usercreate;
+package user_login;
 
 import androidx.annotation.MainThread;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +21,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.classdifficultyfrontend.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,8 +41,6 @@ public class User_Create extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_create);
-
-
 
         TextResult = findViewById(R.id.textUser);
         Button button = findViewById(R.id.button);
@@ -98,9 +97,9 @@ public class User_Create extends AppCompatActivity {
                     TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
 
                     text = jsonObject.toString();
-                    Intent intent = new Intent(getApplicationContext(), Default_Screen.class);
-                    intent.putExtra("message_key", text);
-                    startActivity(intent);
+                  //  Intent intent = new Intent(getApplicationContext(), Default_Screen.class);
+                  //  intent.putExtra("message_key", text);
+                   // startActivity(intent);
 
                 } catch (Exception e) {
                     e.printStackTrace();
