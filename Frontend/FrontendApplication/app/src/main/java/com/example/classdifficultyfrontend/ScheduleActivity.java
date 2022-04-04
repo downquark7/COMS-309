@@ -38,14 +38,14 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
     }
     private void initWidgets(){
         hourRecyclerView = findViewById(R.id.schedule_hourRecyclerView);
-
+        //hourDayText = findViewById(R.id.)
     }
     private void setHourDayView(){
         ArrayList<String> hoursInDay = hoursInDayArray();
         ScheduleAdapter scheduleAdapter = new ScheduleAdapter(hoursInDay, this);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
         hourRecyclerView.setLayoutManager(layoutManager);
-        hourRecyclerView.setAdapter(scheduleAdapter); // TODO This line of code is causing the crashing
+        hourRecyclerView.setAdapter(scheduleAdapter);
     }
 
 
@@ -59,7 +59,7 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
     private ArrayList<String> hoursInDayArray(){
         ArrayList<String> hoursInDayArray = new ArrayList<>();
         for(int i = 0; i < 50; i++){
-            hoursInDayArray.add(""); // TODO Change this later
+            hoursInDayArray.add("a"); // TODO Change this later
         }
         return hoursInDayArray;
     }
