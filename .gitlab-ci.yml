@@ -21,8 +21,8 @@ stages:          # List of stages for jobs, and their order of execution
   - testSpringboot
   - buildSpringboot
   - deploySpringboot
-  - testAndroid
   - buildAndroid
+  - testAndroid
 
 springboot-build:       # This job runs in the build stage, which runs first.
   stage: buildSpringboot

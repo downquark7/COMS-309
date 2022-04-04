@@ -10,4 +10,265 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_login">LoginActivity</string>
+
+    <string-array name="Departments">
+        <item>ACCOUNTING</item>
+        <item>ACTUARIAL SCIENCE</item>
+        <item>ADVERTISING</item>
+        <item>AEROSPACE sENGINEERING</item>
+        <item>AFRICAN AND AFRICAN AMERICAN STUDIES</item>
+        <item>AGRICULTURAL AND BIOSYSTEMS ENGINEERING</item>
+        <item>AGRICULTURAL EDUCATION &amp; STUDIES</item>
+        <item>AGRONOMY</item>
+        <item>AIR FORCE AEROSPACE STUDIES</item>
+        <item>AMERICAN INDIAN STUDIES</item>
+        <item>AMERICAN SIGN LANGUAGE</item>
+        <item>ANIMAL ECOLOGY</item>
+        <item>ANIMAL SCIENCE</item>
+        <item>ANTHROPOLOGY</item>
+        <item>APPAREL, EVENTS, AND HOSPITALITY MANAGEM</item>
+        <item>APPAREL, MERCHANDISING, AND DESIGN</item>
+        <item>ARABIC</item>
+        <item>ARCHITECTURE</item>
+        <item>ART EDUCATION</item>
+        <item>ART HISTORY</item>
+        <item>ASTRONOMY &amp; ASTROPHYSICS</item>
+        <item>ATHLETIC TRAINING</item>
+        <item>ATHLETICS</item>
+        <item>BIOCHEM, BIOPHYSICS &amp; MOLECULAR BIO</item>
+        <item>BIOINFORMATICS &amp; COMPUTATIONAL BIOL-UG</item>
+        <item>BIOINFORMATICS AND COMPUTATIONAL BIOL</item>
+        <item>BIOLOGICAL/PRE-MEDICAL ILLUSTRATION</item>
+        <item>BIOLOGY</item>
+        <item>BIOMEDICAL ENGINEERING</item>
+        <item>BIOMEDICAL SCIENCES</item>
+        <item>BUSINESS ADMINISTRATION</item>
+        <item>CHEMICAL ENGINEERING</item>
+        <item>CHEMISTRY</item>
+        <item>CHINESE</item>
+        <item>CIVIL ENGINEERING</item>
+        <item>CLASSICAL STUDIES</item>
+        <item>COMMUNICATION DISORDERS</item>
+        <item>COMMUNICATION STUDIES</item>
+        <item>COMMUNITY &amp; REGIONAL PLANNING</item>
+        <item>COMMUNITY DEVELOPMENT</item>
+        <item>COMPUTER ENGINEERING</item>
+        <item>COMPUTER SCIENCE</item>
+        <item>CONSTRUCTION ENGINEERING</item>
+        <item>CRIMINAL JUSTICE</item>
+        <item>CYBER SECURITY</item>
+        <item>CYBER SECURITY ENGINEERING</item>
+        <item>CYBER-PHYSICAL SYSTEMS</item>
+        <item>DANCE</item>
+        <item>DATA SCIENCE</item>
+        <item>DESIGN</item>
+        <item>DESIGN STUDIES</item>
+        <item>DIETETICS</item>
+        <item>EARLY CHILDCARE EDUCATION AND PROGRAMMIN</item>
+        <item>ECOLOGY &amp; EVOLUTIONARY BIOLOGY</item>
+        <item>ECOLOGY, EVOLUTION &amp; ORGANISMAL BIOL</item>
+        <item>ECONOMICS</item>
+        <item>EDUCATION</item>
+        <item>EDUCATIONAL ADMINISTRATION</item>
+        <item>EDUCATIONAL LEADERSHIP &amp; POLICY ST</item>
+        <item>ELECTRICAL ENGINEERING</item>
+        <item>ENGINEERING</item>
+        <item>ENGINEERING MECHANICS</item>
+        <item>ENGLISH</item>
+        <item>ENTOMOLOGY</item>
+        <item>ENTREPRENEURSHIP</item>
+        <item>ENVIRONMENTAL ENGINEERING</item>
+        <item>ENVIRONMENTAL SCIENCE</item>
+        <item>ENVIRONMENTAL STUDIES</item>
+        <item>EVENT MANAGEMENT</item>
+        <item>FAMILY &amp; CONSUMER SCIENCES ED &amp; STUDIES</item>
+        <item>FAMILY FINANCIAL PLANNING</item>
+        <item>FINANCE</item>
+        <item>FOOD SCIENCE &amp; HUMAN NUTRITION</item>
+        <item>FRENCH</item>
+        <item>GENETICS</item>
+        <item>GENETICS - INTERDISCIPLINARY</item>
+        <item>GENETICS, DEVELOPMENT &amp; CELL BIOL</item>
+        <item>GEOLOGY</item>
+        <item>GERMAN</item>
+        <item>GERONTOLOGY</item>
+        <item>GLOBAL RESOURCE SYSTEMS</item>
+        <item>GRADUATE STUDIES</item>
+        <item>GRAPHIC DESIGN</item>
+        <item>HEALTH STUDIES</item>
+        <item>HEALTHCARE MANAGEMENT</item>
+        <item>HIGHER EDUCATION</item>
+        <item>HISTORY</item>
+        <item>HONORS</item>
+        <item>HORTICULTURE</item>
+        <item>HOSPITALITY MANAGEMENT</item>
+        <item>HUMAN COMPUTER INTERACTION</item>
+        <item>HUMAN DEVELOPMENT &amp; FAMILY STUDIES</item>
+        <item>HUMAN SCIENCES</item>
+        <item>IMMUNOBIOLOGY</item>
+        <item>INDUSTRIAL DESIGN</item>
+        <item>INDUSTRIAL ENGINEERING</item>
+        <item>INTEGRATED STUDIO ARTS</item>
+        <item>INTERDISCIPLINARY GRADUATE STUDIES</item>
+        <item>INTERIOR DESIGN</item>
+        <item>INTERNATIONAL STUDIES</item>
+        <item>JOURNALISM &amp; MASS COMMUNICATION</item>
+        <item>KINESIOLOGY</item>
+        <item>LANDSCAPE ARCHITECTURE</item>
+        <item>LATIN</item>
+        <item>LEADERSHIP STUDIES</item>
+        <item>LEARNING AND LEADERSHIP SCIENCES</item>
+        <item>LEARNING TEAM</item>
+        <item>LIBERAL ARTS &amp; SCIENCES</item>
+        <item>LIBRARY</item>
+        <item>LINGUISTICS</item>
+        <item>MANAGEMENT</item>
+        <item>MANAGEMENT INFORMATION SYSTEMS</item>
+        <item>MARKETING</item>
+        <item>MATERIALS ENGINEERING</item>
+        <item>MATERIALS SCIENCE &amp; ENGINEERING</item>
+        <item>MATHEMATICS</item>
+        <item>MECHANICAL ENGINEERING</item>
+        <item>METEOROLOGY</item>
+        <item>MICROBIOLOGY</item>
+        <item>MILITARY SCIENCE</item>
+        <item>MOLECULAR CELLULAR DEV BIOLOGY</item>
+        <item>MUSIC</item>
+        <item>NATURAL RESOURCE ECOLOGY AND MGMT</item>
+        <item>NAVAL SCIENCE</item>
+        <item>NEUROSCIENCE</item>
+        <item>NURSING</item>
+        <item>NUTRITIONAL SCIENCES</item>
+        <item>ORGANIZATION FOR TROPICAL STUDIES</item>
+        <item>PERFORMING ARTS</item>
+        <item>PHILOSOPHY</item>
+        <item>PHYSICS</item>
+        <item>PLANT BIOLOGY</item>
+        <item>PLANT PATHOLOGY</item>
+        <item>POLITICAL SCIENCE</item>
+        <item>PORTUGUESE</item>
+        <item>PSYCHOLOGY</item>
+        <item>PUBLIC RELATIONS</item>
+        <item>RELIGIOUS STUDIES</item>
+        <item>RESEARCH &amp; EVALUATION</item>
+        <item>RUSSIAN</item>
+        <item>SEED TECHNOLOGY AND BUSINESS</item>
+        <item>SOCIOLOGY</item>
+        <item>SOFTWARE ENGINEERING</item>
+        <item>SPANISH</item>
+        <item>SPECIAL EDUCATION</item>
+        <item>SPEECH COMMUNICATION</item>
+        <item>STATISTICS</item>
+        <item>SUPPLY CHAIN MANAGEMENT</item>
+        <item>SUSTAINABLE AGRICULTURE</item>
+        <item>SUSTAINABLE ENVIRONMENTS</item>
+        <item>TECHNOLOGY SYSTEMS MANAGEMENT</item>
+        <item>THEATRE</item>
+        <item>TOXICOLOGY</item>
+        <item>TRANSPORTATION</item>
+        <item>U.S. LATINO/A STUDIES</item>
+        <item>UNIVERSITY STUDIES</item>
+        <item>URBAN DESIGN</item>
+        <item>VET DIAGNOSTIC &amp; PRODUCTION AN MED</item>
+        <item>VETERINARY CLINICAL SCIENCES</item>
+        <item>VETERINARY MICROBIOLOGY &amp; PREV MED</item>
+        <item>VETERINARY PATHOLOGY</item>
+        <item>WIND ENERGY SCIENCE, ENGINEERING AND POL</item>
+        <item>WISE</item>
+        <item>WOMEN\'S AND GENDER STUDIES</item>
+        <item>WORLD FILM STUDIES</item>
+        <item>WORLD LANGUAGES AND CULTURES</item>
+        <item>YOUTH</item>
+    </string-array>
+    <string name="title_activity_profile_screen">profile_screen</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="action_settings">Settings</string>
 </resources>

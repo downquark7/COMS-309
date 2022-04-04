@@ -9,9 +9,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72949be-70e0-467a-b679-9238a6c1bce6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Login_User/app/src/main/java/com/example/login_usercreate/User_Create.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Login_User/app/src/main/java/com/example/login_usercreate/User_Create.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Login_User/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Login_User/gradle.properties" afterDir="false" />
+    <list default="true" id="9cd10e90-0049-4fc5-a484-9bfadc1754f6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/classdifficultyfrontend/updated_class_list.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/classdifficultyfrontend/updated_class_list.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -111,5 +110,16 @@
       <updated>1649017240831</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
