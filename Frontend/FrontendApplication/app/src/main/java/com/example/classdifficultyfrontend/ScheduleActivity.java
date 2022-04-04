@@ -1,5 +1,5 @@
 package com.example.classdifficultyfrontend;
-
+//import static classController.ClassController.ClassData;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,14 +52,20 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
                     hoursInDayArray.add("1:00");
                 else
                 hoursInDayArray.add(((((i+1)/8)+ 8)% 13)+":00");//TODO There is a bug here, it is showing 1:00 twice
-
             }
             else
-            hoursInDayArray.add("-"); // TODO Change this later
+            hoursInDayArray.add("-");
         }
         return hoursInDayArray;
     }
+    private ArrayList<String> classlist(String scheduleID){//TODO temporary, for sake of demo
+        ArrayList<String> classlist = new ArrayList<>();
+        String classes[][] = {{"L TM", "S112"}, {"MTEOR", "498"}, {"AER E", "192"}};
+        for(int i = 0; i < 3; i++){
 
+        }
+        return classlist;
+    }
 
 
 }
