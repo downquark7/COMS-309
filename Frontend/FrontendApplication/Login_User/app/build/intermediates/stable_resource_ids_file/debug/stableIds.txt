@@ -3835,6 +3835,10 @@ com.example.login_usercreate:color/m3_ref_palette_dynamic_neutral_variant20 = 0x
 com.example.login_usercreate:drawable/abc_list_selector_holo_light = 0x7f070036
 com.example.login_usercreate:attr/layout_goneMarginLeft = 0x7f03025d
 com.example.login_usercreate:id/accessibility_action_clickable_span = 0x7f080012
+<<<<<<< HEAD
+com.example.login_usercreate:id/Pass_input = 0x7f0801e3
+=======
+>>>>>>> 8f20eb78866827659c3fa9ce4f3d6a8760df8c5f
 com.example.login_usercreate:attr/onTouchUp = 0x7f0302ed
 com.example.login_usercreate:style/TextAppearance.Widget.AppCompat.Toolbar.Title = 0x7f1001d7
 com.example.login_usercreate:style/TextAppearance.Material3.TitleSmall = 0x7f1001c3

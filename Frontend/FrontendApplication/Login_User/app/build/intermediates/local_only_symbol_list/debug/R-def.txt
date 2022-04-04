@@ -11,6 +11,10 @@ drawable back
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 id Login
+<<<<<<< HEAD
+id Pass_input
+=======
+>>>>>>> 8f20eb78866827659c3fa9ce4f3d6a8760df8c5f
 id User_Create
 id Username_input
 id button

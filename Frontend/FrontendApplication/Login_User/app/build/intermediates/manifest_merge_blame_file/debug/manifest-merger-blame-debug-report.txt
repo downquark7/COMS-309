@@ -69,6 +69,27 @@
 40        </activity>
 41
 42        <provider
+<<<<<<< HEAD
+42-->[androidx.emoji2:emoji2:1.0.0] C:\Users\samgo\.gradle\caches\transforms-3\76c467336cfde2066e93b5d8011c588c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+43            android:name="androidx.startup.InitializationProvider"
+43-->[androidx.emoji2:emoji2:1.0.0] C:\Users\samgo\.gradle\caches\transforms-3\76c467336cfde2066e93b5d8011c588c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+44            android:authorities="com.example.login_usercreate.androidx-startup"
+44-->[androidx.emoji2:emoji2:1.0.0] C:\Users\samgo\.gradle\caches\transforms-3\76c467336cfde2066e93b5d8011c588c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+45            android:exported="false" >
+45-->[androidx.emoji2:emoji2:1.0.0] C:\Users\samgo\.gradle\caches\transforms-3\76c467336cfde2066e93b5d8011c588c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+46            <meta-data
+46-->[androidx.emoji2:emoji2:1.0.0] C:\Users\samgo\.gradle\caches\transforms-3\76c467336cfde2066e93b5d8011c588c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+47                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+47-->[androidx.emoji2:emoji2:1.0.0] C:\Users\samgo\.gradle\caches\transforms-3\76c467336cfde2066e93b5d8011c588c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+48                android:value="androidx.startup" />
+48-->[androidx.emoji2:emoji2:1.0.0] C:\Users\samgo\.gradle\caches\transforms-3\76c467336cfde2066e93b5d8011c588c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+49            <meta-data
+49-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\samgo\.gradle\caches\transforms-3\86073857aad360c8a4bae9b934e55cac\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+50                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+50-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\samgo\.gradle\caches\transforms-3\86073857aad360c8a4bae9b934e55cac\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+51                android:value="androidx.startup" />
+51-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\samgo\.gradle\caches\transforms-3\86073857aad360c8a4bae9b934e55cac\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+=======
 42-->[androidx.emoji2:emoji2:1.0.0] C:\Users\samgo\.gradle\caches\transforms-3\8c082c95bd529051ea549ace80b5e003\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
 43            android:name="androidx.startup.InitializationProvider"
 43-->[androidx.emoji2:emoji2:1.0.0] C:\Users\samgo\.gradle\caches\transforms-3\8c082c95bd529051ea549ace80b5e003\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
@@ -88,6 +109,7 @@
 50-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\samgo\.gradle\caches\transforms-3\1417e026bf9408eea127bab3316820d3\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
 51                android:value="androidx.startup" />
 51-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\samgo\.gradle\caches\transforms-3\1417e026bf9408eea127bab3316820d3\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+>>>>>>> 8f20eb78866827659c3fa9ce4f3d6a8760df8c5f
 52        </provider>
 53    </application>
 54

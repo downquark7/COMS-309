@@ -1,25 +1,42 @@
 [
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
+=======
         "merged": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+>>>>>>> 8f20eb78866827659c3fa9ce4f3d6a8760df8c5f
     },
     {
         "merged": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
+=======
         "merged": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
+>>>>>>> 8f20eb78866827659c3fa9ce4f3d6a8760df8c5f
     },
     {
         "merged": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_default_screen.xml.flat",
         "source": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\src\\main\\res\\layout\\activity_default_screen.xml"
     },
     {
+<<<<<<< HEAD
+=======
         "merged": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
+>>>>>>> 8f20eb78866827659c3fa9ce4f3d6a8760df8c5f
         "merged": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\samgo\\OneDrive\\Desktop\\COMS 309\\1_hb_4\\Frontend\\FrontendApplication\\Login_User\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
     },

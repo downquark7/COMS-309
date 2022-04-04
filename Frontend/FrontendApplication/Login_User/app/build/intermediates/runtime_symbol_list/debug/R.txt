@@ -2514,6 +2514,10 @@ int id FUNCTION 0x7f080004
 int id Login 0x7f080005
 int id META 0x7f080006
 int id NO_DEBUG 0x7f080007
+<<<<<<< HEAD
+int id Pass_input 0x7f0801e3
+=======
+>>>>>>> 8f20eb78866827659c3fa9ce4f3d6a8760df8c5f
 int id SHIFT 0x7f080008
 int id SHOW_ALL 0x7f080009
 int id SHOW_PATH 0x7f08000a
