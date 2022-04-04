@@ -2515,7 +2515,10 @@ id FUNCTION
 id Login
 id META
 id NO_DEBUG
+<<<<<<< HEAD
 id Pass_input
+=======
+>>>>>>> 8f20eb78866827659c3fa9ce4f3d6a8760df8c5f
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH

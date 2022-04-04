@@ -5,14 +5,21 @@
       <config />
     </shared>
   </component>
+<<<<<<< HEAD
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+=======
+>>>>>>> 8f20eb78866827659c3fa9ce4f3d6a8760df8c5f
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="2d8c326e-3a29-4820-ae3e-6a03a5f0836a" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="6090185d-96ec-4681-9490-844f63b6e7c6" name="Default Changelist" comment="" />
+>>>>>>> 8f20eb78866827659c3fa9ce4f3d6a8760df8c5f
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,24 +60,47 @@
     </system>
   </component>
   <component name="Git.Settings">
+<<<<<<< HEAD
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectId" id="27Ir3eeOV5dHMCJPz8vaPSi0ccC" />
+=======
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../../.." value="20-user-login" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2600bSRONzkBVUHceucZe2QIzcu" />
+>>>>>>> 8f20eb78866827659c3fa9ce4f3d6a8760df8c5f
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
+=======
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+>>>>>>> 8f20eb78866827659c3fa9ce4f3d6a8760df8c5f
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\samgo\OneDrive\Desktop\COMS 309\1_hb_4\Frontend\FrontendApplication\Login_User\app\src\main\java\com\example\login_usercreate" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.1063465039">
+      <recent name="com.example.login_usercreate" />
+>>>>>>> 8f20eb78866827659c3fa9ce4f3d6a8760df8c5f
     </key>
   </component>
   <component name="RunManager">
@@ -137,6 +167,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="2d8c326e-3a29-4820-ae3e-6a03a5f0836a" name="Default Changelist" comment="" />
       <created>1649018243392</created>
       <option name="number" value="Default" />
@@ -145,4 +176,25 @@
     </task>
     <servers />
   </component>
+=======
+      <changelist id="6090185d-96ec-4681-9490-844f63b6e7c6" name="Default Changelist" comment="" />
+      <created>1646545268360</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646545268360</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+>>>>>>> 8f20eb78866827659c3fa9ce4f3d6a8760df8c5f
 </project>
