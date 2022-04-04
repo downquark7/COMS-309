@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -47,18 +48,22 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
         hourRecyclerView.setAdapter(scheduleAdapter); // TODO This line of code is causing the crashing
     }
 
-    @Override
-    public void onItemClick(int position, String dayText) {
 
+    @Override
+    public void onItemClick(int position, String hourText) {
+        if(!hourText.equals("")){
+            String message = "Selected Time " + hourText + " ";
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        }
     }
     private ArrayList<String> hoursInDayArray(){
         ArrayList<String> hoursInDayArray = new ArrayList<>();
-        for(int i = 7; i < 12; i++){
-            hoursInDayArray.add(String.valueOf(i)); // TODO Change this later
+        for(int i = 0; i < 50; i++){
+            hoursInDayArray.add(""); // TODO Change this later
         }
         return hoursInDayArray;
     }
-    // private ArrayList<String>
+
 
 
 }

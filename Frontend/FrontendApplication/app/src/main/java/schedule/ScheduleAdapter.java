@@ -16,7 +16,6 @@ public class ScheduleAdapter extends RecyclerView.Adapter< ScheduleViewHolder> {
 
     public ScheduleAdapter(ArrayList<String> hoursOfDay, OnItemListener onItemListener) {
         this.hoursOfDay = hoursOfDay;
-
         this.onItemListener = onItemListener;
     }
 
