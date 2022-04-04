@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, Login.class));
+                startActivity(new Intent(MainActivity.this, updated_class_list.class));
             }
         });
         classListButton = (Button) findViewById(R.id.button_go_to_classlist);
