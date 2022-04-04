@@ -41,8 +41,6 @@ public class User_Create extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_create);
 
-
-
         TextResult = findViewById(R.id.textUser);
         Button button = findViewById(R.id.button);
         user = findViewById(R.id.Username_input);
@@ -74,7 +72,6 @@ public class User_Create extends AppCompatActivity {
         String Userpass = pass.getText().toString().trim();
 
 
-
         JSONObject jsonBody = new JSONObject();
         try {
             jsonBody.put("username", Userstr);
@@ -98,9 +95,9 @@ public class User_Create extends AppCompatActivity {
                     TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
 
                     text = jsonObject.toString();
-                    Intent intent = new Intent(getApplicationContext(), Default_Screen.class);
-                    intent.putExtra("message_key", text);
-                    startActivity(intent);
+//                    Intent intent = new Intent(getApplicationContext(), Default_Screen.class);
+//                    intent.putExtra("message_key", text);
+//                    startActivity(intent);
 
                 } catch (Exception e) {
                     e.printStackTrace();
