@@ -22,6 +22,7 @@ import org.json.JSONObject;
 
 public class Login extends AppCompatActivity {
 
+    private static final android.R.attr R = ;
     private TextView TextResult;
     private RequestQueue queue;
     private String text;
