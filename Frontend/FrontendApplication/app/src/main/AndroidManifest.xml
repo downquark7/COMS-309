@@ -22,9 +22,6 @@
             android:name=".updated_class_list"
             android:exported="false" />
         <activity
-            android:name=".class_list_updated"
-            android:exported="false" />
-        <activity
             android:name=".User_Create"
             android:exported="false" />
         <activity
