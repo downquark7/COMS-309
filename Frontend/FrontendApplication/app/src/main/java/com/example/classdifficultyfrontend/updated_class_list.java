@@ -28,7 +28,7 @@ public class updated_class_list extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_updated_class_list);
 
         TextView text = (TextView) findViewById(R.id.textView);
         Spinner choose = (Spinner) findViewById(R.id.spinner);

@@ -1,6 +1,5 @@
 package com.example.classdifficultyfrontend;
 
-import androidx.annotation.MainThread;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;

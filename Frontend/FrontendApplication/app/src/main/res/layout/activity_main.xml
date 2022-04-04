@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -37,13 +37,60 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is a temporary screen to \nnavigate between pages "
+        android:text="This is a temporary screen to \navigate between pages "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
        />
 
+=======
+        app:layout_constraintVertical_bias="0.059"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/button_go_to_scheduler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scheduler"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="90dp"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <Button
+        android:id="@+id/button_go_to_classlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Class list"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="90dp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/button_go_to_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login Screen"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="157dp"
+        android:layout_marginTop="140dp"
+        android:layout_centerHorizontal="true"/>
+>>>>>>> origin/main
+
+    <Button
+        android:id="@+id/button_go_to_user_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Create"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="157dp"
+        android:layout_marginTop="180dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

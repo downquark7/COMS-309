@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User_Create">
+    tools:context=".User_Create"
+    android:background="@drawable/back">
 
     <TextView
         android:id="@+id/textUser"
@@ -26,6 +27,7 @@
         android:ems="10"
         android:layout_centerHorizontal="true"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:gravity="center_horizontal"
         android:inputType="textPersonName"
         />
@@ -50,6 +52,7 @@
         android:gravity="center_horizontal"
         android:hint="Password"
         android:inputType="textPassword"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:layout_centerHorizontal="true"
         android:textSize="20sp" />
