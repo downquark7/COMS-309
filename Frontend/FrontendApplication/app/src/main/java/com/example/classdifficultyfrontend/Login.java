@@ -18,6 +18,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Login extends AppCompatActivity {
@@ -28,7 +29,6 @@ public class Login extends AppCompatActivity {
 
     private EditText user;
     private EditText pass;
-
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,20 +52,68 @@ public class Login extends AppCompatActivity {
                 String Userpass = pass.getText().toString().trim();
 
                 if (!Userstr.isEmpty() || !Userpass.isEmpty()) {
-                    login(Userstr, Userpass);
+                    login();
                 }
             }
         });
     }
 
-    private void login(String User_passed, String Pass_passed) {
+    private void login() {
         RequestQueue queue = Volley.newRequestQueue(this);
 
-        String url = "http://coms-309-032.class.las.iastate.edu:8080/user/create";
+        String url = "http://coms-309-032.class.las.iastate.edu:8080/user/login";
 
         String Userstr = user.getText().toString().trim();
         String Userpass = pass.getText().toString().trim();
 
+        JSONObject jsonBody = new JSONObject();
+        try {
+            jsonBody.put("username", Userstr);
+            jsonBody.put("authenticationMethod", Userpass);
+            jsonBody.put("authenticationData", Userpass);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        final String requestBody = jsonBody.toString();
+        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    TextResult.setText(response);
+                    JSONObject jsonObject = new JSONObject(response);
+
+                    TextResult.setText("Username: " + jsonObject.getString("username"));
+                    TextResult.append("\n");
+                    TextResult.append("Authentication Method: " + jsonObject.getString("authenticationMethod"));
+                    TextResult.append("\n");
+                    TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
+
+                    text = jsonObject.toString();
+                   // Intent intent = new Intent(getApplicationContext(), Default_Screen.class);
+                   // intent.putExtra("message_key", text);
+                   // startActivity(intent);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                TextResult.setText(error.toString());
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
+
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                return requestBody.getBytes();
+            }
+        };
+        queue.add(request);
 
     }
 }
