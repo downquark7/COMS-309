@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabsLayout;
     private ViewPager2 pager;
     private TabsAdapter adapter;
-    private Button scheduleButton, loginButton, classListButton;
+    private Button scheduleButton, loginButton, classListButton, usercreate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,14 @@ public class MainActivity extends AppCompatActivity {
         classListButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, ClassListActivity.class));
+                startActivity(new Intent(MainActivity.this, updated_class_list.class));
+            }
+        });
+        usercreate = (Button) findViewById(R.id.button_go_to_user_create);
+        usercreate.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, User_Create.class));
             }
         });
 

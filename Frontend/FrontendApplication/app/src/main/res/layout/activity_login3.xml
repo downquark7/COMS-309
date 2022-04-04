@@ -27,6 +27,7 @@
         android:ems="10"
         android:layout_centerHorizontal="true"
         android:textColorHint="@color/white"
+        android:textColor="@android:color/white"
         android:gravity="center_horizontal"
         android:inputType="textPersonName"
         />
@@ -38,7 +39,7 @@
         android:layout_marginTop="370dp"
         android:textStyle="bold"
         android:text="Enter Password here:"
-        android:textColor="@android:color/white"
+        android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         android:textSize="20sp" />
 
@@ -52,6 +53,7 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         android:textSize="20sp" />
 
