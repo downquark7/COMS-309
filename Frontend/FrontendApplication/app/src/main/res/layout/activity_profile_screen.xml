@@ -16,4 +16,70 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         app:srcCompat="@drawable/isu" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="200dp"
+                android:text="User: sgrettig"
+                android:textColor="#FAF9F9"
+                android:textSize="25dp" />
+
+            <EditText
+                android:id="@+id/Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textEmailAddress"
+                android:text="Email:"
+                android:textColor="#FAF9F9"
+                android:textSize="25dp" />
+
+
+            <EditText
+                android:id="@+id/Phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="phone"
+                android:text="Phone Number:"
+                android:textColor="#FAF9F9"
+                android:textSize="23dp" />
+
+            <TextView
+                android:id="@+id/classes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:text="Class List:"
+                android:textColor="#FAF9F9"
+                android:textSize="25dp" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/Classes"
+                android:textAlignment="center"
+                android:textColor="#FF0000"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
+
+
 </RelativeLayout>

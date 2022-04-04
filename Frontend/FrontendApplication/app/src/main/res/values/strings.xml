@@ -180,6 +180,14 @@
         <item>WORLD LANGUAGES AND CULTURES</item>
         <item>YOUTH</item>
     </string-array>
+
+    <string-array name="Classes">
+        <item>COMS 309</item>
+        <item>COMS 319</item>
+        <item>COMS 327 </item>
+        <item>INTST 235</item>
+    </string-array>
+
     <string name="title_activity_profile_screen">profile_screen</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
