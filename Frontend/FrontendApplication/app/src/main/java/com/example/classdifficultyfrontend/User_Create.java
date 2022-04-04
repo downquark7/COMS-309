@@ -55,14 +55,14 @@ public class User_Create extends AppCompatActivity {
                 String Userpass = pass.getText().toString().trim();
 
                 if(!Userstr.isEmpty() || !Userpass.isEmpty()){
-                    postRequest(Userstr, Userpass);
+                    postRequest();
                 }
             }
         });
     }
 
 
-    private void postRequest(String User_passed, String Pass_passed) {
+    private void postRequest() {
         RequestQueue queue = Volley.newRequestQueue(this);
 
         String url = "http://coms-309-032.class.las.iastate.edu:8080/user/create";
