@@ -3,10 +3,7 @@ package backend.users;
 import backend.schedules.Schedule;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +16,10 @@ public class User
     private String username;
     private String authenticationMethod;
     private String authenticationData;
+
+    @OneToOne
+    @JsonIgnore
+    private UserContact userContact;
 
     @OneToMany
     private List<Schedule> schedules;
@@ -81,5 +82,15 @@ public class User
     public void addSchedule(Schedule schedule)
     {
         schedules.add(schedule);
+    }
+
+    public UserContact getUserContact()
+    {
+        return userContact;
+    }
+
+    public void setUserContact(UserContact userContact)
+    {
+        this.userContact = userContact;
     }
 }
