@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import userController.User;
 import userController.Schedule;
@@ -26,6 +27,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class profile_screen extends AppCompatActivity {
+   private EditText email;
+   private EditText phone;
+   private TextView TextResult;
+   private RequestQueue queue;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +39,8 @@ public class profile_screen extends AppCompatActivity {
         setContentView(R.layout.activity_profile_screen);
         Button button = findViewById(R.id.button);
         Spinner spin = findViewById(R.id.spinner);
+        TextResult = findViewById(R.id.textUser);
 
-        EditText email;
-        EditText phone;
 
         email = findViewById(R.id.Email);
         phone = findViewById(R.id.Phone);
@@ -44,7 +49,7 @@ public class profile_screen extends AppCompatActivity {
 
 
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,
-                R.array.Classes, R.layout.spinner_xml_layout);
+        R.array.Classes, R.layout.spinner_xml_layout);
 
         adapter.setDropDownViewResource(R.layout.spinner_xml_layout);
         spin.setAdapter(adapter);
@@ -64,13 +69,12 @@ public class profile_screen extends AppCompatActivity {
         String url = "http://coms-309-032.class.las.iastate.edu:8080/user";
 
         String UserEmail = email.getText().toString().trim();
-        String UserPhone = pass.getText().toString().trim();
+        String UserPhone = phone.getText().toString().trim();
 
         JSONObject jsonBody = new JSONObject();
         try {
-            jsonBody.put("username", Userstr);
-            jsonBody.put("authenticationMethod", Userpass);
-            jsonBody.put("authenticationData", Userpass);
+            jsonBody.put("Email", email);
+            jsonBody.put("Phone Number", phone);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -82,9 +86,9 @@ public class profile_screen extends AppCompatActivity {
                     TextResult.setText(response);
                     JSONObject jsonObject = new JSONObject(response);
 
-                    TextResult.setText("Username: " + jsonObject.getString("username"));
+                    TextResult.setText("Email: " + jsonObject.getString("Email"));
                     TextResult.append("\n");
-                    TextResult.append("Authentication Method: " + jsonObject.getString("authenticationMethod"));
+                    TextResult.append("Phone number: " + jsonObject.getString("Phone Number"));
 
                 } catch (Exception e) {
                     e.printStackTrace();
