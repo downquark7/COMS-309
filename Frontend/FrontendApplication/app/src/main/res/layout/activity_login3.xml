@@ -61,10 +61,20 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="480dp"
         android:backgroundTint="@android:color/white"
         android:textColor="@android:color/holo_red_light"
         android:layout_centerHorizontal="true"
         android:text="login" />
+
+    <Button
+        android:id="@+id/User_create_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="540dp"
+        android:backgroundTint="@android:color/white"
+        android:textColor="@android:color/holo_red_light"
+        android:layout_centerHorizontal="true"
+        android:text="Create User" />
 
 </RelativeLayout>

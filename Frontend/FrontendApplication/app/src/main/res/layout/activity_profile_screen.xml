@@ -80,6 +80,16 @@
                 android:textColorHint="#F6F6F6"
                 android:textSize="20dp" />
 
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="110dp"
+                android:backgroundTint="@android:color/white"
+                android:text="Update Information"
+                android:textColor="@android:color/holo_red_light" />
+
             <TextView
                 android:id="@+id/classes"
                 android:layout_width="match_parent"

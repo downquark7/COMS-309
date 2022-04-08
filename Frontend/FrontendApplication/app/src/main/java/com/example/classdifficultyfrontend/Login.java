@@ -38,6 +38,7 @@ public class Login extends AppCompatActivity {
 
         TextResult = findViewById(R.id.textUser);
         Button button = findViewById(R.id.button);
+        Button button2 = findViewById(R.id.User_create_button);
         user = findViewById(R.id.Username_input);
         pass = findViewById(R.id.Pass_input);
 
@@ -54,6 +55,13 @@ public class Login extends AppCompatActivity {
                 if (!Userstr.isEmpty() || !Userpass.isEmpty()) {
                     login();
                 }
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Login.this, User_Create.class));
             }
         });
     }
