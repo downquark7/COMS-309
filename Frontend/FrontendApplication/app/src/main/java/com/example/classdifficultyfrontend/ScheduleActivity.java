@@ -58,9 +58,9 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
         }
         return hoursInDayArray;
     }
-    private ArrayList<String> classlist(String scheduleID){//TODO temporary, for sake of demo
+    private ArrayList<String> classlist(String scheduleID){//TODO temporary, for sake of testing
         ArrayList<String> classlist = new ArrayList<>();
-        String classes[][] = {{"L TM", "S112"}, {"MTEOR", "498"}, {"AER E", "192"}};
+        String classes[][] = {{"LEARNING TEAM", "S112"}, {"METEOROLOGY", "498"}, {"AEROSPACE ENGINEERING", "192"}};
         for(int i = 0; i < 3; i++){
 
         }
