@@ -13,6 +13,9 @@ public class UserController
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    UserContactRepository userContactRepository;
+
     @PostMapping("/user/create")
     public User createUser(@RequestBody User user) throws Exception
     {
@@ -78,5 +81,15 @@ public class UserController
     @GetMapping("/getUserById/{user}")
     public User getUserById(@PathVariable int user) {
         return userRepository.getById(user);
+    }
+
+    @GetMapping("/getUserContact/{user}")
+    public UserContact getUserContactByName(@PathVariable String user) {
+        return userContactRepository.findByUsername(user);
+    }
+
+    @GetMapping("/getUserContactById/{user}")
+    public UserContact getUserContactById(@PathVariable int user) {
+        return userContactRepository.getById(user);
     }
 }
