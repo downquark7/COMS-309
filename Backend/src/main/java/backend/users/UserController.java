@@ -85,7 +85,7 @@ public class UserController
 
     @GetMapping("/getUserContact/{user}")
     public UserContact getUserContactByName(@PathVariable String user) {
-        return userContactRepository.findByUsername(user);
+        return userRepository.findByUsername(user).getUserContact();
     }
 
     @GetMapping("/getUserContactById/{user}")
