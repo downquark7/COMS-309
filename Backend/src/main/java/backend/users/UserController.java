@@ -29,8 +29,24 @@ public class UserController
     @PutMapping("/user/manage")
     public User manageUser(@RequestBody User user)
     {
+        if (user.getId() < 1)
+            user.setId(userRepository.findByUsername("dq").getId());
+
         if (user.getSchedules().isEmpty())
-            user.setSchedules(userRepository.getById(user.getId()).getSchedules());
+            user.setSchedules(userRepository.findByUsername(user.getUsername()).getSchedules());
+
+        if (user.getAuthenticationData() == null)
+            user.setAuthenticationData(userRepository.findByUsername(user.getUsername()).getAuthenticationData());
+
+        if (user.getAuthenticationMethod() == null)
+            user.setAuthenticationMethod(userRepository.findByUsername(user.getUsername()).getAuthenticationData());
+
+        if (user.getUserContact() != null)
+        {
+            userContactRepository.save(user.getUserContact());
+            user.setUserContact(user.getUserContact());
+        }
+
         userRepository.save(user);
         return user;
     }
@@ -74,22 +90,26 @@ public class UserController
     }
 
     @GetMapping("/getUser/{user}")
-    public User getUserByName(@PathVariable String user) {
+    public User getUserByName(@PathVariable String user)
+    {
         return userRepository.findByUsername(user);
     }
 
     @GetMapping("/getUserById/{user}")
-    public User getUserById(@PathVariable int user) {
+    public User getUserById(@PathVariable int user)
+    {
         return userRepository.getById(user);
     }
 
     @GetMapping("/getUserContact/{user}")
-    public UserContact getUserContactByName(@PathVariable String user) {
+    public UserContact getUserContactByName(@PathVariable String user)
+    {
         return userRepository.findByUsername(user).getUserContact();
     }
 
     @GetMapping("/getUserContactById/{user}")
-    public UserContact getUserContactById(@PathVariable int user) {
+    public UserContact getUserContactById(@PathVariable int user)
+    {
         return userRepository.getById(user).getUserContact();
     }
 }
