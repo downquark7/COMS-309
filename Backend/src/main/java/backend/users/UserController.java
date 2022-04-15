@@ -90,6 +90,6 @@ public class UserController
 
     @GetMapping("/getUserContactById/{user}")
     public UserContact getUserContactById(@PathVariable int user) {
-        return userContactRepository.getById(user);
+        return userRepository.getById(user).getUserContact();
     }
 }

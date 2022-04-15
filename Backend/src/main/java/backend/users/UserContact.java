@@ -11,6 +11,7 @@ import javax.persistence.OneToOne;
 public class UserContact
 {
     @Id
+    @GeneratedValue
     private int id;
 
     @JsonIgnore
