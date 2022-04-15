@@ -18,7 +18,6 @@ public class User
     private String authenticationData;
 
     @OneToOne
-    @JsonIgnore
     private UserContact userContact;
 
     @OneToMany

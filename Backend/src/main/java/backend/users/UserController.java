@@ -27,7 +27,7 @@ public class UserController
     }
 
     @PutMapping("/user/manage")
-    public Object manageUser(@RequestBody User user)
+    public User manageUser(@RequestBody User user)
     {
         if (user.getSchedules().isEmpty())
             user.setSchedules(userRepository.getById(user.getId()).getSchedules());
