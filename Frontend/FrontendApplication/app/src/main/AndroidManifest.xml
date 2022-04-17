@@ -36,7 +36,7 @@
             android:name=".ClassListActivity"
             android:exported="false" />
         <activity
-            android:name=".ScheduleActivity"
+            android:name="schedule.ScheduleActivity"
             android:exported="false"
             android:label="@string/title_activity_schedule"
             android:theme="@style/Theme.ClassDifficultyFrontend.NoActionBar" />

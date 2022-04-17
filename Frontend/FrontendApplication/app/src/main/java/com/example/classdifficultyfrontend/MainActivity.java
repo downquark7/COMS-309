@@ -1,7 +1,6 @@
 package com.example.classdifficultyfrontend;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 
 //import androidx.appcompat.app.AppCompatActivity;
@@ -11,10 +10,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
+
+import schedule.ScheduleActivity;
 
 public class MainActivity extends AppCompatActivity {
 
