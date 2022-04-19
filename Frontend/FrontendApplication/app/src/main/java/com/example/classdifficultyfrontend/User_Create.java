@@ -25,7 +25,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
+/**
+ *  Main code for the class. allows for teh ability to click on a button, create user, as well as
+ *  get the user input in in the according box.
+ */
 public class User_Create extends AppCompatActivity {
     private TextView TextResult;
     private RequestQueue queue;
@@ -61,7 +64,9 @@ public class User_Create extends AppCompatActivity {
         });
     }
 
-
+    /**
+     * Post request that uses Volley to send data to back end
+     */
     private void postRequest() {
         RequestQueue queue = Volley.newRequestQueue(this);
 
@@ -81,6 +86,11 @@ public class User_Create extends AppCompatActivity {
         }
         final String requestBody = jsonBody.toString();
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            /**
+             * On response, get the string passed, and append it to a TextResult. This allows for on-screen showing ,as well as data transfer.
+             * outputs to server via textfield object and queue object
+             * @param response is the string response
+             */
             @Override
             public void onResponse(String response) {
                 try {
@@ -108,6 +118,10 @@ public class User_Create extends AppCompatActivity {
                 TextResult.setText(error.toString());
             }
         }) {
+            /**
+             * make sure correct object is sent
+             * @return json object
+             */
             @Override
             public String getBodyContentType() {
                 return "application/json; charset=utf-8";

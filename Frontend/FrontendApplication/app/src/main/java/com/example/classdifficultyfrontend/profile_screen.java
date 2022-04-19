@@ -26,13 +26,19 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * Main class
+ */
 public class profile_screen extends AppCompatActivity {
    private EditText email;
    private EditText phone;
    private TextView TextResult;
    private RequestQueue queue;
 
-
+    /**
+     * create objects specified in the XML, and on click of button, try to send data to database
+     * @param savedInstanceState on click basically
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +68,9 @@ public class profile_screen extends AppCompatActivity {
         });
     }
 
+    /**
+     * Send data to the server via the url (email and phone number)
+     */
     private void sendData() {
 
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -80,6 +89,11 @@ public class profile_screen extends AppCompatActivity {
         }
         final String requestBody = jsonBody.toString();
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            /**
+             * append number and email to textview object to send to database
+             * adds to a queue (using the request object) to send ot database.
+             * @param response string response
+             */
             @Override
             public void onResponse(String response) {
                 try {
@@ -100,6 +114,10 @@ public class profile_screen extends AppCompatActivity {
                 TextResult.setText(error.toString());
             }
         }) {
+            /**
+             * make sure correct object is sent
+             * @return json object
+             */
             @Override
             public String getBodyContentType() {
                 return "application/json; charset=utf-8";

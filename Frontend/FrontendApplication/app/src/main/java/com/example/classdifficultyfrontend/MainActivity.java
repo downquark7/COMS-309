@@ -31,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
         scheduleButton = (Button) findViewById(R.id.button_go_to_scheduler);
         scheduleButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * go to Schedule Activity
+             * Output is going to new screen
+             * @param v view object
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ScheduleActivity.class));
@@ -38,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
         });
         loginButton = (Button) findViewById(R.id.button_go_to_login);
         loginButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * go to Login Activity
+             * Output is going to new screen
+             * @param v view object
+             */
             @Override
             public void onClick(View v){
                 startActivity(new Intent(MainActivity.this, Login.class));
@@ -45,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
         });
         classListButton = (Button) findViewById(R.id.button_go_to_classlist);
         classListButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * go to Class List activity
+             * Output is going to new screen
+             * @param v view object
+             */
             @Override
             public void onClick(View v){
                 startActivity(new Intent(MainActivity.this, updated_class_list.class));
@@ -54,11 +69,21 @@ public class MainActivity extends AppCompatActivity {
         usercreate.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                /**
+                 * go to User Create class
+                 * Output is going to new screen
+                 * @param v view object
+                 */
                 startActivity(new Intent(MainActivity.this, User_Create.class));
             }
         });
         profile = (Button) findViewById(R.id.button_go_to_profile);
         profile.setOnClickListener(new View.OnClickListener(){
+            /**
+             * go to profile screen
+             * Output is going to new screen
+             * @param v view object
+             */
             @Override
             public void onClick(View v){
                 startActivity(new Intent(MainActivity.this, profile_screen.class));
@@ -66,6 +91,11 @@ public class MainActivity extends AppCompatActivity {
         });
         homePageButton = (Button) findViewById(R.id.button_go_to_home_page);
         homePageButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * go to Home Page activity
+             * Output is going to new screen
+             * @param v view object
+             */
             @Override
             public void onClick(View v){
                 startActivity(new Intent(MainActivity.this, HomePageActivity.class));

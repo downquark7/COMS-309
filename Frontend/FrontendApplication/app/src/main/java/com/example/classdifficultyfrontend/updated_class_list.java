@@ -20,6 +20,9 @@ import java.util.List;
 
 import classController.ClassData;
 
+/**
+ * Main class for class list
+ */
 public class updated_class_list extends AppCompatActivity {
 
     @Override
@@ -34,6 +37,14 @@ public class updated_class_list extends AppCompatActivity {
         Spinner choose = (Spinner) findViewById(R.id.spinner);
 
         choose.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /**
+             * Thus method allows for the users to click on the department, then choose one, and display the data.
+             * Recieves class list object (by department)
+             * @param parent parent object
+             * @param view view object
+             * @param position  position
+             * @param id id for class
+             */
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String t = choose.getSelectedItem().toString();
