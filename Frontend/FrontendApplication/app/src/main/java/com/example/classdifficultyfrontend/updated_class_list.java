@@ -39,7 +39,7 @@ public class updated_class_list extends AppCompatActivity {
         choose.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             /**
              * Thus method allows for the users to click on the department, then choose one, and display the data.
-             * Recieves class list object (by department)
+             * Receives class list object (by department). Outputs as text to screen
              * @param parent parent object
              * @param view view object
              * @param position  position
