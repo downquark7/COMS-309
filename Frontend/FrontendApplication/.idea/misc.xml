@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mabro/OneDrive/Desktop/Com S 309/2_hb_4/Frontend/FrontendApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.135" />
+        <entry key="..\:/Users/mabro/OneDrive/Desktop/Com S 309/2_hb_4/Frontend/FrontendApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.135" />
+        <entry key="..\:/Users/mabro/OneDrive/Desktop/Com S 309/2_hb_4/Frontend/FrontendApplication/app/src/main/res/layout/activity_home_page.xml" value="0.3046875" />
         <entry key="..\:/Users/mabro/OneDrive/Desktop/Com S 309/2_hb_4/Frontend/FrontendApplication/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/mabro/OneDrive/Desktop/Com S 309/2_hb_4/Frontend/FrontendApplication/app/src/main/res/layout/activity_profile_screen.xml" value="0.15579710144927536" />
         <entry key="..\:/Users/mabro/OneDrive/Desktop/Com S 309/2_hb_4/Frontend/FrontendApplication/app/src/main/res/layout/activity_schedule.xml" value="0.1" />
         <entry key="..\:/Users/mabro/OneDrive/Desktop/Com S 309/2_hb_4/Frontend/FrontendApplication/app/src/main/res/layout/activity_updated_class_list.xml" value="0.1852355072463768" />
         <entry key="..\:/Users/mabro/OneDrive/Desktop/Com S 309/2_hb_4/Frontend/FrontendApplication/app/src/main/res/layout/content_schedule.xml" value="0.161231884057971" />
@@ -29,6 +33,13 @@
         <entry key="..\:/Users/samgo/OneDrive/Desktop/COMS 309/1_hb_4/Frontend/FrontendApplication/app/src/main/res/layout/spinner_xml_layout.xml" value="0.10552536231884058" />
       </map>
     </option>
+  </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../Frontend_Docs" />
+    <option name="OPTION_DOCUMENT_TAG_USE" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="true" />
+    <option name="OTHER_OPTIONS" value="-encoding utf8 -docencoding utf8 -charset utf8" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
