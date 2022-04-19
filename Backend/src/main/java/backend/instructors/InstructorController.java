@@ -8,12 +8,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/***
+ * 
+ */
 @RestController
 public class InstructorController
 {
     @Autowired
     InstructorRepository instructorRepository;
 
+    /***
+     * get classes by specific instructor
+     * @param instructor as string
+     * @return list of classes taught by instructor
+     */
     @GetMapping("/instructorClasses/{instructor}")
     public List<ClassData> instructorClasses(@PathVariable String instructor)
     {
@@ -21,6 +29,9 @@ public class InstructorController
         return i.getClasses();
     }
 
+    /***
+     * @return list of all instructors and the classes they teach nested within
+     */
     @GetMapping("/allInstructors")
     public List<Instructor> allInstructors() {
         return instructorRepository.findAll();

@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/***
+ * Rest Controller focused on getting and creating schedules
+ */
 @RestController
 public class ScheduleController
 {

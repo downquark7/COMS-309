@@ -7,6 +7,9 @@ import backend.users.User;
 import java.util.ArrayList;
 import java.util.List;
 
+/***
+ * Helper class for sending the schedule to the frontend. It filters out extra sections in the list of classes.
+ */
 public class ScheduleOutputHelper
 {
     public String name;
