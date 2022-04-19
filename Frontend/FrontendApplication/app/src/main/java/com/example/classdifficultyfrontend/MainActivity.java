@@ -13,6 +13,7 @@ import android.widget.Button;
 
 import com.google.android.material.tabs.TabLayout;
 
+import home_page.HomePageActivity;
 import schedule.ScheduleActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabsLayout;
     private ViewPager2 pager;
     private TabsAdapter adapter;
-    private Button scheduleButton, loginButton, classListButton, usercreate, profile;
+    private Button scheduleButton, loginButton, classListButton, usercreate, profile, homePageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +64,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, profile_screen.class));
             }
         });
-
+        homePageButton = (Button) findViewById(R.id.button_go_to_home_page);
+        homePageButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, HomePageActivity.class));
+            }
+        });
 //        tabsLayout = findViewById(R.id.globalTabsLayout);
 //        pager = findViewById(R.id.pager);
 //        adapter = new TabsAdapter(this);
