@@ -27,7 +27,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Main class
+ * Main class for profile
  */
 public class profile_screen extends AppCompatActivity {
    private EditText email;
@@ -70,6 +70,7 @@ public class profile_screen extends AppCompatActivity {
 
     /**
      * Send data to the server via the url (email and phone number)
+     * uses queue and Requestqueue object to send data (email and phone number)
      */
     private void sendData() {
 

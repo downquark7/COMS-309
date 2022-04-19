@@ -66,6 +66,7 @@ public class User_Create extends AppCompatActivity {
 
     /**
      * Post request that uses Volley to send data to back end
+     * uses queue and requestQueue object to send data to the server
      */
     private void postRequest() {
         RequestQueue queue = Volley.newRequestQueue(this);

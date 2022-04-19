@@ -69,6 +69,7 @@ public class Login extends AppCompatActivity {
         });
 /**
  *  on click of button, attempt to go to new screen
+ *  Output is new screen
  * @param view view object
  */
         button2.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +82,7 @@ public class Login extends AppCompatActivity {
 
     /**
      * Send data to server, verify user, login if matching with data in the back end.
+     * use queue and RequestQueue object to send data (username, authMethod, authData)
      */
     private void login() {
         RequestQueue queue = Volley.newRequestQueue(this);
