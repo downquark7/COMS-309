@@ -7,6 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+/***
+ * user contact table database entity
+ */
 @Entity
 public class UserContact
 {

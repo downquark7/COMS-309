@@ -9,6 +9,9 @@ import javax.persistence.ManyToMany;
 import java.util.ArrayList;
 import java.util.List;
 
+/***
+ * instructor database entity class
+ */
 @Entity
 public class Instructor
 {

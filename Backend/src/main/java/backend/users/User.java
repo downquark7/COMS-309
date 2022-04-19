@@ -7,6 +7,9 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/***
+ * user table database entity class
+ */
 @Entity
 public class User
 {

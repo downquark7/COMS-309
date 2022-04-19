@@ -1,0 +1,261 @@
+openapi: 3.0.3
+info:
+  description: Backend API
+  title: Backend API
+  version: 1.0.0
+servers:
+- url: http://coms-309-032.class.las.iastate.edu
+paths:
+  /getUser/{user}:
+    get:
+      operationId: getUserByName
+      parameters:
+      - explode: false
+        in: path
+        name: user
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET getUser/{user}
+      x-accepts: application/json
+  /getUserById/{user}:
+    get:
+      operationId: getUserById
+      parameters:
+      - explode: false
+        in: path
+        name: user
+        required: true
+        schema:
+          format: int32
+          type: number
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET getUserById/{user}
+      x-accepts: application/json
+  /getUserContact/{user}:
+    get:
+      operationId: getUserContactByName
+      parameters:
+      - explode: false
+        in: path
+        name: user
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET getUserContact/{user}
+      x-accepts: application/json
+  /getUserContactById/{user}:
+    get:
+      operationId: getUserContactById
+      parameters:
+      - explode: false
+        in: path
+        name: user
+        required: true
+        schema:
+          format: int32
+          type: number
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET getUserContactById/{user}
+      x-accepts: application/json
+  /onlineUsers:
+    get:
+      operationId: getOnlineUsers
+      responses:
+        "200":
+          description: OK
+      summary: GET onlineUsers
+      x-accepts: application/json
+  /user/create:
+    post:
+      operationId: createUser
+      responses:
+        "200":
+          description: OK
+      summary: POST user/create
+      x-accepts: application/json
+  /user/login:
+    post:
+      operationId: loginUser
+      responses:
+        "200":
+          description: OK
+      summary: POST user/login
+      x-accepts: application/json
+  /user/logout:
+    post:
+      operationId: logout
+      responses:
+        "200":
+          description: OK
+      summary: POST user/logout
+      x-accepts: application/json
+  /user/manage:
+    put:
+      operationId: manageUser
+      responses:
+        "200":
+          description: OK
+      summary: PUT user/manage
+      x-accepts: application/json
+  /class:
+    post:
+      operationId: updateClass
+      responses:
+        "200":
+          description: OK
+      summary: POST class
+      x-accepts: application/json
+  /class/{department}/{number}:
+    get:
+      operationId: getClass
+      parameters:
+      - explode: false
+        in: path
+        name: department
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: number
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET class/{department}/{number}
+      x-accepts: application/json
+  /classes:
+    get:
+      operationId: getAllClasses
+      responses:
+        "200":
+          description: OK
+      summary: GET classes
+      x-accepts: application/json
+    post:
+      operationId: updateClasses
+      responses:
+        "200":
+          description: OK
+      summary: POST classes
+      x-accepts: application/json
+  /classes/{department}:
+    get:
+      operationId: getAllClassesByDepartment
+      parameters:
+      - explode: false
+        in: path
+        name: department
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET classes/{department}
+      x-accepts: application/json
+  /schedule:
+    post:
+      operationId: addSchedule
+      responses:
+        "200":
+          description: OK
+      summary: POST schedule
+      x-accepts: application/json
+  /schedule/byId/{id}:
+    delete:
+      operationId: deleteById
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: number
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: DELETE schedule/byId/{id}
+      x-accepts: application/json
+    get:
+      operationId: getSchedule
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: number
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET schedule/byId/{id}
+      x-accepts: application/json
+  /schedules/byUserId/{userid}:
+    get:
+      operationId: getSchedules
+      parameters:
+      - explode: false
+        in: path
+        name: userid
+        required: true
+        schema:
+          format: int32
+          type: number
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET schedules/byUserId/{userid}
+      x-accepts: application/json
+  /allInstructors:
+    get:
+      operationId: allInstructors
+      responses:
+        "200":
+          description: OK
+      summary: GET allInstructors
+      x-accepts: application/json
+  /instructorClasses/{instructor}:
+    get:
+      operationId: instructorClasses
+      parameters:
+      - explode: false
+        in: path
+        name: instructor
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET instructorClasses/{instructor}
+      x-accepts: application/json
+components:
+  schemas: {}
+
