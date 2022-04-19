@@ -14,7 +14,7 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.classdifficultyfrontend.R;
+import com.example.classdifficultyfrontend.*;
 
 import java.io.IOException;
 import java.util.Arrays;

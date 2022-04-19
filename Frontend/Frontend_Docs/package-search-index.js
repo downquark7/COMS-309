@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"class_list"},{"l":"classController"},{"l":"com.example.classdifficultyfrontend"},{"l":"com.example.classdifficultyfrontend.placeholder"},{"l":"home_page"},{"l":"schedule"},{"l":"user_login"},{"l":"userController"}];updateSearchResults();

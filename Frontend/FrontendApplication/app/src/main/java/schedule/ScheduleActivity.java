@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.classdifficultyfrontend.R;
+import com.example.classdifficultyfrontend.*;
 
 import java.util.ArrayList;
 
