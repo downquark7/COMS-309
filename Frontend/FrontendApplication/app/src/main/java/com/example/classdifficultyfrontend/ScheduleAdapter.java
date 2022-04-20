@@ -4,6 +4,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import schedule.ScheduleViewHolder;
+
 public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleViewHolder> {
 
 
