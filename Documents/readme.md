@@ -1,1 +1,3 @@
-To access the frontend docs, open up the index html file located at ~\2_hb_4\Documents\Frontend_Docs in a browser.
+[Frontend Javadocs](http://coms-309-032.class.las.iastate.edu/Frontend_Docs/)  
+[Backend Javadocs](http://coms-309-032.class.las.iastate.edu/javadoc-backend/)  
+[API Reference](https://app.swaggerhub.com/apis/enicely/backend-api/1.0.0)  
