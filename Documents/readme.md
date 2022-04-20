@@ -1,0 +1,1 @@
+To access the frontend docs, open up the index html file located at ~\2_hb_4\Documents\Frontend_Docs in a browser.
