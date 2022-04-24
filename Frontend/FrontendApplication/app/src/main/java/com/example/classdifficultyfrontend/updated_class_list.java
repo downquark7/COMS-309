@@ -55,7 +55,9 @@ public class updated_class_list extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
+                for(int i = 0; i<list.toArray().length; i++){
+                    text.setText(list.add(i));
+                }
                 text.setText(Arrays.toString(list.toArray()));
             }
 
