@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ClassDifficultyFrontend"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Course_matcher"
+            android:exported="false" />
+        <activity
             android:name="home_page.HomePageActivity"
             android:exported="false" />
         <activity
