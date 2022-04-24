@@ -36,7 +36,7 @@
                 android:textSize="29dp"
                 android:textColor="#F6F2F2"
                 android:gravity="center"
-                android:text="Test" />
+                android:text=" " />
         </LinearLayout>
     </ScrollView>
 
