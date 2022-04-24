@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".updated_class_list">
+    tools:context=".updated_class_list"
+    android:background="@drawable/back2">
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,6 +24,7 @@
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="match_parent"
+                android:textSize="25dp"
                 android:layout_height="wrap_content"
                 android:entries="@array/Departments"/>
 
@@ -31,8 +33,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="300dp"
-                android:textSize="35dp"
-                android:textColor="#0E0707"
+                android:textSize="29dp"
+                android:textColor="#F6F2F2"
                 android:gravity="center"
                 android:text="Test" />
         </LinearLayout>
