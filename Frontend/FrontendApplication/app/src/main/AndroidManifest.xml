@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ClassDifficultyFrontend"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Class_Review"
+            android:exported="false" />
+        <activity
             android:name=".Course_matcher"
             android:exported="false" />
         <activity
