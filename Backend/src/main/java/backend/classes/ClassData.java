@@ -4,10 +4,7 @@ import backend.instructors.Instructor;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +24,9 @@ public class ClassData
     private String classNumber;
     private String departmentTitle;
     private String classTitle;
-    //    private String classComments;
+
+    @Column(columnDefinition = "TEXT")
+    private String classComments;
     private String classPreReqs;
 
     @OneToMany
@@ -112,15 +111,15 @@ public class ClassData
         this.classTitle = classTitle;
     }
 
-//    public String getClassComments()
-//    {
-//        return classComments;
-//    }
-//
-//    public void setClassComments(String classComments)
-//    {
-//        this.classComments = classComments;
-//    }
+    public String getClassComments()
+    {
+        return classComments;
+    }
+
+    public void setClassComments(String classComments)
+    {
+        this.classComments = classComments;
+    }
 
     public String getClassPreReqs()
     {
