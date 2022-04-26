@@ -25,6 +25,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import home_page.HomePageActivity;
+
 /**
  *  Main code for the class. allows for teh ability to click on a button, create user, as well as
  *  get the user input in in the according box.
@@ -105,9 +107,9 @@ public class User_Create extends AppCompatActivity {
                     TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
 
                    // text = jsonObject.toString();
-//                    Intent intent = new Intent(getApplicationContext(), Default_Screen.class);
+                    Intent intent = new Intent(getApplicationContext(), Login.class);
 //                    intent.putExtra("message_key", text);
-//                    startActivity(intent);
+                    startActivity(intent);
 
                 } catch (Exception e) {
                     e.printStackTrace();

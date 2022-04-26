@@ -21,6 +21,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import home_page.HomePageActivity;
+
 /**
  * Main class for Login
  */
@@ -120,9 +122,9 @@ public class Login extends AppCompatActivity {
                     TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
 
                     //text = jsonObject.toString();
-                    // Intent intent = new Intent(getApplicationContext(), Default_Screen.class);
+                     Intent intent = new Intent(getApplicationContext(), HomePageActivity.class);
                     // intent.putExtra("message_key", text);
-                    // startActivity(intent);
+                     startActivity(intent);
 
                 } catch (Exception e) {
                     e.printStackTrace();
