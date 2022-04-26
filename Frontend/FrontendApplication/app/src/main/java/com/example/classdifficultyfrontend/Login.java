@@ -119,7 +119,7 @@ public class Login extends AppCompatActivity {
                     TextResult.append("\n");
                     TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
 
-                    text = jsonObject.toString();
+                    //text = jsonObject.toString();
                     // Intent intent = new Intent(getApplicationContext(), Default_Screen.class);
                     // intent.putExtra("message_key", text);
                     // startActivity(intent);
