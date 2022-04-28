@@ -57,12 +57,15 @@ public class updated_class_list extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                //if(list.size() != 0) {
-//                    for (int i = 0; i < 100; i++) {
-//                        text.append("Class: " + list.get(i).toString().toLowerCase() + "\n");
-//                    }
-               // }
-                text.setText(Arrays.toString(list.toArray()));
+                if(list != null) {
+                    for (int i = 0; i < 100; i++) {
+                        text.append("Class: " + list.get(i).toString().toLowerCase() + "\n");
+                    }
+                }
+                else{
+                    text.setText("stuff went wrong");
+                }
+               // text.setText(Arrays.toString(list.toArray()));
             }
 
             @Override
