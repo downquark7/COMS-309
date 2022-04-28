@@ -5,7 +5,7 @@ import static classController.ClassController.getByDepartment;
 
 import androidx.appcompat.app.AppCompatActivity;
 //import classController.ClassController;
-//import departmentCodes.DepartmentCodes;
+//import classController.DepartmentCodes;
 
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -50,16 +50,19 @@ public class updated_class_list extends AppCompatActivity {
                 String t = choose.getSelectedItem().toString();
 
                 List<ClassData> list = null;
+
                 try {
                     list = getByDepartment(t);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
-                for(int i = 0; i<list.toArray().length; i++){
-                    text.append("Class: " + list.get(i).toString().toLowerCase() + "\n");
-                }
-//                text.setText(Arrays.toString(list.toArray()));
+                //if(list.size() != 0) {
+//                    for (int i = 0; i < 100; i++) {
+//                        text.append("Class: " + list.get(i).toString().toLowerCase() + "\n");
+//                    }
+               // }
+                text.setText(Arrays.toString(list.toArray()));
             }
 
             @Override
