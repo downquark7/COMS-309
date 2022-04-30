@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabsLayout;
     private ViewPager2 pager;
     private TabsAdapter adapter;
-    private Button scheduleButton, loginButton, classListButton, usercreate, profile, homePageButton;
+    private Button scheduleButton, loginButton, classListButton, usercreate, profile, homePageButton,Class_desc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +101,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, HomePageActivity.class));
             }
         });
+
+        Class_desc = (Button) findViewById(R.id.button_go_to_class_desc);
+        Class_desc.setOnClickListener(new View.OnClickListener(){
+
+        /**
+         * go to Home Page activity
+         * Output is going to new screen
+         * @param v view object
+         */
+        @Override
+        public void onClick(View v){
+            startActivity(new Intent(MainActivity.this, Course_matcher.class));
+        }
+    });
+
+
 //        tabsLayout = findViewById(R.id.globalTabsLayout);
 //        pager = findViewById(R.id.pager);
 //        adapter = new TabsAdapter(this);
