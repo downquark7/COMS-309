@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af9ce9b7-dbd5-412e-b5e9-83662e5401be" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/Frontend/FrontendApplication/app/src/main/java/com/example/classdifficultyfrontend/SchedulePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/2_hb_4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/2_hb_4.iml" afterDir="false" />
-    </list>
+    <list default="true" id="af9ce9b7-dbd5-412e-b5e9-83662e5401be" name="Changes" comment="Changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,6 +72,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

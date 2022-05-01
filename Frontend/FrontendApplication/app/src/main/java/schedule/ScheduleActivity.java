@@ -50,10 +50,12 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
         ArrayList<String> hoursInDayArray = new ArrayList<>();
         for(int i = 0; i < 100; i++){
             if(i % 8 == 0){
-                if(i == 40)
-                    hoursInDayArray.add("1:00");
+                if(((i + 1) / 8) + 7 > 12){
+                    hoursInDayArray.add((((i+56) / 8) - 12) + ":00");//PM, putting pm in the
+                }
                 else
-                hoursInDayArray.add(((((i+1)/8)+ 8)% 13)+":00");//TODO There is a bug here, it is showing 1:00 twice
+                    hoursInDayArray.add(((i+56) / 8) + ":00");//AM
+
             }
             else
             hoursInDayArray.add("-");
