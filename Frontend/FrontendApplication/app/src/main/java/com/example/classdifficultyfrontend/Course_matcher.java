@@ -113,6 +113,7 @@ public class Course_matcher extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 try {
+                    Class_desc.setText("Running");
                    //in this case, we need to direct feedback
 
                 } catch (Exception e) {
@@ -122,7 +123,7 @@ public class Course_matcher extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                //TextResult.setText(error.toString());
+                Class_desc.setText(error.toString());
             }
         }) {
             /**
