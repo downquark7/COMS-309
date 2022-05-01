@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ public class Course_matcher extends AppCompatActivity {
 
     Spinner Spinner;
     TextView Class_desc, Class_diff;
+    Button button;
 
 
 
@@ -24,6 +26,7 @@ public class Course_matcher extends AppCompatActivity {
         Spinner = (Spinner)findViewById(R.id.spinner);
         Class_desc = (TextView)findViewById(R.id.class_desc);
         Class_diff = (TextView)findViewById(R.id.class_diff);
+        button = (Button)findViewById((R.id.button));
 
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,
                 R.array.Classes_2, R.layout.spinner);
@@ -60,13 +63,22 @@ public class Course_matcher extends AppCompatActivity {
             }
         });
 
-        //Class_desc.setText(txtFromSpinner);
+        button.setOnClickListener(new View.OnClickListener() {
+            /**
+             *  on click of button, attempt ot log in
+             * @param view view object
+             */
+            @Override
+            public void onClick(View view) {
+                sendData();
 
+            }
+        });
 
-//        if (txtFromSpinner.equals("COMS 309"))
-//        {
-//        Class_desc.setText("A practical introduction to methods for managing software development. Process models, requirements analysis, structured and object-oriented design, coding, testing, maintenance, cost and schedule estimation, metrics. Programming projects.");
-//        Class_diff.setText("3/5");
-//        }
+    }
+
+    private void sendData() {
+
+        
     }
 }
