@@ -188,6 +188,14 @@
         <item>INTST 235</item>
     </string-array>
 
+    <string-array name="Classes_2">
+        <item>Pick </item>
+        <item>COMS 309</item>
+        <item>COMS 319</item>
+        <item>COMS 327 </item>
+        <item>COMS 417</item>
+    </string-array>
+
     <string name="title_activity_profile_screen">profile_screen</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"

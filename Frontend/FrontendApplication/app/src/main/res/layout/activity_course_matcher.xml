@@ -13,10 +13,18 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Class Name: COMS 309"
+        android:text="Class Name:"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
+
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:entries="@array/Classes_2" />
 
     <TextView
         android:id="@+id/class_desc_head"
@@ -76,4 +84,6 @@
         android:textColor="@android:color/holo_red_light"
         android:layout_centerHorizontal="true"
         android:text="Add to Schedule" />
+
+
 </RelativeLayout>
