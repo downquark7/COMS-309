@@ -2,6 +2,7 @@ package com.example.classdifficultyfrontend;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,6 +10,19 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import home_page.HomePageActivity;
 
 public class Course_matcher extends AppCompatActivity {
 
@@ -70,15 +84,63 @@ public class Course_matcher extends AppCompatActivity {
              */
             @Override
             public void onClick(View view) {
-                sendData();
+               String text = Spinner.getSelectedItem().toString();
+                sendData(text);
 
             }
         });
 
     }
 
-    private void sendData() {
+    private void sendData(String text) {
 
-        
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+        String url = "http://coms-309-032.class.las.iastate.edu:8080/user/";
+
+        JSONObject jsonBody = new JSONObject();
+        try {
+            jsonBody.put("class", text);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        final String requestBody = jsonBody.toString();
+        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            /**
+             * Send class to item
+             * @param response string response
+             */
+            @Override
+            public void onResponse(String response) {
+                try {
+                   //in this case, we need to direct feedback
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //TextResult.setText(error.toString());
+            }
+        }) {
+            /**
+             * make sure correct object is sent
+             * @return json object
+             */
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
+
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                return requestBody.getBytes();
+            }
+        };
+        queue.add(request);
+
+
     }
 }
