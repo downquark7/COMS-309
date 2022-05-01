@@ -15,7 +15,7 @@
         android:layout_marginTop="20dp"
         android:text="Class Name:"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
 
@@ -34,7 +34,7 @@
         android:layout_marginTop="120dp"
         android:text="Class Description:"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -43,8 +43,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="180dp"
-        android:text="A practical introduction to methods for managing software development. Process models, requirements analysis, structured and object-oriented design, coding, testing, maintenance, cost and schedule estimation, metrics. Programming projects."
-        android:textColor="#F30C0C"
+        android:text=" "
+        android:textColor="#F4F1F1"
         android:textSize="19sp"
         android:textStyle="bold" />
 
@@ -53,10 +53,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="420dp"
         android:text="Class Difficulty:"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -64,22 +64,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="360dp"
-        android:text="3/5"
-        android:textColor="#F60505"
+        android:layout_marginTop="460dp"
+        android:text=" "
+        android:textColor="#EAE5E5"
         android:textSize="32sp"
         android:textStyle="bold" />
-
-
-
-
 
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="520dp"
         android:backgroundTint="@android:color/white"
         android:textColor="@android:color/holo_red_light"
         android:layout_centerHorizontal="true"
