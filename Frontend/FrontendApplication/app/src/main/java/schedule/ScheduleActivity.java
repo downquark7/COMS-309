@@ -12,6 +12,8 @@ import com.example.classdifficultyfrontend.*;
 
 import java.util.ArrayList;
 
+import classController.ClassController;
+import classController.ClassData;
 import schedule.ScheduleAdapter;
 
 public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapter.OnItemListener{ // a lot of this code is based on the example given in this youtube tutorial: https://www.youtube.com/watch?v=Ba0Q-cK1fJo&ab_channel=CodeWithCal
@@ -62,11 +64,16 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
         }
         return hoursInDayArray;
     }
+//    private ArrayList<ClassData> classDataList(){
+//        ArrayList<ClassData> classDataList = new ArrayList<>();
+//
+//    }
     private ArrayList<String> classlist(String scheduleID){//TODO temporary, for sake of testing
         ArrayList<String> classlist = new ArrayList<>();
         String classes[][] = {{"LEARNING TEAM", "S112"}, {"METEOROLOGY", "498"}, {"AEROSPACE ENGINEERING", "192"}};
+        ClassController classCon = new ClassController();
         for(int i = 0; i < 3; i++){
-
+            ClassData tempClass = classCon.getAClass()
         }
         return classlist;
     }
