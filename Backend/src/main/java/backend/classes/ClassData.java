@@ -32,6 +32,9 @@ public class ClassData
     @OneToMany
     private List<Section> sections;
 
+    @Column(columnDefinition = "TEXT")
+    private String classDescription;
+
     @JsonIgnore
     @ManyToMany
     private List<Instructor> instructorList = new ArrayList<>();
@@ -159,5 +162,15 @@ public class ClassData
     public void removeInstructor(Instructor instructor)
     {
         instructorList.remove(instructor);
+    }
+
+    public String getClassDescription()
+    {
+        return classDescription;
+    }
+
+    public void setClassDescription(String classDescription)
+    {
+        this.classDescription = classDescription;
     }
 }
