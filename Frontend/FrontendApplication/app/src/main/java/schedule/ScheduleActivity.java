@@ -73,7 +73,8 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
         String classes[][] = {{"LEARNING TEAM", "S112"}, {"METEOROLOGY", "498"}, {"AEROSPACE ENGINEERING", "192"}};
         ClassController classCon = new ClassController();
         for(int i = 0; i < 3; i++){
-            ClassData tempClass = classCon.getAClass()
+//            ClassData tempClass = classCon.getAClass(classes[i][0], classes[i][1]);
+//            classlist.add()
         }
         return classlist;
     }
