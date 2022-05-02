@@ -14,6 +14,11 @@ public class ScheduleAdapter extends RecyclerView.Adapter< ScheduleViewHolder> {
     private final ArrayList<String> hoursOfDay;
     private final OnItemListener onItemListener;
 
+    /**
+     * Adapter that helps recycle hour cells
+     * @param hoursOfDay ArrayList of all hours to be displayed in the day
+     * @param onItemListener Keeps track of each item in the hour cell
+     */
     public ScheduleAdapter(ArrayList<String> hoursOfDay, OnItemListener onItemListener) {
         this.hoursOfDay = hoursOfDay;
         this.onItemListener = onItemListener;

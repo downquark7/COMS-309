@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.room:room-compiler:2.4.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.room/room-compiler/2.4.2/de03a66ae88c970beeb78ae0e7c48af6419d3250/room-compiler-2.4.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.room/room-compiler/2.4.2/995c9d97208758273013b314f486d6b9f367dc05/room-compiler-2.4.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

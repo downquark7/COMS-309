@@ -11,6 +11,9 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/***
+ * schedule database entity class
+ */
 @Entity
 public class Schedule
 {

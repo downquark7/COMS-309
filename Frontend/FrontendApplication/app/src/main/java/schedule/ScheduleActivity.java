@@ -42,6 +42,11 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
 
 
     @Override
+    /**
+     * Displays the selected time + the hour when a cell is clicked
+     * @param position location of hour cell
+     * @param hourText hour to be displayed
+     */
     public void onItemClick(int position, String hourText) {
         if(!hourText.equals("")){
             String message = "Selected Time " + hourText + " ";

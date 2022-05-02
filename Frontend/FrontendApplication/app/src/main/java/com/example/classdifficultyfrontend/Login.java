@@ -21,6 +21,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import home_page.HomePageActivity;
+
+/**
+ * Main class for Login
+ */
 public class Login extends AppCompatActivity {
 
     private TextView TextResult;
@@ -30,7 +35,10 @@ public class Login extends AppCompatActivity {
     private EditText user;
     private EditText pass;
 
-
+    /**
+     * create main objects specified in XML
+     * @param savedInstanceState objects here
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login3);
@@ -47,6 +55,10 @@ public class Login extends AppCompatActivity {
 
 
         button.setOnClickListener(new View.OnClickListener() {
+            /**
+             *  on click of button, attempt ot log in
+             * @param view view object
+             */
             @Override
             public void onClick(View view) {
                 String Userstr = user.getText().toString().trim();
@@ -57,7 +69,11 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
-
+/**
+ *  on click of button, attempt to go to new screen
+ *  Output is new screen
+ * @param view view object
+ */
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,6 +82,10 @@ public class Login extends AppCompatActivity {
         });
     }
 
+    /**
+     * Send data to server, verify user, login if matching with data in the back end.
+     * use queue and RequestQueue object to send data (username, authMethod, authData)
+     */
     private void login() {
         RequestQueue queue = Volley.newRequestQueue(this);
 
@@ -84,6 +104,11 @@ public class Login extends AppCompatActivity {
         }
         final String requestBody = jsonBody.toString();
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            /**
+             * append username and other data to textview object to send to database
+             * Uses queue to send appropiate data in the form of a server request
+             * @param response string response
+             */
             @Override
             public void onResponse(String response) {
                 try {
@@ -96,10 +121,10 @@ public class Login extends AppCompatActivity {
                     TextResult.append("\n");
                     TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
 
-                    text = jsonObject.toString();
-                    // Intent intent = new Intent(getApplicationContext(), Default_Screen.class);
+                    //text = jsonObject.toString();
+                     Intent intent = new Intent(getApplicationContext(), HomePageActivity.class);
                     // intent.putExtra("message_key", text);
-                    // startActivity(intent);
+                     startActivity(intent);
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -111,6 +136,10 @@ public class Login extends AppCompatActivity {
                 TextResult.setText(error.toString());
             }
         }) {
+            /**
+             * make sure correct object is sent
+             * @return json object
+             */
             @Override
             public String getBodyContentType() {
                 return "application/json; charset=utf-8";

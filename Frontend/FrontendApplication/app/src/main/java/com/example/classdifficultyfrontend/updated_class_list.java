@@ -5,7 +5,7 @@ import static classController.ClassController.getByDepartment;
 
 import androidx.appcompat.app.AppCompatActivity;
 //import classController.ClassController;
-//import departmentCodes.DepartmentCodes;
+//import classController.DepartmentCodes;
 
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -20,6 +20,9 @@ import java.util.List;
 
 import classController.ClassData;
 
+/**
+ * Main class for class list
+ */
 public class updated_class_list extends AppCompatActivity {
 
     @Override
@@ -34,18 +37,35 @@ public class updated_class_list extends AppCompatActivity {
         Spinner choose = (Spinner) findViewById(R.id.spinner);
 
         choose.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /**
+             * Thus method allows for the users to click on the department, then choose one, and display the data.
+             * Receives class list object (by department). Outputs as text to screen
+             * @param parent parent object
+             * @param view view object
+             * @param position  position
+             * @param id id for class
+             */
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String t = choose.getSelectedItem().toString();
 
                 List<ClassData> list = null;
+
                 try {
                     list = getByDepartment(t);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
-                text.setText(Arrays.toString(list.toArray()));
+                if(list != null) {
+                    for (int i = 0; i < 100; i++) {
+                        text.append("Class: " + list.get(i).toString().toLowerCase() + "\n");
+                    }
+                }
+                else{
+                    text.setText("stuff went wrong");
+                }
+               // text.setText(Arrays.toString(list.toArray()));
             }
 
             @Override

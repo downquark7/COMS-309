@@ -13,6 +13,15 @@
         android:theme="@style/Theme.ClassDifficultyFrontend"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Websocket"
+            android:exported="false" />
+        <activity
+            android:name=".Class_Review"
+            android:exported="false" />
+        <activity
+            android:name=".Course_matcher"
+            android:exported="false" />
+        <activity
             android:name="home_page.HomePageActivity"
             android:exported="false" />
         <activity
@@ -34,9 +43,6 @@
             android:exported="false"
             android:label="@string/title_activity_login"
             android:theme="@style/Theme.ClassDifficultyFrontend.NoActionBar" />
-        <activity
-            android:name=".ClassListActivity"
-            android:exported="false" />
         <activity
             android:name="schedule.ScheduleActivity"
             android:exported="false"

@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.classdifficultyfrontend.R;
+import com.example.classdifficultyfrontend.*;
 
 public class HomePageActivity extends AppCompatActivity {
 

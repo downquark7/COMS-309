@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.classdifficultyfrontend.R;
+import com.example.classdifficultyfrontend.*;
 import com.example.classdifficultyfrontend.placeholder.PlaceholderContent;
 
 

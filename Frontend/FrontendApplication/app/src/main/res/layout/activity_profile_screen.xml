@@ -57,6 +57,7 @@
                 android:inputType="textEmailAddress"
                 android:hint="Email"
                 android:textColorHint="#F6F6F6"
+                android:textColor="#FAF9F9"
                 android:textSize="20dp" />
 
             <TextView
@@ -77,6 +78,7 @@
                 android:gravity="center"
                 android:inputType="phone"
                 android:hint="Phone Number"
+                android:textColor="#FAF9F9"
                 android:textColorHint="#F6F6F6"
                 android:textSize="20dp" />
 
@@ -105,9 +107,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:entries="@array/Classes"
-                android:textAlignment="center"
                 android:textColor="#FF0000"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"/>
         </LinearLayout>
     </ScrollView>
 
