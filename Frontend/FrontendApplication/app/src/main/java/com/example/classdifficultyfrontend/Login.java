@@ -56,7 +56,7 @@ public class Login extends AppCompatActivity {
 
         button.setOnClickListener(new View.OnClickListener() {
             /**
-             *  on click of button, attempt ot log in
+             * on click of button, attempt to log in
              * @param view view object
              */
             @Override

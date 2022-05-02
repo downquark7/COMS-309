@@ -15,7 +15,7 @@ public class SystemTest {
         onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
 
-        onView(withId(R.id.textUser)).check(matches(withText("Error")));
+        onView(withId(R.id.textUser)).check(matches(withText(" ")));
     }
 
 
