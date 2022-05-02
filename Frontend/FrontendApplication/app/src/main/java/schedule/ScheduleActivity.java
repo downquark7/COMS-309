@@ -1,5 +1,7 @@
 package schedule;
 //import static classController.ClassController.ClassData;
+import static classController.ClassController.getByDepartment;
+
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -10,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.classdifficultyfrontend.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import classController.ClassController;
@@ -78,8 +81,13 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
         String classes[][] = {{"LEARNING TEAM", "S112"}, {"METEOROLOGY", "498"}, {"AEROSPACE ENGINEERING", "192"}};
         ClassController classCon = new ClassController();
         for(int i = 0; i < 3; i++){
-//            ClassData tempClass = classCon.getAClass(classes[i][0], classes[i][1]);
-//            classlist.add()
+            try {
+                ClassData tempClass = classCon.getAClass(classes[i][0], classes[i][1]);
+                classlist.add(tempClass.getClassTitle() + " " + tempClass.getClassNumber());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
         return classlist;
     }
