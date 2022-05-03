@@ -31,36 +31,37 @@ public class SystemTest {
     private static final int SIMULATED_DELAY_MS = 500;
 
     @Rule   // needed to launch the activity
-    public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<Login> activityRule = new ActivityTestRule<>(Login.class);
 
     @Test
     public void test_login() throws Exception{
         onView(withId(R.id.Username_input)).perform(typeText("testcreate"),closeSoftKeyboard());
         onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
-        onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
 
-        onView(withId(R.id.textUser)).check(matches(withText(" ")));
+        onView(withId(R.id.textUser)).check(matches(withText("Username: " + "testcreate" + "\n" +
+                "Authentication Method: " + "create" + "\n" +
+                "Authentication Data: " + "create")));
     }
 
+    @Rule   // needed to launch the activity
+    public ActivityTestRule<User_Create> activitycreate = new ActivityTestRule<>(User_Create.class);
+
+    @Test
     public void test_create_user_fail() throws Exception{
         onView(withId(R.id.Username_input)).perform(typeText("testcreate"),closeSoftKeyboard());
         onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
-        onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
 
         onView(withId(R.id.textUser)).check(matches(withText(" ")));
     }
-
+    @Test
     public void test_create_user_succeed() throws Exception{
         onView(withId(R.id.Username_input)).perform(typeText("test" + randomNumber),closeSoftKeyboard());
         onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
-        onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
 
-        onView(withId(R.id.textUser)).check(matches(withText("Username: " + "test" + randomNumber +"\n" +
-                "Authentication Method: " + "create" + "\n" +
-                "Authentication Data: " + "create")));
+        onView(withId(R.id.textUser)).check(matches(withText("")));
     }
 
 
