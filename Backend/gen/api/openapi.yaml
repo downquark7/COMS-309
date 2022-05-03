@@ -4,7 +4,7 @@ info:
   title: Backend API
   version: 1.0.0
 servers:
-- url: http://coms-309-032.class.las.iastate.edu
+- url: https://Backend
 paths:
   /getUser/{user}:
     get:
@@ -121,6 +121,28 @@ paths:
       summary: POST class
       x-accepts: application/json
   /class/{department}/{number}:
+    delete:
+      operationId: deleteClass
+      parameters:
+      - explode: false
+        in: path
+        name: department
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: number
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: DELETE class/{department}/{number}
+      x-accepts: application/json
     get:
       operationId: getClass
       parameters:
@@ -142,6 +164,28 @@ paths:
         "200":
           description: OK
       summary: GET class/{department}/{number}
+      x-accepts: application/json
+    put:
+      operationId: updateClass2
+      parameters:
+      - explode: false
+        in: path
+        name: department
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: number
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: PUT class/{department}/{number}
       x-accepts: application/json
   /classes:
     get:
@@ -255,6 +299,44 @@ paths:
         "200":
           description: OK
       summary: GET instructorClasses/{instructor}
+      x-accepts: application/json
+  /review:
+    delete:
+      operationId: deleteReview
+      responses:
+        "200":
+          description: OK
+      summary: DELETE review
+      x-accepts: application/json
+    post:
+      operationId: addReview
+      responses:
+        "200":
+          description: OK
+      summary: POST review
+      x-accepts: application/json
+  /reviews/{department}/{number}:
+    get:
+      operationId: getReviews
+      parameters:
+      - explode: false
+        in: path
+        name: department
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: number
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: GET reviews/{department}/{number}
       x-accepts: application/json
 components:
   schemas: {}

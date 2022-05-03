@@ -65,3 +65,13 @@ Content-Type: application/json
   }
 }
 ###
+POST http://localhost:8080/review
+Content-Type: application/json
+
+{
+  "username": "hax",
+  "classId": 1530,
+  "difficulty": 2.71828,
+  "text": "that's what she said"
+}
+###

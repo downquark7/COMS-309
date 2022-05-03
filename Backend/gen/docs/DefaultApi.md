@@ -1,17 +1,21 @@
 # DefaultApi
 
-All URIs are relative to *http://coms-309-032.class.las.iastate.edu*
+All URIs are relative to *https://Backend*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addReview**](DefaultApi.md#addReview) | **POST** /review | POST review
 [**addSchedule**](DefaultApi.md#addSchedule) | **POST** /schedule | POST schedule
 [**allInstructors**](DefaultApi.md#allInstructors) | **GET** /allInstructors | GET allInstructors
 [**createUser**](DefaultApi.md#createUser) | **POST** /user/create | POST user/create
 [**deleteById**](DefaultApi.md#deleteById) | **DELETE** /schedule/byId/{id} | DELETE schedule/byId/{id}
+[**deleteClass**](DefaultApi.md#deleteClass) | **DELETE** /class/{department}/{number} | DELETE class/{department}/{number}
+[**deleteReview**](DefaultApi.md#deleteReview) | **DELETE** /review | DELETE review
 [**getAllClasses**](DefaultApi.md#getAllClasses) | **GET** /classes | GET classes
 [**getAllClassesByDepartment**](DefaultApi.md#getAllClassesByDepartment) | **GET** /classes/{department} | GET classes/{department}
 [**getClass**](DefaultApi.md#getClass) | **GET** /class/{department}/{number} | GET class/{department}/{number}
 [**getOnlineUsers**](DefaultApi.md#getOnlineUsers) | **GET** /onlineUsers | GET onlineUsers
+[**getReviews**](DefaultApi.md#getReviews) | **GET** /reviews/{department}/{number} | GET reviews/{department}/{number}
 [**getSchedule**](DefaultApi.md#getSchedule) | **GET** /schedule/byId/{id} | GET schedule/byId/{id}
 [**getSchedules**](DefaultApi.md#getSchedules) | **GET** /schedules/byUserId/{userid} | GET schedules/byUserId/{userid}
 [**getUserById**](DefaultApi.md#getUserById) | **GET** /getUserById/{user} | GET getUserById/{user}
@@ -23,8 +27,64 @@ Method | HTTP request | Description
 [**logout**](DefaultApi.md#logout) | **POST** /user/logout | POST user/logout
 [**manageUser**](DefaultApi.md#manageUser) | **PUT** /user/manage | PUT user/manage
 [**updateClass**](DefaultApi.md#updateClass) | **POST** /class | POST class
+[**updateClass2**](DefaultApi.md#updateClass2) | **PUT** /class/{department}/{number} | PUT class/{department}/{number}
 [**updateClasses**](DefaultApi.md#updateClasses) | **POST** /classes | POST classes
 
+
+<a name="addReview"></a>
+# **addReview**
+> addReview()
+
+POST review
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://Backend");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    try {
+      apiInstance.addReview();
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#addReview");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 <a name="addSchedule"></a>
 # **addSchedule**
@@ -44,7 +104,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     try {
@@ -99,7 +159,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     try {
@@ -154,7 +214,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     try {
@@ -209,7 +269,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     BigDecimal id = new BigDecimal(78); // BigDecimal | 
@@ -250,6 +310,122 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 
+<a name="deleteClass"></a>
+# **deleteClass**
+> deleteClass(department, number)
+
+DELETE class/{department}/{number}
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://Backend");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    String department = "department_example"; // String | 
+    String number = "number_example"; // String | 
+    try {
+      apiInstance.deleteClass(department, number);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#deleteClass");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **department** | **String**|  |
+ **number** | **String**|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+<a name="deleteReview"></a>
+# **deleteReview**
+> deleteReview()
+
+DELETE review
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://Backend");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    try {
+      apiInstance.deleteReview();
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#deleteReview");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 <a name="getAllClasses"></a>
 # **getAllClasses**
 > getAllClasses()
@@ -268,7 +444,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     try {
@@ -323,7 +499,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String department = "department_example"; // String | 
@@ -382,7 +558,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String department = "department_example"; // String | 
@@ -443,7 +619,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     try {
@@ -461,6 +637,67 @@ public class Example {
 
 ### Parameters
 This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+<a name="getReviews"></a>
+# **getReviews**
+> getReviews(department, number)
+
+GET reviews/{department}/{number}
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://Backend");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    String department = "department_example"; // String | 
+    String number = "number_example"; // String | 
+    try {
+      apiInstance.getReviews(department, number);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#getReviews");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **department** | **String**|  |
+ **number** | **String**|  |
 
 ### Return type
 
@@ -498,7 +735,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     BigDecimal id = new BigDecimal(78); // BigDecimal | 
@@ -557,7 +794,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     BigDecimal userid = new BigDecimal(78); // BigDecimal | 
@@ -616,7 +853,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     BigDecimal user = new BigDecimal(78); // BigDecimal | 
@@ -675,7 +912,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String user = "user_example"; // String | 
@@ -734,7 +971,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     BigDecimal user = new BigDecimal(78); // BigDecimal | 
@@ -793,7 +1030,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String user = "user_example"; // String | 
@@ -852,7 +1089,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String instructor = "instructor_example"; // String | 
@@ -911,7 +1148,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     try {
@@ -966,7 +1203,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     try {
@@ -1021,7 +1258,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     try {
@@ -1076,7 +1313,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     try {
@@ -1094,6 +1331,67 @@ public class Example {
 
 ### Parameters
 This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+<a name="updateClass2"></a>
+# **updateClass2**
+> updateClass2(department, number)
+
+PUT class/{department}/{number}
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://Backend");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    String department = "department_example"; // String | 
+    String number = "number_example"; // String | 
+    try {
+      apiInstance.updateClass2(department, number);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#updateClass2");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **department** | **String**|  |
+ **number** | **String**|  |
 
 ### Return type
 
@@ -1131,7 +1429,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     try {
