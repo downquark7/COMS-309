@@ -41,6 +41,7 @@ public class Course_matcher extends AppCompatActivity {
         Class_desc = (TextView)findViewById(R.id.class_desc);
         Class_diff = (TextView)findViewById(R.id.class_diff);
         button = (Button)findViewById((R.id.button));
+        Button button = findViewById(R.id.back);
 
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,
                 R.array.Classes_2, R.layout.spinner);
@@ -87,6 +88,13 @@ public class Course_matcher extends AppCompatActivity {
                String text = Spinner.getSelectedItem().toString();
                 sendData(text);
 
+            }
+        });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Course_matcher.this, MainActivity.class));
             }
         });
 
