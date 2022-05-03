@@ -20,9 +20,13 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.core.StringEndsWith.endsWith;
 
+import java.util.Random;
+
 @RunWith(AndroidJUnit4ClassRunner.class)
 @LargeTest
 public class SystemTest {
+    Random random = new Random();
+    int randomNumber = random.nextInt(15) + 65;
 
     private static final int SIMULATED_DELAY_MS = 500;
 
@@ -33,9 +37,30 @@ public class SystemTest {
     public void test_login() throws Exception{
         onView(withId(R.id.Username_input)).perform(typeText("testcreate"),closeSoftKeyboard());
         onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
+        onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
 
         onView(withId(R.id.textUser)).check(matches(withText(" ")));
+    }
+
+    public void test_create_user_fail() throws Exception{
+        onView(withId(R.id.Username_input)).perform(typeText("testcreate"),closeSoftKeyboard());
+        onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
+        onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
+        onView(withId(R.id.button)).perform(click());
+
+        onView(withId(R.id.textUser)).check(matches(withText(" ")));
+    }
+
+    public void test_create_user_succeed() throws Exception{
+        onView(withId(R.id.Username_input)).perform(typeText("test" + randomNumber),closeSoftKeyboard());
+        onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
+        onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
+        onView(withId(R.id.button)).perform(click());
+
+        onView(withId(R.id.textUser)).check(matches(withText("Username: " + "test" + randomNumber +"\n" +
+                "Authentication Method: " + "create" + "\n" +
+                "Authentication Data: " + "create")));
     }
 
 
