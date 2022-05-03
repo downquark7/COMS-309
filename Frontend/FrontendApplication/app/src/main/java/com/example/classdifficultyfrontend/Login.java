@@ -23,6 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import home_page.HomePageActivity;
+import user_data.UserPreferences;
 
 /**
  * Main class for Login
@@ -123,9 +124,14 @@ public class Login extends AppCompatActivity {
                     TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
 
                     //text = jsonObject.toString();
-                    SharedPreferences userSettings = getSharedPreferences("UserData", MODE_PRIVATE);
+                    SharedPreferences userSettings = getApplicationContext().getSharedPreferences("UserData", MODE_PRIVATE);
                     SharedPreferences.Editor userEdit = userSettings.edit();
-                    userEdit.putString("Username", Userstr);
+                    userEdit.putString(Userstr, "");
+                    userEdit.apply();
+
+
+//                     UserPreferences userPref = new UserPreferences(getApplicationContext());
+//                    userPref.saveBody(Userstr);
                      Intent intent = new Intent(getApplicationContext(), HomePageActivity.class);
                     // intent.putExtra("message_key", text);
                      startActivity(intent);
