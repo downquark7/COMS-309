@@ -222,4 +222,9 @@ public class ClassData
         if (!reviews.isEmpty())
             setDifficulty(sum / reviews.size());
     }
+
+    @Override
+    public String toString() {
+        return getDeptCode() + " " + getClassTitle() + ": \n" + getDescription() + "\nDifficulty: " + getDifficulty();
+    }
 }

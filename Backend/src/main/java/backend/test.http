@@ -35,13 +35,13 @@ Content-Type: application/json
 GET http://localhost:8080/onlineUsers
 
 ###
-POST http://localhost:8080/schedule
+POST http://coms-309-032.class.las.iastate.edu:8080/schedule
 Content-Type: application/json
 
 {
-  "name": "test schedule",
+  "name": "testschedule",
   "user": {
-    "username": "dq"
+    "username": "MaxTest"
   },
   "sections": [
     5560
