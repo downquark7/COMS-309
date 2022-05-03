@@ -43,7 +43,7 @@ public class UserController
     public User manageUser(@RequestBody User user)
     {
         if (user.getId() < 1)
-            user.setId(userRepository.findByUsername("dq").getId());
+            user.setId(userRepository.findByUsername(user.getUsername()).getId());
 
         if (user.getSchedules().isEmpty())
             user.setSchedules(userRepository.findByUsername(user.getUsername()).getSchedules());
@@ -76,11 +76,10 @@ public class UserController
 
         if (userFromDb != null)
         {
-            if (!user.getAuthenticationMethod().equals(userFromDb.getAuthenticationMethod()))
+            if (user.getAuthenticationMethod() == null || userFromDb.getAuthenticationMethod() == null || !user.getAuthenticationMethod().equals(userFromDb.getAuthenticationMethod()))
                 return null;
-            if (!user.getAuthenticationData().equals(userFromDb.getAuthenticationData()))
+            if (user.getAuthenticationData() == null || userFromDb.getAuthenticationData() == null || !user.getAuthenticationData().equals(userFromDb.getAuthenticationData()))
                 return null;
-
         } else
         {
             return null;
@@ -134,7 +133,14 @@ public class UserController
     @GetMapping("/getUserById/{user}")
     public User getUserById(@PathVariable int user)
     {
-        return userRepository.getById(user);
+        return (User) userRepository.getById(user);
+    }
+
+    @DeleteMapping("/user")
+    public User deleteUserById(@RequestBody User user)
+    {
+        userRepository.delete(user);
+        return user;
     }
 
     /***

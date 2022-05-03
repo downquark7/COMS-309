@@ -2,6 +2,7 @@ package backend.users;
 
 import backend.schedules.Schedule;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.List;
  * user table database entity class
  */
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class User
 {
     @Id
