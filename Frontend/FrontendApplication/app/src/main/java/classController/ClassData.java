@@ -13,8 +13,10 @@ public class ClassData {
     private String classTitle;
     private String classComments;
     private String classPreReqs;
+    private String description;
+    private Double difficulty;
     private List<Section> sections;
-    private List<Instructor> sections;
+    private List<Instructor> instructorList;
 
     public int getId()
     {
@@ -114,6 +116,46 @@ public class ClassData {
     public void setSections(List<Section> sections)
     {
         this.sections = sections;
+    }
+
+    public List<Instructor> getInstructorList()
+    {
+        return instructorList;
+    }
+
+    public void setInstructorList(List<Instructor> instructorList)
+    {
+        this.instructorList = instructorList;
+    }
+
+    public void addInstructor(Instructor instructor)
+    {
+        instructorList.add(instructor);
+    }
+
+    public void removeInstructor(Instructor instructor)
+    {
+        instructorList.remove(instructor);
+    }
+
+    public String getDescription()
+    {
+        return description;
+    }
+
+    public void setDescription(String description)
+    {
+        this.description = description;
+    }
+
+    public double getDifficulty()
+    {
+        return difficulty;
+    }
+
+    public void setDifficulty(double difficulty)
+    {
+        this.difficulty = difficulty;
     }
 
     @Override
