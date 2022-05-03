@@ -5,6 +5,7 @@ import backend.classes.SectionRepository;
 import backend.classes.SectionTime;
 import backend.users.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
@@ -15,6 +16,7 @@ import java.util.List;
  * schedule database entity class
  */
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Schedule
 {
     @Id

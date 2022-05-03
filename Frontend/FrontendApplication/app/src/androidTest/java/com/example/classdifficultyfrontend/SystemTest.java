@@ -20,32 +20,57 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.core.StringEndsWith.endsWith;
 
+import java.util.Random;
+
 @RunWith(AndroidJUnit4ClassRunner.class)
 @LargeTest
 public class SystemTest {
+    Random random = new Random();
+    int randomNumber = random.nextInt(15) + 65;
 
     private static final int SIMULATED_DELAY_MS = 500;
 
     @Rule   // needed to launch the activity
-    public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<Login> activityRule = new ActivityTestRule<>(Login.class);
 
     @Test
     public void test_login() throws Exception{
         onView(withId(R.id.Username_input)).perform(typeText("testcreate"),closeSoftKeyboard());
         onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
-        onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
 
-        onView(withId(R.id.textUser)).check(matches(withText(" ")));
+        onView(withId(R.id.out)).check(matches(withText("Username: " + "testcreate" + "\n" +
+                "Authentication Method: " + "create" + "\n" +
+                "Authentication Data: " + "create")));
     }
 
+    @Test
+    public void test_login_fail() throws Exception{
+        onView(withId(R.id.Username_input)).perform(typeText("no"),closeSoftKeyboard());
+        onView(withId(R.id.Pass_input)).perform(typeText("more"),closeSoftKeyboard());
+        onView(withId(R.id.button)).perform(click());
+
+        onView(withId(R.id.out)).check(matches(withText("")));
+    }
+
+
+    @Test
     public void test_create_user_fail() throws Exception{
-        onView(withId(R.id.Username_input)).perform(typeText("testcreate"),closeSoftKeyboard());
-        onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
+        onView(withId(R.id.User_create_button)).perform(click());
+        onView(withId(R.id.Username_input)).perform(typeText("tes"),closeSoftKeyboard());
         onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
 
-        onView(withId(R.id.textUser)).check(matches(withText(" ")));
+        onView(withId(R.id.out)).check(matches(withText("")));
+    }
+    @Test
+    public void test_create_user_succeed() throws Exception{
+        onView(withId(R.id.User_create_button)).perform(click());
+        onView(withId(R.id.Username_input)).perform(typeText("test" + randomNumber),closeSoftKeyboard());
+        onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
+        onView(withId(R.id.button)).perform(click());
+
+        onView(withId(R.id.out)).check(matches(withText("")));
     }
 
 

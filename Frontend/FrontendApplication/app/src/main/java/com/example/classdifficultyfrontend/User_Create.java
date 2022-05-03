@@ -45,7 +45,7 @@ public class User_Create extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_create);
 
-        TextResult = findViewById(R.id.textUser);
+        TextResult = findViewById(R.id.out);
         Button button = findViewById(R.id.button);
         user = findViewById(R.id.Username_input);
         pass = findViewById(R.id.Pass_input);

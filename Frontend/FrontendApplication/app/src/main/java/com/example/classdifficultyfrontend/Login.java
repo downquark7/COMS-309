@@ -46,7 +46,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login3);
 
 
-        TextResult = findViewById(R.id.textUser);
+        TextResult = findViewById(R.id.out);
         Button button = findViewById(R.id.button);
         Button button2 = findViewById(R.id.User_create_button);
         user = findViewById(R.id.Username_input);
