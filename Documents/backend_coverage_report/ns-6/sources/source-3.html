@@ -1,0 +1,272 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > UserController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">backend.users</a>
+</div>
+
+<h1>Coverage Summary for Class: UserController (backend.users)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">UserController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (11/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    85%
+  </span>
+  <span class="absValue">
+    (34/40)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package backend.users;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i class="no-highlight">4</i>&nbsp;import org.springframework.web.bind.annotation.*;
+<i class="no-highlight">5</i>&nbsp;
+<i class="no-highlight">6</i>&nbsp;import java.util.HashMap;
+<i class="no-highlight">7</i>&nbsp;
+<i class="no-highlight">8</i>&nbsp;/***
+<i class="no-highlight">9</i>&nbsp; * user data focused rest controller for creating, managing, and logging in users and such
+<i class="no-highlight">10</i>&nbsp; */
+<i class="no-highlight">11</i>&nbsp;@RestController
+<b class="fc"><i class="no-highlight">12</i>&nbsp;public class UserController</b>
+<i class="no-highlight">13</i>&nbsp;{
+<b class="fc"><i class="no-highlight">14</i>&nbsp;    private HashMap&lt;Integer, User&gt; onlineUsers = new HashMap&lt;&gt;();</b>
+<i class="no-highlight">15</i>&nbsp;
+<i class="no-highlight">16</i>&nbsp;    @Autowired
+<i class="no-highlight">17</i>&nbsp;    UserRepository userRepository;
+<i class="no-highlight">18</i>&nbsp;
+<i class="no-highlight">19</i>&nbsp;    @Autowired
+<i class="no-highlight">20</i>&nbsp;    UserContactRepository userContactRepository;
+<i class="no-highlight">21</i>&nbsp;
+<i class="no-highlight">22</i>&nbsp;    /***
+<i class="no-highlight">23</i>&nbsp;     * mapping to creat a user
+<i class="no-highlight">24</i>&nbsp;     * @param user user object to create and add to user database
+<i class="no-highlight">25</i>&nbsp;     * @return null if user exists or user if it worked
+<i class="no-highlight">26</i>&nbsp;     */
+<i class="no-highlight">27</i>&nbsp;    @PostMapping(&quot;/user/create&quot;)
+<i class="no-highlight">28</i>&nbsp;    public User createUser(@RequestBody User user)
+<i class="no-highlight">29</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">30</i>&nbsp;        if (!userRepository.existsByUsername(user.getUsername()))</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;            userRepository.save(user);</b>
+<i class="no-highlight">32</i>&nbsp;        else
+<b class="fc"><i class="no-highlight">33</i>&nbsp;            return null;</b>
+<b class="fc"><i class="no-highlight">34</i>&nbsp;        return user;</b>
+<i class="no-highlight">35</i>&nbsp;    }
+<i class="no-highlight">36</i>&nbsp;
+<i class="no-highlight">37</i>&nbsp;    /***
+<i class="no-highlight">38</i>&nbsp;     * manage user mapping
+<i class="no-highlight">39</i>&nbsp;     * @param user updated user object, if fields are empty it is assumed that previous fields should be used
+<i class="no-highlight">40</i>&nbsp;     * @return updated user object
+<i class="no-highlight">41</i>&nbsp;     */
+<i class="no-highlight">42</i>&nbsp;    @PutMapping(&quot;/user/manage&quot;)
+<i class="no-highlight">43</i>&nbsp;    public User manageUser(@RequestBody User user)
+<i class="no-highlight">44</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">45</i>&nbsp;        if (user.getId() &lt; 1)</b>
+<b class="fc"><i class="no-highlight">46</i>&nbsp;            user.setId(userRepository.findByUsername(user.getUsername()).getId());</b>
+<i class="no-highlight">47</i>&nbsp;
+<b class="fc"><i class="no-highlight">48</i>&nbsp;        if (user.getSchedules().isEmpty())</b>
+<b class="fc"><i class="no-highlight">49</i>&nbsp;            user.setSchedules(userRepository.findByUsername(user.getUsername()).getSchedules());</b>
+<i class="no-highlight">50</i>&nbsp;
+<b class="fc"><i class="no-highlight">51</i>&nbsp;        if (user.getAuthenticationData() == null)</b>
+<b class="fc"><i class="no-highlight">52</i>&nbsp;            user.setAuthenticationData(userRepository.findByUsername(user.getUsername()).getAuthenticationData());</b>
+<i class="no-highlight">53</i>&nbsp;
+<b class="fc"><i class="no-highlight">54</i>&nbsp;        if (user.getAuthenticationMethod() == null)</b>
+<b class="fc"><i class="no-highlight">55</i>&nbsp;            user.setAuthenticationMethod(userRepository.findByUsername(user.getUsername()).getAuthenticationData());</b>
+<i class="no-highlight">56</i>&nbsp;
+<b class="fc"><i class="no-highlight">57</i>&nbsp;        if (user.getUserContact() != null)</b>
+<i class="no-highlight">58</i>&nbsp;        {
+<b class="nc"><i class="no-highlight">59</i>&nbsp;            userContactRepository.save(user.getUserContact());</b>
+<b class="nc"><i class="no-highlight">60</i>&nbsp;            user.setUserContact(user.getUserContact());</b>
+<i class="no-highlight">61</i>&nbsp;        }
+<i class="no-highlight">62</i>&nbsp;
+<b class="fc"><i class="no-highlight">63</i>&nbsp;        userRepository.save(user);</b>
+<b class="fc"><i class="no-highlight">64</i>&nbsp;        return user;</b>
+<i class="no-highlight">65</i>&nbsp;    }
+<i class="no-highlight">66</i>&nbsp;
+<i class="no-highlight">67</i>&nbsp;    /***
+<i class="no-highlight">68</i>&nbsp;     * user login mapping
+<i class="no-highlight">69</i>&nbsp;     * @param user user object including username, authenticationData, and authenticationMethod
+<i class="no-highlight">70</i>&nbsp;     * @return user object from database
+<i class="no-highlight">71</i>&nbsp;     */
+<i class="no-highlight">72</i>&nbsp;    @PostMapping(&quot;/user/login&quot;)
+<i class="no-highlight">73</i>&nbsp;    public User loginUser(@RequestBody User user)
+<i class="no-highlight">74</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">75</i>&nbsp;        User userFromDb = userRepository.findByUsername(user.getUsername());</b>
+<i class="no-highlight">76</i>&nbsp;
+<b class="fc"><i class="no-highlight">77</i>&nbsp;        if (userFromDb != null)</b>
+<i class="no-highlight">78</i>&nbsp;        {
+<b class="fc"><i class="no-highlight">79</i>&nbsp;            if (user.getAuthenticationMethod() == null || userFromDb.getAuthenticationMethod() == null || !user.getAuthenticationMethod().equals(userFromDb.getAuthenticationMethod()))</b>
+<b class="fc"><i class="no-highlight">80</i>&nbsp;                return null;</b>
+<b class="fc"><i class="no-highlight">81</i>&nbsp;            if (user.getAuthenticationData() == null || userFromDb.getAuthenticationData() == null || !user.getAuthenticationData().equals(userFromDb.getAuthenticationData()))</b>
+<b class="nc"><i class="no-highlight">82</i>&nbsp;                return null;</b>
+<i class="no-highlight">83</i>&nbsp;        } else
+<i class="no-highlight">84</i>&nbsp;        {
+<b class="nc"><i class="no-highlight">85</i>&nbsp;            return null;</b>
+<i class="no-highlight">86</i>&nbsp;        }
+<i class="no-highlight">87</i>&nbsp;
+<b class="fc"><i class="no-highlight">88</i>&nbsp;        onlineUsers.put(user.getId(), user);</b>
+<i class="no-highlight">89</i>&nbsp;
+<b class="fc"><i class="no-highlight">90</i>&nbsp;        return userFromDb;</b>
+<i class="no-highlight">91</i>&nbsp;    }
+<i class="no-highlight">92</i>&nbsp;
+<i class="no-highlight">93</i>&nbsp;    /***
+<i class="no-highlight">94</i>&nbsp;     * @return list of all online users from hashmap
+<i class="no-highlight">95</i>&nbsp;     */
+<i class="no-highlight">96</i>&nbsp;    @GetMapping(&quot;/onlineUsers&quot;)
+<i class="no-highlight">97</i>&nbsp;    public HashMap&lt;Integer, User&gt; getOnlineUsers()
+<i class="no-highlight">98</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">99</i>&nbsp;        return onlineUsers;</b>
+<i class="no-highlight">100</i>&nbsp;    }
+<i class="no-highlight">101</i>&nbsp;
+<i class="no-highlight">102</i>&nbsp;    /***
+<i class="no-highlight">103</i>&nbsp;     * logout user
+<i class="no-highlight">104</i>&nbsp;     * @param user user id needed to logout
+<i class="no-highlight">105</i>&nbsp;     * @return user that was logged out or null if failed
+<i class="no-highlight">106</i>&nbsp;     */
+<i class="no-highlight">107</i>&nbsp;    @PostMapping(&quot;/user/logout&quot;)
+<i class="no-highlight">108</i>&nbsp;    public User logout(@RequestBody User user)
+<i class="no-highlight">109</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">110</i>&nbsp;        User userFromHashmap = onlineUsers.get(user.getId());</b>
+<b class="fc"><i class="no-highlight">111</i>&nbsp;        if (userFromHashmap == null)</b>
+<b class="fc"><i class="no-highlight">112</i>&nbsp;            return null;</b>
+<b class="nc"><i class="no-highlight">113</i>&nbsp;        onlineUsers.remove(user.getId());</b>
+<b class="nc"><i class="no-highlight">114</i>&nbsp;        return userFromHashmap;</b>
+<i class="no-highlight">115</i>&nbsp;    }
+<i class="no-highlight">116</i>&nbsp;
+<i class="no-highlight">117</i>&nbsp;    /***
+<i class="no-highlight">118</i>&nbsp;     * get data about specific user
+<i class="no-highlight">119</i>&nbsp;     * @param user user object but only needs username defined to work right now
+<i class="no-highlight">120</i>&nbsp;     * @return user object including schedules and contact object
+<i class="no-highlight">121</i>&nbsp;     */
+<i class="no-highlight">122</i>&nbsp;    @GetMapping(&quot;/getUser/{user}&quot;)
+<i class="no-highlight">123</i>&nbsp;    public User getUserByName(@PathVariable String user)
+<i class="no-highlight">124</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">125</i>&nbsp;        return userRepository.findByUsername(user);</b>
+<i class="no-highlight">126</i>&nbsp;    }
+<i class="no-highlight">127</i>&nbsp;
+<i class="no-highlight">128</i>&nbsp;    /***
+<i class="no-highlight">129</i>&nbsp;     * get data about specific user
+<i class="no-highlight">130</i>&nbsp;     * @param user takes user id as int
+<i class="no-highlight">131</i>&nbsp;     * @return user object including schedules and contact object
+<i class="no-highlight">132</i>&nbsp;     */
+<i class="no-highlight">133</i>&nbsp;    @GetMapping(&quot;/getUserById/{user}&quot;)
+<i class="no-highlight">134</i>&nbsp;    public User getUserById(@PathVariable int user)
+<i class="no-highlight">135</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">136</i>&nbsp;        return (User) userRepository.getById(user);</b>
+<i class="no-highlight">137</i>&nbsp;    }
+<i class="no-highlight">138</i>&nbsp;
+<i class="no-highlight">139</i>&nbsp;    @DeleteMapping(&quot;/user&quot;)
+<i class="no-highlight">140</i>&nbsp;    public User deleteUserById(@RequestBody User user)
+<i class="no-highlight">141</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">142</i>&nbsp;        userRepository.delete(user);</b>
+<b class="fc"><i class="no-highlight">143</i>&nbsp;        return user;</b>
+<i class="no-highlight">144</i>&nbsp;    }
+<i class="no-highlight">145</i>&nbsp;
+<i class="no-highlight">146</i>&nbsp;    /***
+<i class="no-highlight">147</i>&nbsp;     * get contact data about specific user
+<i class="no-highlight">148</i>&nbsp;     * @param user user object but only needs username defined to work right now
+<i class="no-highlight">149</i>&nbsp;     * @return user contact object
+<i class="no-highlight">150</i>&nbsp;     */
+<i class="no-highlight">151</i>&nbsp;    @GetMapping(&quot;/getUserContact/{user}&quot;)
+<i class="no-highlight">152</i>&nbsp;    public UserContact getUserContactByName(@PathVariable String user)
+<i class="no-highlight">153</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">154</i>&nbsp;        return userRepository.findByUsername(user).getUserContact();</b>
+<i class="no-highlight">155</i>&nbsp;    }
+<i class="no-highlight">156</i>&nbsp;
+<i class="no-highlight">157</i>&nbsp;    /***
+<i class="no-highlight">158</i>&nbsp;     * get contact data about specific user
+<i class="no-highlight">159</i>&nbsp;     * @param user takes user id as int
+<i class="no-highlight">160</i>&nbsp;     * @return user contact object
+<i class="no-highlight">161</i>&nbsp;     */
+<i class="no-highlight">162</i>&nbsp;    @GetMapping(&quot;/getUserContactById/{user}&quot;)
+<i class="no-highlight">163</i>&nbsp;    public UserContact getUserContactById(@PathVariable int user)
+<i class="no-highlight">164</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">165</i>&nbsp;        return userRepository.getById(user).getUserContact();</b>
+<i class="no-highlight">166</i>&nbsp;    }
+<i class="no-highlight">167</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-05-03 17:16</div>
+</div>
+</body>
+</html>

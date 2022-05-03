@@ -1,0 +1,208 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Review</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">backend.reviews</a>
+</div>
+
+<h1>Coverage Summary for Class: Review (backend.reviews)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Review</td>
+<td class="coverageStat">
+  <span class="percent">
+    92.3%
+  </span>
+  <span class="absValue">
+    (12/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92.3%
+  </span>
+  <span class="absValue">
+    (12/13)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Review$HibernateProxy$cojLpI72</td>
+  </tr>
+  <tr>
+    <td class="name">Review$HibernateProxy$OvZ4Kh66</td>
+  </tr>
+  <tr>
+    <td class="name">Review$HibernateProxy$ZnX1CnH6</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    92.3%
+  </span>
+  <span class="absValue">
+    (12/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92.3%
+  </span>
+  <span class="absValue">
+    (12/13)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package backend.reviews;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import backend.classes.ClassData;
+<i class="no-highlight">4</i>&nbsp;import com.fasterxml.jackson.annotation.JsonIgnore;
+<i class="no-highlight">5</i>&nbsp;
+<i class="no-highlight">6</i>&nbsp;import javax.persistence.*;
+<i class="no-highlight">7</i>&nbsp;
+<i class="no-highlight">8</i>&nbsp;@Entity
+<b class="fc"><i class="no-highlight">9</i>&nbsp;public class Review</b>
+<i class="no-highlight">10</i>&nbsp;{
+<i class="no-highlight">11</i>&nbsp;    @GeneratedValue
+<i class="no-highlight">12</i>&nbsp;    @Id
+<i class="no-highlight">13</i>&nbsp;    private int id;
+<i class="no-highlight">14</i>&nbsp;
+<i class="no-highlight">15</i>&nbsp;    private int classId;
+<i class="no-highlight">16</i>&nbsp;
+<i class="no-highlight">17</i>&nbsp;    private String username;
+<i class="no-highlight">18</i>&nbsp;
+<i class="no-highlight">19</i>&nbsp;    @ManyToOne
+<i class="no-highlight">20</i>&nbsp;    @JsonIgnore
+<i class="no-highlight">21</i>&nbsp;    private ClassData classData;
+<i class="no-highlight">22</i>&nbsp;
+<i class="no-highlight">23</i>&nbsp;    private double difficulty;
+<i class="no-highlight">24</i>&nbsp;
+<i class="no-highlight">25</i>&nbsp;    @Column(columnDefinition = &quot;TEXT&quot;)
+<i class="no-highlight">26</i>&nbsp;    private String text;
+<i class="no-highlight">27</i>&nbsp;
+<i class="no-highlight">28</i>&nbsp;    public int getId()
+<i class="no-highlight">29</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">30</i>&nbsp;        return id;</b>
+<i class="no-highlight">31</i>&nbsp;    }
+<i class="no-highlight">32</i>&nbsp;
+<i class="no-highlight">33</i>&nbsp;    public void setId(int id)
+<i class="no-highlight">34</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">35</i>&nbsp;        this.id = id;</b>
+<i class="no-highlight">36</i>&nbsp;    }
+<i class="no-highlight">37</i>&nbsp;
+<i class="no-highlight">38</i>&nbsp;    public ClassData getClassData()
+<i class="no-highlight">39</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">40</i>&nbsp;        return classData;</b>
+<i class="no-highlight">41</i>&nbsp;    }
+<i class="no-highlight">42</i>&nbsp;
+<i class="no-highlight">43</i>&nbsp;    public void setClassData(ClassData classData)
+<i class="no-highlight">44</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">45</i>&nbsp;        this.classData = classData;</b>
+<i class="no-highlight">46</i>&nbsp;    }
+<i class="no-highlight">47</i>&nbsp;
+<i class="no-highlight">48</i>&nbsp;    public double getDifficulty()
+<i class="no-highlight">49</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">50</i>&nbsp;        return difficulty;</b>
+<i class="no-highlight">51</i>&nbsp;    }
+<i class="no-highlight">52</i>&nbsp;
+<i class="no-highlight">53</i>&nbsp;    public void setDifficulty(double difficulty)
+<i class="no-highlight">54</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">55</i>&nbsp;        this.difficulty = difficulty;</b>
+<i class="no-highlight">56</i>&nbsp;    }
+<i class="no-highlight">57</i>&nbsp;
+<i class="no-highlight">58</i>&nbsp;    public String getText()
+<i class="no-highlight">59</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">60</i>&nbsp;        return text;</b>
+<i class="no-highlight">61</i>&nbsp;    }
+<i class="no-highlight">62</i>&nbsp;
+<i class="no-highlight">63</i>&nbsp;    public void setText(String text)
+<i class="no-highlight">64</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">65</i>&nbsp;        this.text = text;</b>
+<i class="no-highlight">66</i>&nbsp;    }
+<i class="no-highlight">67</i>&nbsp;
+<i class="no-highlight">68</i>&nbsp;    public int getClassId()
+<i class="no-highlight">69</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">70</i>&nbsp;        return classId;</b>
+<i class="no-highlight">71</i>&nbsp;    }
+<i class="no-highlight">72</i>&nbsp;
+<i class="no-highlight">73</i>&nbsp;    public void setClassId(int classId)
+<i class="no-highlight">74</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">75</i>&nbsp;        this.classId = classId;</b>
+<i class="no-highlight">76</i>&nbsp;    }
+<i class="no-highlight">77</i>&nbsp;
+<i class="no-highlight">78</i>&nbsp;    public String getUsername()
+<i class="no-highlight">79</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">80</i>&nbsp;        return username;</b>
+<i class="no-highlight">81</i>&nbsp;    }
+<i class="no-highlight">82</i>&nbsp;
+<i class="no-highlight">83</i>&nbsp;    public void setUsername(String username)
+<i class="no-highlight">84</i>&nbsp;    {
+<b class="fc"><i class="no-highlight">85</i>&nbsp;        this.username = username;</b>
+<i class="no-highlight">86</i>&nbsp;    }
+<i class="no-highlight">87</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-05-03 17:16</div>
+</div>
+</body>
+</html>
