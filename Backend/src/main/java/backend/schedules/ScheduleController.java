@@ -66,9 +66,4 @@ public class ScheduleController
     public ScheduleOutputHelper getSchedule(@PathVariable int id) {
         return new ScheduleOutputHelper(scheduleRepository.getById(id));
     }
-
-    @DeleteMapping("/schedule/byId/{id}")
-    public void deleteById(@PathVariable int id) {
-        scheduleRepository.deleteById(id);
-    }
 }

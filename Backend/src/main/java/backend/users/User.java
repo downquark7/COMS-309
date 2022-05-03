@@ -22,10 +22,10 @@ public class User
     private String authenticationMethod;
     private String authenticationData;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
     private UserContact userContact;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Schedule> schedules;
 
     public User()

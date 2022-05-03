@@ -12,6 +12,7 @@ import java.util.List;
  */
 public class ScheduleOutputHelper
 {
+    public int id;
     public String name;
     public User user;
     public List<ClassData> classes;
@@ -20,6 +21,7 @@ public class ScheduleOutputHelper
     {
         this.user = schedule.getUser();
         this.name = schedule.getName();
+        this.id = schedule.getId();
 
         List<ClassData> list = new ArrayList<>();
         for (Section s : schedule.getList())
@@ -31,5 +33,9 @@ public class ScheduleOutputHelper
             list.add(classData);
         }
         this.classes = list;
+    }
+
+    public ScheduleOutputHelper() {
+
     }
 }
