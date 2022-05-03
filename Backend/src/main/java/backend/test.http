@@ -8,7 +8,7 @@ POST http://localhost:8080/user/create
 Content-Type: application/json
 
 {
-  "username": "testUser",
+  "username": "dq",
   "authenticationMethod": "plaintext",
   "authenticationData": "cool"
 }
@@ -35,13 +35,13 @@ Content-Type: application/json
 GET http://localhost:8080/onlineUsers
 
 ###
-POST http://coms-309-032.class.las.iastate.edu:8080/schedule
+POST http://localhost:8080/schedule
 Content-Type: application/json
 
 {
   "name": "testschedule",
   "user": {
-    "username": "MaxTest"
+    "username": "dq"
   },
   "sections": [
     5560
