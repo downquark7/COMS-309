@@ -39,29 +39,38 @@ public class SystemTest {
         onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
 
-        onView(withId(R.id.textUser)).check(matches(withText("Username: " + "testcreate" + "\n" +
+        onView(withId(R.id.out)).check(matches(withText("Username: " + "testcreate" + "\n" +
                 "Authentication Method: " + "create" + "\n" +
                 "Authentication Data: " + "create")));
     }
 
-    @Rule   // needed to launch the activity
-    public ActivityTestRule<User_Create> activitycreate = new ActivityTestRule<>(User_Create.class);
+    @Test
+    public void test_login_fail() throws Exception{
+        onView(withId(R.id.Username_input)).perform(typeText("no"),closeSoftKeyboard());
+        onView(withId(R.id.Pass_input)).perform(typeText("more"),closeSoftKeyboard());
+        onView(withId(R.id.button)).perform(click());
+
+        onView(withId(R.id.out)).check(matches(withText("")));
+    }
+
 
     @Test
     public void test_create_user_fail() throws Exception{
-        onView(withId(R.id.Username_input)).perform(typeText("testcreate"),closeSoftKeyboard());
+        onView(withId(R.id.User_create_button)).perform(click());
+        onView(withId(R.id.Username_input)).perform(typeText("tes"),closeSoftKeyboard());
         onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
 
-        onView(withId(R.id.textUser)).check(matches(withText(" ")));
+        onView(withId(R.id.out)).check(matches(withText("")));
     }
     @Test
     public void test_create_user_succeed() throws Exception{
+        onView(withId(R.id.User_create_button)).perform(click());
         onView(withId(R.id.Username_input)).perform(typeText("test" + randomNumber),closeSoftKeyboard());
         onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
 
-        onView(withId(R.id.textUser)).check(matches(withText("")));
+        onView(withId(R.id.out)).check(matches(withText("")));
     }
 
 
