@@ -132,7 +132,7 @@ public class Login extends AppCompatActivity {
 
 //                     UserPreferences userPref = new UserPreferences(getApplicationContext());
 //                    userPref.saveBody(Userstr);
-                     Intent intent = new Intent(getApplicationContext(), HomePageActivity.class);
+                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     // intent.putExtra("message_key", text);
                      startActivity(intent);
 

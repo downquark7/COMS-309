@@ -6,39 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <DigitalClock
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"/>
+
+    <android.widget.TextClock
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is a temporary screen to \navigate between pages "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.059"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:gravity="center"
+        android:format12Hour="MM.dd.yyyy"
+        android:format24Hour="@null" />
 
     <Button
         android:id="@+id/button_go_to_scheduler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
         android:text="Scheduler"
         tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="90dp"
-        android:layout_marginTop="60dp"
-        android:layout_centerHorizontal="true"
-        />
+        tools:layout_editor_absoluteY="90dp" />
 
     <Button
         android:id="@+id/button_go_to_classlist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
         android:text="Class list"
         tools:layout_editor_absoluteX="208dp"
-        tools:layout_editor_absoluteY="90dp"
-        android:layout_marginTop="100dp"
-        android:layout_centerHorizontal="true"/>
+        tools:layout_editor_absoluteY="90dp" />
 
     <Button
         android:id="@+id/button_go_to_login"
@@ -54,11 +53,11 @@
         android:id="@+id/button_go_to_user_create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
         android:text="User Create"
         tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="157dp"
-        android:layout_marginTop="180dp"
-        android:layout_centerHorizontal="true"/>
+        tools:layout_editor_absoluteY="157dp" />
     <Button
         android:id="@+id/button_go_to_profile"
         android:layout_width="wrap_content"
