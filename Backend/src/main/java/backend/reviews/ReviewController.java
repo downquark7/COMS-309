@@ -27,13 +27,6 @@ public class ReviewController
         return review;
     }
 
-    @DeleteMapping("/review")
-    public Review deleteReview(@RequestBody Review review)
-    {
-        reviewRepository.delete(review);
-        return review;
-    }
-
     @GetMapping("/reviews/{department}/{number}")
     public List<Review> getReviews(@PathVariable String department, @PathVariable String number)
     {
