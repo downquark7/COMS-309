@@ -31,4 +31,9 @@ public class ClassController {
         ObjectMapper mapper = new ObjectMapper();
         return Arrays.asList(mapper.readValue(url, ClassData[].class));
     }
+//    public static List<SectionTime> getScheduleByUserId(String userId) throws IOException {
+//        URL url = new URL(Config.baseURL + "/schedule/byUserId/" + userId);
+//        ObjectMapper mapper = new ObjectMapper();
+//        return Arrays.asList(mapper.readValue(url, SectionTime[].class));
+//    }
 }
