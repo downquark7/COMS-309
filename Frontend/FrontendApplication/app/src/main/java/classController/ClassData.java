@@ -11,9 +11,10 @@ public class ClassData {
     private String classNumber;
     private String departmentTitle;
     private String classTitle;
-    //    private String classComments;
+    private String classComments;
     private String classPreReqs;
     private List<Section> sections;
+    private List<Instructor> sections;
 
     public int getId()
     {
@@ -85,15 +86,15 @@ public class ClassData {
         this.classTitle = classTitle;
     }
 
-//    public String getClassComments()
-//    {
-//        return classComments;
-//    }
-//
-//    public void setClassComments(String classComments)
-//    {
-//        this.classComments = classComments;
-//    }
+    public String getClassComments()
+    {
+        return classComments;
+    }
+
+    public void setClassComments(String classComments)
+    {
+        this.classComments = classComments;
+    }
 
     public String getClassPreReqs()
     {
