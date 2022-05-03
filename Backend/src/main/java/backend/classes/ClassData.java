@@ -1,6 +1,7 @@
 package backend.classes;
 
 import backend.instructors.Instructor;
+import backend.reviews.Review;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -33,11 +34,16 @@ public class ClassData
     private List<Section> sections;
 
     @Column(columnDefinition = "TEXT")
-    private String classDescription;
+    private String description;
+
+    private double difficulty;
 
     @JsonIgnore
     @ManyToMany
     private List<Instructor> instructorList = new ArrayList<>();
+
+    @OneToMany
+    private List<Review> reviews = new ArrayList<>();
 
     public ClassData()
     {
@@ -164,13 +170,56 @@ public class ClassData
         instructorList.remove(instructor);
     }
 
-    public String getClassDescription()
+    public String getDescription()
     {
-        return classDescription;
+        return description;
     }
 
-    public void setClassDescription(String classDescription)
+    public void setDescription(String description)
     {
-        this.classDescription = classDescription;
+        this.description = description;
+    }
+
+    public double getDifficulty()
+    {
+        return difficulty;
+    }
+
+    public void setDifficulty(double difficulty)
+    {
+        this.difficulty = difficulty;
+    }
+
+    public List<Review> getReviews()
+    {
+        return reviews;
+    }
+
+    public void addReview(Review review)
+    {
+        reviews.add(review);
+        updateDifficulty();
+    }
+
+    public void removeReview(Review review)
+    {
+        reviews.remove(review);
+        updateDifficulty();
+    }
+
+    public void setReviews(List<Review> reviews)
+    {
+        this.reviews = reviews;
+        updateDifficulty();
+    }
+
+    private void updateDifficulty() {
+        double sum = 0;
+        for (Review r : reviews)
+        {
+            sum += r.getDifficulty();
+        }
+        if (!reviews.isEmpty())
+            setDifficulty(sum / reviews.size());
     }
 }

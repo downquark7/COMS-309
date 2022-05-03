@@ -2,7 +2,7 @@
 
 Backend API
 - API version: 1.0.0
-  - Build date: 2022-04-18T22:22:09.760875400-05:00[America/Chicago]
+  - Build date: 2022-05-02T22:21:12.639238-05:00[America/Chicago]
 
 Backend API
 
@@ -82,13 +82,13 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://coms-309-032.class.las.iastate.edu");
+    defaultClient.setBasePath("https://Backend");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     try {
-      apiInstance.addSchedule();
+      apiInstance.addReview();
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#addSchedule");
+      System.err.println("Exception when calling DefaultApi#addReview");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -101,18 +101,22 @@ public class Example {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://coms-309-032.class.las.iastate.edu*
+All URIs are relative to *https://Backend*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DefaultApi* | [**addReview**](docs/DefaultApi.md#addReview) | **POST** /review | POST review
 *DefaultApi* | [**addSchedule**](docs/DefaultApi.md#addSchedule) | **POST** /schedule | POST schedule
 *DefaultApi* | [**allInstructors**](docs/DefaultApi.md#allInstructors) | **GET** /allInstructors | GET allInstructors
 *DefaultApi* | [**createUser**](docs/DefaultApi.md#createUser) | **POST** /user/create | POST user/create
 *DefaultApi* | [**deleteById**](docs/DefaultApi.md#deleteById) | **DELETE** /schedule/byId/{id} | DELETE schedule/byId/{id}
+*DefaultApi* | [**deleteClass**](docs/DefaultApi.md#deleteClass) | **DELETE** /class/{department}/{number} | DELETE class/{department}/{number}
+*DefaultApi* | [**deleteReview**](docs/DefaultApi.md#deleteReview) | **DELETE** /review | DELETE review
 *DefaultApi* | [**getAllClasses**](docs/DefaultApi.md#getAllClasses) | **GET** /classes | GET classes
 *DefaultApi* | [**getAllClassesByDepartment**](docs/DefaultApi.md#getAllClassesByDepartment) | **GET** /classes/{department} | GET classes/{department}
 *DefaultApi* | [**getClass**](docs/DefaultApi.md#getClass) | **GET** /class/{department}/{number} | GET class/{department}/{number}
 *DefaultApi* | [**getOnlineUsers**](docs/DefaultApi.md#getOnlineUsers) | **GET** /onlineUsers | GET onlineUsers
+*DefaultApi* | [**getReviews**](docs/DefaultApi.md#getReviews) | **GET** /reviews/{department}/{number} | GET reviews/{department}/{number}
 *DefaultApi* | [**getSchedule**](docs/DefaultApi.md#getSchedule) | **GET** /schedule/byId/{id} | GET schedule/byId/{id}
 *DefaultApi* | [**getSchedules**](docs/DefaultApi.md#getSchedules) | **GET** /schedules/byUserId/{userid} | GET schedules/byUserId/{userid}
 *DefaultApi* | [**getUserById**](docs/DefaultApi.md#getUserById) | **GET** /getUserById/{user} | GET getUserById/{user}
@@ -124,6 +128,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**logout**](docs/DefaultApi.md#logout) | **POST** /user/logout | POST user/logout
 *DefaultApi* | [**manageUser**](docs/DefaultApi.md#manageUser) | **PUT** /user/manage | PUT user/manage
 *DefaultApi* | [**updateClass**](docs/DefaultApi.md#updateClass) | **POST** /class | POST class
+*DefaultApi* | [**updateClass2**](docs/DefaultApi.md#updateClass2) | **PUT** /class/{department}/{number} | PUT class/{department}/{number}
 *DefaultApi* | [**updateClasses**](docs/DefaultApi.md#updateClasses) | **POST** /classes | POST classes
 
 

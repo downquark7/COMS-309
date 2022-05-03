@@ -54,29 +54,29 @@ public class ClassController
         return classRepository.findByDepartmentTitleAndClassNumber(department, number);
     }
 
-//    @DeleteMapping("/class/{department}/{number}")
-//    public ClassData deleteClass(@PathVariable String department, @PathVariable String number)
-//    {
-//        ClassData classData = classRepository.findByDepartmentTitleAndClassNumber(department, number);
-//        classRepository.delete(classData);
-//        return classData;
-//    }
+    @DeleteMapping("/class/{department}/{number}")
+    public ClassData deleteClass(@PathVariable String department, @PathVariable String number)
+    {
+        ClassData classData = classRepository.findByDepartmentTitleAndClassNumber(department, number);
+        classRepository.delete(classData);
+        return classData;
+    }
 
-//    /***
-//     * update specific class but it probably won't be used
-//     * @param department
-//     * @param number
-//     * @param classData
-//     * @return
-//     */
-//    @PutMapping("/class/{department}/{number}")
-//    public ClassData updateClass(@PathVariable String department, @PathVariable String number, @RequestBody ClassData classData)
-//    {
-//        classData.setDepartmentTitle(department);
-//        classData.setClassNumber(number);
-//        classRepository.save(classData);
-//        return classData;
-//    }
+    /***
+     * update specific class but it probably won't be used
+     * @param department
+     * @param number
+     * @param classData
+     * @return
+     */
+    @PutMapping("/class/{department}/{number}")
+    public ClassData updateClass(@PathVariable String department, @PathVariable String number, @RequestBody ClassData classData)
+    {
+        classData.setDepartmentTitle(department);
+        classData.setClassNumber(number);
+        classRepository.save(classData);
+        return classData;
+    }
 
     @Autowired
     InstructorRepository instructorRepository;
