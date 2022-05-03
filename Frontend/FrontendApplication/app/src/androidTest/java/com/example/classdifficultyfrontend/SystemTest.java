@@ -39,5 +39,14 @@ public class SystemTest {
         onView(withId(R.id.textUser)).check(matches(withText(" ")));
     }
 
+    public void test_create_user_fail() throws Exception{
+        onView(withId(R.id.Username_input)).perform(typeText("testcreate"),closeSoftKeyboard());
+        onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
+        onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
+        onView(withId(R.id.button)).perform(click());
+
+        onView(withId(R.id.textUser)).check(matches(withText(" ")));
+    }
+
 
 }
