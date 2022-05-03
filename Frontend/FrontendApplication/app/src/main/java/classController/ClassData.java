@@ -17,6 +17,7 @@ public class ClassData {
     private Double difficulty;
     private List<Section> sections;
     private List<Instructor> instructorList;
+    private List<Review> reviews;
 
     public int getId()
     {
@@ -157,6 +158,41 @@ public class ClassData {
     {
         this.difficulty = difficulty;
     }
+
+    public List<Review> getReviews()
+    {
+        return reviews;
+    }
+
+    public void addReview(Review review)
+    {
+        reviews.add(review);
+        updateDifficulty();
+    }
+
+    public void removeReview(Review review)
+    {
+        reviews.remove(review);
+        updateDifficulty();
+    }
+
+    public void setReviews(List<Review> reviews)
+    {
+        this.reviews = reviews;
+        updateDifficulty();
+    }
+
+    private void updateDifficulty() {
+        double sum = 0;
+        for (Review r : reviews)
+        {
+            sum += r.getDifficulty();
+        }
+        if (!reviews.isEmpty())
+            setDifficulty(sum / reviews.size());
+    }
+
+
 
     @Override
     public String toString()

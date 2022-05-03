@@ -11,7 +11,7 @@ public class Review
     private ClassData classData;
 
     private double difficulty;
-    
+
     private String text;
 
     public int getId()
