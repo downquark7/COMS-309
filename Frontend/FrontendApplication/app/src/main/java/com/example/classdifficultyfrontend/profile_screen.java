@@ -76,7 +76,7 @@ public class profile_screen extends AppCompatActivity {
 
         RequestQueue queue = Volley.newRequestQueue(this);
 
-        String url = "http://coms-309-032.class.las.iastate.edu:8080/user";
+        String url = "http://coms-309-032.class.las.iastate.edu:8080/user/manage";
 
         String UserEmail = email.getText().toString().trim();
         String UserPhone = phone.getText().toString().trim();

@@ -8,7 +8,7 @@ POST http://localhost:8080/user/create
 Content-Type: application/json
 
 {
-  "username": "testUser",
+  "username": "dq",
   "authenticationMethod": "plaintext",
   "authenticationData": "cool"
 }
@@ -39,7 +39,7 @@ POST http://localhost:8080/schedule
 Content-Type: application/json
 
 {
-  "name": "test schedule",
+  "name": "testschedule",
   "user": {
     "username": "dq"
   },
