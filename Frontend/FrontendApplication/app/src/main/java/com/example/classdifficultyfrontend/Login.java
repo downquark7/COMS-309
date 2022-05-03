@@ -3,6 +3,7 @@ package com.example.classdifficultyfrontend;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -122,6 +123,9 @@ public class Login extends AppCompatActivity {
                     TextResult.append("Authentication Data: " + jsonObject.getString("authenticationData"));
 
                     //text = jsonObject.toString();
+                    SharedPreferences userSettings = getSharedPreferences("UserData", MODE_PRIVATE);
+                    SharedPreferences.Editor userEdit = userSettings.edit();
+                    userEdit.putString("Username", Userstr);
                      Intent intent = new Intent(getApplicationContext(), HomePageActivity.class);
                     // intent.putExtra("message_key", text);
                      startActivity(intent);

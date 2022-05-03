@@ -17,4 +17,10 @@
         android:gravity="center"
         android:format12Hour="MM.dd.yyyy"
         android:format24Hour="@null" />
+
+    <TextView
+        android:id="@+id/testbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 </LinearLayout>
