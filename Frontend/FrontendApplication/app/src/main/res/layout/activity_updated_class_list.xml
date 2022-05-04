@@ -37,8 +37,20 @@
                 android:textColor="#F6F2F2"
                 android:gravity="center"
                 android:text=" " />
+
+            <Button
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#F4F0F0"
+                android:orientation="vertical"
+                android:text="Back"
+                android:layout_marginLeft="160dp"
+                android:textColor="@android:color/holo_red_light" />
         </LinearLayout>
     </ScrollView>
+
 
 
 </RelativeLayout>

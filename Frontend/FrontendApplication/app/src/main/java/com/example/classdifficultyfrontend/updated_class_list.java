@@ -7,10 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 //import classController.ClassController;
 //import classController.DepartmentCodes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -35,6 +37,15 @@ public class updated_class_list extends AppCompatActivity {
 
         TextView text = (TextView) findViewById(R.id.textView);
         Spinner choose = (Spinner) findViewById(R.id.spinner);
+
+        Button button = findViewById(R.id.back);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(updated_class_list.this, MainActivity.class));
+            }
+        });
 
         choose.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             /**
@@ -74,4 +85,6 @@ public class updated_class_list extends AppCompatActivity {
             }
         });
     }
+
+
 }
