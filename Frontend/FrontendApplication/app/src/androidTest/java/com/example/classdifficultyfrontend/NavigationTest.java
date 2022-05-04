@@ -51,7 +51,7 @@ public class NavigationTest {
 
     private static final int SIMULATED_DELAY_MS = 500;
     @Rule
-    public ActivityTestRule<ScheduleActivity> activityRule = new ActivityTestRule<>(Login.class);
+    public ActivityTestRule<ScheduleActivity> activityRule = new ActivityTestRule<>(ScheduleActivity.class);
 
     @Test
     public void test_days() throws Exception{

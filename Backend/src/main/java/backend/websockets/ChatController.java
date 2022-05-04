@@ -1,7 +1,5 @@
 package backend.websockets;
 
-import org.aspectj.bridge.Message;
-
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
@@ -9,9 +7,14 @@ import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Map;
 
-@org.springframework.stereotype.Controller
+import backend.classes.ClassRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+
+@Controller
 @ServerEndpoint(value="/chat/{username}")
-public class Controller
+public class ChatController
 {
 
     // Store all socket session and their corresponding username.
@@ -19,6 +22,11 @@ public class Controller
     private static Map<String, Session> usernameSessionMap = new Hashtable<>();
 
     private Chatbot chatbot = new Chatbot();
+
+    @Autowired
+    public void setMessageRepository(ClassRepository classRepository) {
+        Chatbot.classRepository = classRepository;  // we are setting the static variable
+    }
 
     @OnOpen
     public void onOpen(Session session, @PathParam("username") String username)
@@ -28,7 +36,6 @@ public class Controller
         String message = "User:" + username + " has Joined the Chat";
         broadcast(message);
     }
-
 
     @OnMessage
     public void onMessage(Session session, String message) throws IOException {
