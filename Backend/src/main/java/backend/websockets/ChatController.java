@@ -1,17 +1,17 @@
 package backend.websockets;
 
-import org.aspectj.bridge.Message;
-
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Map;
+import org.springframework.stereotype.Controller;
 
-@org.springframework.stereotype.Controller
+
+@Controller
 @ServerEndpoint(value="/chat/{username}")
-public class Controller
+public class ChatController
 {
 
     // Store all socket session and their corresponding username.
