@@ -1,15 +1,17 @@
 package backend.websockets;
 
+import backend.classes.ClassData;
 import backend.classes.ClassRepository;
-import backend.instructors.InstructorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.persistence.Access;
 
 public class Chatbot
 {
-    @Autowired
-    ClassRepository classRepository;
+    protected static ClassRepository classRepository;
 
-    public String message(String message)
+    public static String message(String message)
     {
         message = message.replaceFirst("bot ", "");
         if (message.contains("find"))
@@ -17,15 +19,19 @@ public class Chatbot
             message = message.replaceFirst("find ", "");
             if (message.contains("class"))
             {
+                message = message.replaceFirst("class ", "");
                 return findClass(message);
             }
         }
         return "Sorry, I'm not sure what you mean";
     }
 
-    private String findClass(String message)
+    private static String findClass(String message)
     {
         String split[] = message.split(":");
-        return classRepository.findByDepartmentTitleAndClassNumber(split[0], split[1]).toString();
+        ClassData classData = classRepository.findByDepartmentTitleAndClassNumber(split[0], split[1]);
+        if(classData == null)
+            return "Class not found";
+        return classData.toString();
     }
 }

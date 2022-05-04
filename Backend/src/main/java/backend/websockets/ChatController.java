@@ -6,6 +6,9 @@ import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Map;
+
+import backend.classes.ClassRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 
@@ -20,6 +23,11 @@ public class ChatController
 
     private Chatbot chatbot = new Chatbot();
 
+    @Autowired
+    public void setMessageRepository(ClassRepository classRepository) {
+        Chatbot.classRepository = classRepository;  // we are setting the static variable
+    }
+
     @OnOpen
     public void onOpen(Session session, @PathParam("username") String username)
             throws IOException {
@@ -28,7 +36,6 @@ public class ChatController
         String message = "User:" + username + " has Joined the Chat";
         broadcast(message);
     }
-
 
     @OnMessage
     public void onMessage(Session session, String message) throws IOException {
