@@ -29,7 +29,7 @@ public class Schedule
     @ManyToOne
     private User user;
 
-    @OneToMany
+    @ManyToMany
     private List<Section> list;
 
     public void addSection(Section section)
