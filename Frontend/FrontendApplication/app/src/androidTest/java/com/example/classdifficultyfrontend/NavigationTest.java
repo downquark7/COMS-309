@@ -35,7 +35,12 @@ public class NavigationTest {
     public ActivityTestRule<ScheduleActivity> activityRule = new ActivityTestRule<>(Login.class);
 
     @Test
+    public void test_days() throws Exception{
+//        onView(withId(R.id.TextView))
+    }
+    @Test
     public void test_cells() throws Exception{
-
+        o//nView(withId())
+        //onView(withId(R.id.cellHourText)).perform
     }
 }
