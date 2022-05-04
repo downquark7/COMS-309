@@ -27,6 +27,25 @@ import schedule.ScheduleActivity;
 @RunWith(AndroidJUnit4ClassRunner.class)
 @LargeTest
 public class NavigationTest {
+    public class ToastMatcher extends TypeSafeMatcher<Root> {
+
+        @Override    public void describeTo(Description description) {
+            description.appendText("is toast");
+        }
+
+        @Override    public boolean matchesSafely(Root root) {
+            int type = root.getWindowLayoutParams().get().type;
+            if ((type == WindowManager.LayoutParams.TYPE_TOAST)) {
+                IBinder windowToken = root.getDecorView().getWindowToken();
+                IBinder appToken = root.getDecorView().getApplicationWindowToken();
+                if (windowToken == appToken) {
+                    //means this window isn't contained by any other windows.
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
     Random rand = new Random();
     int randomNumber = rand.nextInt(15) + 65;
 
@@ -40,7 +59,7 @@ public class NavigationTest {
     }
     @Test
     public void test_cells() throws Exception{
-        o//nView(withId())
-        //onView(withId(R.id.cellHourText)).perform
+        //onView(withId())
+        onView(withId(R.id.cellHourText)).perform(click());
     }
 }
