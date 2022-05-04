@@ -39,9 +39,7 @@ public class SystemTest {
         onView(withId(R.id.Pass_input)).perform(typeText("create"),closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
 
-        onView(withId(R.id.out)).check(matches(withText("Username: " + "testcreate" + "\n" +
-                "Authentication Method: " + "create" + "\n" +
-                "Authentication Data: " + "create")));
+        onView(withId(R.id.out)).check(matches(withText("")));
     }
 
     @Test
