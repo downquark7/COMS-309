@@ -47,7 +47,7 @@ public class Websocket extends AppCompatActivity {
                  * computer, and change the ip address to that of your computer.
                  * If running on the emulator, you can use localhost.
                  */
-                String w = "ws://10.0.2.2:8080/websocket/" + e1.getText().toString();
+                String w = "ws://coms-309-032.class.las.iastate.edu:8080/chat/" + e1.getText().toString();
 
                 try {
                     Log.d("Socket:", "Trying socket");
