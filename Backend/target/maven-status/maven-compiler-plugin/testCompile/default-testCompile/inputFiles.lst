@@ -1,1 +1,5 @@
-/home/enicely/2_hb_4/Experiments/enicely/src/test/java/com/example/enicely/EnicelyApplicationTests.java
+/home/enicely/2_hb_4/Backend/src/test/java/backend/ClassControllerTest.java
+/home/enicely/2_hb_4/Backend/src/test/java/backend/UserControllerTests.java
+/home/enicely/2_hb_4/Backend/src/test/java/backend/InstructorControllerTest.java
+/home/enicely/2_hb_4/Backend/src/test/java/backend/ReviewControllerTest.java
+/home/enicely/2_hb_4/Backend/src/test/java/backend/ScheduleControllerTest.java
