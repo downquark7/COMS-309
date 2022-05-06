@@ -88,4 +88,14 @@
         android:layout_marginTop="300dp"
         android:layout_centerHorizontal="true"/>
 
+    <Button
+        android:id="@+id/button_go_to_websocket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Websocket"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="157dp"
+        android:layout_marginTop="340dp"
+        android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.example.classdifficultyfrontend;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,12 +29,20 @@ public class Websocket extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_websocket);
         b1 = (Button) findViewById(R.id.bt1);
         b2 = (Button) findViewById(R.id.bt2);
         e1 = (EditText) findViewById(R.id.et1);
         e2 = (EditText) findViewById(R.id.et2);
         t1 = (TextView) findViewById(R.id.tx1);
+        Button button2 = findViewById(R.id.back);
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Websocket.this, MainActivity.class));
+            }
+        });
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +50,8 @@ public class Websocket extends AppCompatActivity {
                 Draft[] drafts = {
                         new Draft_6455()
                 };
+
+
 
                 /**
                  * If running this on an android device, make sure it is on the same network as your
