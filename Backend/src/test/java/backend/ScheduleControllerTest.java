@@ -76,30 +76,62 @@ public class ScheduleControllerTest
     @Test
     public void scheduleTests()
     {
-        Map<String, Object> request = new HashMap<>();
-        Map<String, String> user = new HashMap<>();
-        user.put("username", testUser.getUsername());
-        request.put("user", user);
-        request.put("name", testScheduleName);
-        request.put("sections", new int[]{5560});
+        {
+            Map<String, Object> request = new HashMap<>();
+            Map<String, String> user = new HashMap<>();
+            user.put("username", testUser.getUsername());
+            request.put("user", user);
+            request.put("name", testScheduleName);
+            request.put("sections", new int[]{5560, 5560});
 
-        ScheduleOutputHelper output = given().contentType("application/json")
-                .body(request)
-                .post(uri + "/schedule")
-                .then()
-                .assertThat()
-                .statusCode(HttpStatus.OK.value())
-                .extract()
-                .as(ScheduleOutputHelper.class);
+            ScheduleOutputHelper output = given().contentType("application/json")
+                    .body(request)
+                    .post(uri + "/schedule")
+                    .then()
+                    .assertThat()
+                    .statusCode(HttpStatus.OK.value())
+                    .extract()
+                    .as(ScheduleOutputHelper.class);
 
-        get(uri+"/schedules/byUserId/"+testUser.getId())
-                .then()
-                .assertThat()
-                .statusCode(HttpStatus.OK.value());
 
-        get(uri+"/schedule/byId/"+output.id)
-                .then()
-                .assertThat()
-                .statusCode(HttpStatus.OK.value());
+            get(uri + "/schedules/byUserId/" + testUser.getId())
+                    .then()
+                    .assertThat()
+                    .statusCode(HttpStatus.OK.value());
+
+            get(uri + "/schedule/byId/" + output.id)
+                    .then()
+                    .assertThat()
+                    .statusCode(HttpStatus.OK.value());
+        }
+
+        {
+            Map<String, Object> request = new HashMap<>();
+            Map<String, String> user = new HashMap<>();
+            user.put("username", testUser.getUsername());
+            request.put("user", user);
+            request.put("name", testScheduleName + "v2");
+            request.put("sections", new int[]{5560, 5560});
+
+            ScheduleOutputHelper output = given().contentType("application/json")
+                    .body(request)
+                    .post(uri + "/schedule")
+                    .then()
+                    .assertThat()
+                    .statusCode(HttpStatus.OK.value())
+                    .extract()
+                    .as(ScheduleOutputHelper.class);
+
+
+            get(uri + "/schedules/byUserId/" + testUser.getId())
+                    .then()
+                    .assertThat()
+                    .statusCode(HttpStatus.OK.value());
+
+            get(uri + "/schedule/byId/" + output.id)
+                    .then()
+                    .assertThat()
+                    .statusCode(HttpStatus.OK.value());
+        }
     }
 }
