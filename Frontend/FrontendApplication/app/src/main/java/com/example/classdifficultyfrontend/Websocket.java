@@ -28,7 +28,7 @@ public class Websocket extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_websocket);
         b1 = (Button) findViewById(R.id.bt1);
         b2 = (Button) findViewById(R.id.bt2);
         e1 = (EditText) findViewById(R.id.et1);
